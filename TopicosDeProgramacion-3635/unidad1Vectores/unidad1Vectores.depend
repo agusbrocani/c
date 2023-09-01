@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1693292943 source:c:\users\pc\desktop\guia de tp\clase2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"clase2H.h"
+
+1693293666 c:\users\pc\desktop\guia de tp\clase2\clase2h.h
+
+1693294800 source:c:\users\pc\desktop\guia de tp\clase2\clase2f.c
+	"clase2H.h"
+	<stdio.h>
+	<stdlib.h>
+
+1693116373 source:c:\users\pc\desktop\untitled1.c
+	<stdio.h>
+	<stdlib.h>
+

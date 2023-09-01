@@ -1,0 +1,27 @@
+# depslib dependency file v1.0
+1692297318 source:c:\users\pc\desktop\guiadetp\funcionestp.c
+	"header/headerTP.h"
+	<stdio.h>
+	<math.h>
+
+1691735454 c:\users\pc\desktop\guiadetp\header\headertp.h
+
+1691735964 source:c:\users\pc\desktop\guiadetp\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"header/headerTP.h"
+
+1693604508 source:c:\users\pc\desktop\ejercicios de topicos\guiadetp\unidad0repaso.c
+	"unidad0Repaso.h"
+	<stdio.h>
+	<math.h>
+
+1691735454 c:\users\pc\desktop\ejercicios de topicos\guiadetp\unidad0repaso.h
+
+1693604518 source:c:\users\pc\desktop\ejercicios de topicos\guiadetp\mainunidad0repaso.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+	"unidad0Repaso.h"
+

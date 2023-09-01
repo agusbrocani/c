@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1693509928 source:c:\users\pc\desktop\guia de tp\practica31agosto\funciones31a.c
+	"header31a.h"
+	<stdlib.h>
+
+1693508100 c:\users\pc\desktop\guia de tp\practica31agosto\header31a.h
+
+1693509780 source:c:\users\pc\desktop\guia de tp\practica31agosto\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"header31a.h"
+
