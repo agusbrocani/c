@@ -1,0 +1,17 @@
+CTRL+R		REPLACE [cambiarle el nombre a una variable en el archivo donde estoy]
+CTRL+SHIFT+R	REPLACE IN ALL FILES
+CTRL+SHIFT+C	comentar
+CTRL+SHIFT+X	descomentar
+
+ALT+UP		Mover línea/s seleccionadas arriba
+ALT+DOWN	Mover línea/s seleccionadas abajo
+CTRL+Z		UNDO
+CTRL+SHIFT+Z	REDO
+CTRL+A		Selecciona TODAS las líneas de código
+CTRL+D		Duplica TODAS las líneas de código seleccionadas[posicionar el cursor en la linea anterior a donde quiero duplicar] 
+
+ALT+LEFT	Moverme entre los archivos del proyecto, hacia atras
+ALT+RIGHT	Moverme entre los archivos del proyecto, hacia adelante
+CTRL+F		Buscar la aparición de algo en el código
+CTRL+E		Selecciona la aparición de la palabra marcada en el resto del código de a una
+
