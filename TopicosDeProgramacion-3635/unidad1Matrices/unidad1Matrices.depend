@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1693845962 source:c:\users\pc\desktop\progra 2023\topicosdeprogramacion-3635\unidad1matrices\unidad1matrices.c
+1694032713 source:c:\users\pc\desktop\progra 2023\topicosdeprogramacion-3635\unidad1matrices\unidad1matrices.c
 	"unidad1Matrices.h"
 	<stdio.h>
 	<stdlib.h>
 
 1693789604 c:\users\pc\desktop\progra 2023\topicosdeprogramacion-3635\unidad1matrices\unidad1matrices.h
 
-1693846216 source:c:\users\pc\desktop\progra 2023\topicosdeprogramacion-3635\unidad1matrices\mainunidad1matrices.c
+1694032802 source:c:\users\pc\desktop\progra 2023\topicosdeprogramacion-3635\unidad1matrices\mainunidad1matrices.c
 	<stdio.h>
 	<stdlib.h>
 	"unidad1Matrices.h"

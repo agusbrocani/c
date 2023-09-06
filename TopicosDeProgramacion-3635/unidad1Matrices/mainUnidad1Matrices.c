@@ -70,7 +70,7 @@ int main()
     printf("Traspuesta:");
     mostrarMatriz(matriz,N,N);
 
-    //mostrarMatriz(rectangular,TAM_FILA,N);
+    mostrarMatriz(rectangular,TAM_FILA,N);
     printf("Dar traspuesta de una matriz:");
     unoPuntoDieciochoDarTraspuesta(rectangular,TAM_FILA,N);
 

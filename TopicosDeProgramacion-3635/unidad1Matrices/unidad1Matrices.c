@@ -52,10 +52,6 @@ void mostrarMatriz(float matriz[][N],int cf,int cc)
     int f;
     int c;
 
-    if( cf != cc )
-        printf("\nDIRECCION MATRIZ RESULTADO: %p\nf=%d,c=%d", matriz,cf,cc);
-
-
     printf("\nMatriz:\n");
 
     for( f = 0; f < cf; f++ )
@@ -326,13 +322,11 @@ void unoPuntoDiecisieteTrasponer(float matriz[][N])
 
 void unoPuntoDieciochoDarTraspuesta(float matriz[][N],int cf,int cc)
 {
-    float matrizResultante[cc][cf];
+    float matrizResultante[N][N];
     int f;
     int c;
     int fr;
     int cr;
-
-    printf("\nDIRECCION MATRIZ RESULTADO: %p\n", matrizResultante);
 
     for( f = 0, cr = 0; f < cf; f++, cr++ )
     {
@@ -341,16 +335,8 @@ void unoPuntoDieciochoDarTraspuesta(float matriz[][N],int cf,int cc)
             matrizResultante[fr][cr] = matriz[f][c];
         }
     }
-    printf("\n");
-    for(f=0;f<cc;f++)
-    {
-        for(c=0;c<cf;c++)
-        {
-            printf("%.0f\t",matrizResultante[f][c]);
-        }
-        printf("\n");
-    }
-    //mostrarMatriz(matrizResultante,cc,cf);
+
+    mostrarMatriz(matrizResultante,cc,cf);
 }
 
 

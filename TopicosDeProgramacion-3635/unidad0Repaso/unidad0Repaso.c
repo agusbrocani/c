@@ -167,18 +167,22 @@ int sumaDeLosNNrosNaturales12(int x)
 int esPrimo(int x)
 {
     int i;
-    int contador=1;
+    int contador = 1;
 
-
-    for(i=x-1;i>1;i--)
+    if( x <= 1 )
     {
-        if(         0==x%i          )
+        return 0;
+    }
+
+    for( i = x - 1; i > 1;i-- )
+    {
+        if(         0 == x%i          )
         {
             contador++;
         }
     }
 
-    if(1==contador)
+    if( 1 == contador )
     {
         return contador;    //es primo
     }
