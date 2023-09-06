@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1694035489 source:c:\users\pc\desktop\principiosdecalidaddesoftware(3626)\nrosprimos\mainnrosprimos.c
+	<stdio.h>
+	<stdlib.h>
+
