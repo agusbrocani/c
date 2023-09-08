@@ -160,9 +160,12 @@ int rEsPalindromo(const char* cadena, const char *inicioCadena, const char *finC
 
 unsigned short rCalcularCoeficienteTrianguloTartaglia(int n, int k)
 {
-    if (k == 0 || k == n) {
+    if (k == 0 || k == n)
+    {
         return 1;
-    } else {
+    }
+    else
+    {
         return rCalcularCoeficienteTrianguloTartaglia(n - 1, k - 1) + rCalcularCoeficienteTrianguloTartaglia(n - 1, k);
     }
 }
