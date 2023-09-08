@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1694141263 source:c:\users\pc\desktop\progra 2023\topicosdeprogramacion-3635\unidad6recursividad\unidad6recursividad.c
+	"unidad6Recursividad.h"
+
+1694141252 c:\users\pc\desktop\progra 2023\topicosdeprogramacion-3635\unidad6recursividad\unidad6recursividad.h
+	<stdio.h>
+	<stdlib.h>
+
+1694141588 source:c:\users\pc\desktop\progra 2023\topicosdeprogramacion-3635\unidad6recursividad\mainunidad6recursividad.c
+	<stdio.h>
+	<stdlib.h>
+	"unidad6Recursividad.h"
+
