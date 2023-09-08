@@ -58,7 +58,25 @@ void mostrarMatriz(float matriz[][N],int cf,int cc)
     {
         for( c = 0; c < cc; c++ )
         {
-            printf("%.0f\t", matriz[f][c] );//%05.2f\t
+            printf("%05.2f\t", matriz[f][c] );
+        }
+        printf("\n");
+    }
+    printf("\n");
+
+}
+void mostrarMatrizEnteros(int matriz[][N],int cf,int cc)
+{
+    int f;
+    int c;
+
+    printf("\nMatriz:\n");
+
+    for( f = 0; f < cf; f++ )
+    {
+        for( c = 0; c < cc; c++ )
+        {
+            printf("%d\t", matriz[f][c] );
         }
         printf("\n");
     }
@@ -136,7 +154,7 @@ double unoPuntoDoceSumaTrianguloSuperiorSinDS(float matriz[][N])
     double resultado = 0;
     int f;
     int c;
-    /* SOLUCIÓN FÁCIL
+    /*SOLUCIÓN FÁCIL
     for(f = 0; f < N ; f++)
     {
         for(c = 0; c < N ; c++)
@@ -320,9 +338,9 @@ void unoPuntoDiecisieteTrasponer(float matriz[][N])
     }
 }
 
-void unoPuntoDieciochoDarTraspuesta(float matriz[][N],int cf,int cc)
+void unoPuntoDieciochoDarTraspuesta(float matriz[][N],int cf,int cc)    //2x5 => 5X2
 {
-    float matrizResultante[N][N];
+    float matrizResultante[N][N];   //5X5
     int f;
     int c;
     int fr;
@@ -339,5 +357,31 @@ void unoPuntoDieciochoDarTraspuesta(float matriz[][N],int cf,int cc)
     mostrarMatriz(matrizResultante,cc,cf);
 }
 
+void unoPuntoDiecinueveProducto(int matriz1[][N], int matriz2[][N], int cf1, int cc1, int cf2, int cc2) {
+
+    int resultado[cf1][cc2];
+    int f, c, k;
+
+    if (cc1 != cf2)
+    {
+        printf("No se pueden multiplicar las matrices %d != %d. \n",cc1,cf2);
+        return;
+    }
+
+    for (f = 0; f < cf1; f++)
+    {
+        for (c = 0; c < cc2; c++)
+        {
+            resultado[f][c] = 0;
+
+            for (k = 0; k < cc1; k++)
+            {
+                resultado[f][c] += matriz1[f][k] * matriz2[k][c];
+            }
+        }
+    }
+
+    mostrarMatrizEnteros(resultado,cf1,cc2);
+}
 
 

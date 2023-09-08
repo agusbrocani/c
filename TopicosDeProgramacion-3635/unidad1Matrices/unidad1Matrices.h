@@ -8,6 +8,8 @@
 
 void cargaLoteMatriz(float matriz[][N],int cf,int cc, int opcion);
 void mostrarMatriz(float matriz[][N],int cf,int cc);
+void mostrarMatrizEnteros(int matriz[][N],int cf,int cc);
+
 
 double unoPuntoDoceSumaTrianguloSuperiorSinDP(float matriz[][N]);
 double unoPuntoDoceSumaTrianguloInferiorSinDP(float matriz[][N]);
@@ -27,6 +29,8 @@ int unoPuntoQuinceEsDiagonal(float matriz[][N]);
 int unoPuntoDieciseisEsSimetrica(float matriz[][N]);
 void unoPuntoDiecisieteTrasponer(float matriz[][N]);
 
-void unoPuntoDieciochoDarTraspuesta(float matriz[][N],int cf,int cc);   ///SOLUCIONAR mostrarMatriz, en el ambito de la funcion muestra correctamente la respuesta pero al usar mostrarMatriz no funciona
+void unoPuntoDieciochoDarTraspuesta(float matriz[][N],int cf,int cc);
+void unoPuntoDiecinueveProducto(int matriz1[][N], int matriz2[][N],int cf1,int cc1, int cf2,int cc2);
 
 #endif // UNIDAD1MATRICES_H_INCLUDED
+
