@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1693492104 source:d:\git\programacion\exams\autocorregibleofuscado\examen.c
+	<stdlib.h>
+
+1693491822 source:d:\git\programacion\exams\autocorregibleofuscado\main.c
+	<stdio.h>
+	<stdlib.h>
+	"examen.h"
+
+1693492254 d:\git\programacion\exams\autocorregibleofuscado\examen.h
+
+1693933614 source:c:\users\laboratorios\desktop\autocorregibleofuscado\examen.c
+	<stdlib.h>
+
+1693933710 source:c:\users\laboratorios\desktop\autocorregibleofuscado\main.c
+	<stdio.h>
+	<stdlib.h>
+	"examen.h"
+
+1693933614 c:\users\laboratorios\desktop\autocorregibleofuscado\examen.h
+
+1694491002 source:c:\users\pc\desktop\autocorregibleofuscado_3\examen.c
+	<stdlib.h>
+	<string.h>
+	"examen.h"
+
+1694490848 source:c:\users\pc\desktop\autocorregibleofuscado_3\main.c
+	<stdio.h>
+	<stdlib.h>
+	"examen.h"
+
+1694490898 c:\users\pc\desktop\autocorregibleofuscado_3\examen.h
+
