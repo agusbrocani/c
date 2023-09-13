@@ -10,18 +10,18 @@ void cargaLoteMatriz(float matriz[][N],int cf,int cc, int opcion)
     switch(opcion)
     {
         case 0:
-            for( f = 0 ; f < N; f++ )
+            for( f = 0 ; f < cf; f++ )
             {
-                for( c = 0; c < N; c++ )
+                for( c = 0; c < cc; c++ )
                 {
                     matriz[f][c] = f*10 + c;  //Si modifico esto, debo modificar el %05.2f de mostrarMatrizCuadrada, ya que solamente me muestra 5 digitos[contando el punto]
                 }
             }
         break;
         case 1:
-            for( f = 0; f < N; f++ )
+            for( f = 0; f < cf; f++ )
             {
-                for( c = 0; c < N; c++ )
+                for( c = 0; c < cc; c++ )
                 {
                     if( f != c )
                     {
@@ -178,7 +178,7 @@ double unoPuntoDoceSumaTrianguloSuperiorSinDS(float matriz[][N])
     return resultado;
 }
 
-//es útil pararse al final y restarle desde donde necesite iniciar hasta menor a tamaño de la columna
+//es útil pararse al final y restarle desde donde necesite iniciar hasta menor a tamaño de la c
 double unoPuntoDoceSumaTrianguloInferiorSinDS(float matriz[][N])
 {
     double resultado = 0;
@@ -384,4 +384,66 @@ void unoPuntoDiecinueveProducto(int matriz1[][N], int matriz2[][N], int cf1, int
     mostrarMatrizEnteros(resultado,cf1,cc2);
 }
 
+int valido(int superior,int inferior)
+{
+    int i = 0;
+    int combinaciones[][6] =
+    {
+        {0,1,2,3,4,6},
+        {6,4,2,3,1,0}
+    };
+
+    if(         superior <0 || inferior <0          )
+    {
+        return 0;
+    }
+
+    while(          i < 6  && (superior != combinaciones [0][i] )         )
+    {
+        i++;
+    }
+
+    if(        6 == i || (inferior != combinaciones[1][i])           )
+    {
+        return 0;
+    }
+    else
+    {
+        return 1;
+    }
+
+}
+
+int unoPuntoVeinteEquipos(int matriz[][N],int n)
+{
+    int f;
+    int c;
+
+    for(f = 0; f < n; f++)
+    {
+        for(c = f ; c < n; c++)
+        {
+            if(         f == c  && matriz[f][c]         )
+            {
+                return 0;
+            }
+
+            if(        f != c && (  !valido(matriz[f][c],matriz[c][f])    )          )
+            {
+                return 0;
+            }
+        }
+    }
+
+    return 1;
+}
+
+void puntosPorEquipo(int matriz[][N])
+{
+    /*int f;
+    int c;
+    int vectorPuntos[ORDEN] = {0};
+    */
+
+}
 
