@@ -1,15 +1,15 @@
 # depslib dependency file v1.0
-1694469612 source:c:\users\pc\desktop\progra 2023\topicosdeprogramacion-3635\unidad1vectoresgen\mainunidad1vectoresgen.c
+1694663766 source:c:\users\pc\desktop\progra 2023\topicosdeprogramacion-3635\unidad1vectoresgen\mainunidad1vectoresgen.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"unidad1VectoresGen.h"
 
-1694469813 c:\users\pc\desktop\progra 2023\topicosdeprogramacion-3635\unidad1vectoresgen\unidad1vectoresgen.h
+1694662818 c:\users\pc\desktop\progra 2023\topicosdeprogramacion-3635\unidad1vectoresgen\unidad1vectoresgen.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1694469508 source:c:\users\pc\desktop\progra 2023\topicosdeprogramacion-3635\unidad1vectoresgen\unidad1vectoresgen.c
+1694663478 source:c:\users\pc\desktop\progra 2023\topicosdeprogramacion-3635\unidad1vectoresgen\unidad1vectoresgen.c
 	"unidad1VectoresGen.h"
 
