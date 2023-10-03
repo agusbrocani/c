@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1696274139 source:c:\users\pc\desktop\ingeniería en informática    -materias actuales - plan de estudio\materias 2do cuatrimestre 2023\progra 2023\topicosdeprogramacion-3635\archivosbinarios\archivosbinarios.c
+	"archivosBinarios.h"
+
+1696189331 c:\users\pc\desktop\ingeniería en informática    -materias actuales - plan de estudio\materias 2do cuatrimestre 2023\progra 2023\topicosdeprogramacion-3635\archivosbinarios\archivosbinarios.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1696274139 source:c:\users\pc\desktop\ingeniería en informática    -materias actuales - plan de estudio\materias 2do cuatrimestre 2023\progra 2023\topicosdeprogramacion-3635\archivosbinarios\main.c
+	"archivosBinarios.h"
+

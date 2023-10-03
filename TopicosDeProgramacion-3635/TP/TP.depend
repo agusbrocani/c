@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1696276954 source:c:\users\pc\desktop\ingeniería en informática    -materias actuales - plan de estudio\materias 2do cuatrimestre 2023\progra 2023\topicosdeprogramacion-3635\tp\tp.c
+	"tp.h"
+
+1696279037 c:\users\pc\desktop\ingeniería en informática    -materias actuales - plan de estudio\materias 2do cuatrimestre 2023\progra 2023\topicosdeprogramacion-3635\tp\tp.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1696279880 source:c:\users\pc\desktop\ingeniería en informática    -materias actuales - plan de estudio\materias 2do cuatrimestre 2023\progra 2023\topicosdeprogramacion-3635\tp\main.c
+	"tp.h"
+
