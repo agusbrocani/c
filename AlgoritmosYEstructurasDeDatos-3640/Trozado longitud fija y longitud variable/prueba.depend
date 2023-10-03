@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1656954813 source:c:\users\pc\desktop\ prueba\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1656957093 source:c:\users\pc\desktop\ingeniería en informática    -materias actuales - plan de estudio\materias 2do cuatrimestre 2023\progra 2023\algoritmosyestructurasdedatos-3640\trozado longitud fija y longitud variable\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1655254036 source:e:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\listasimple\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1655229590 source:e:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\listasimple\lista.c
+	"lista.h"
+
+1655835382 e:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\listasimple\lista.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1655254036 source:f:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\listasimple\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1655254170 f:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\listasimple\lista.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1655256674 source:f:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\listasimple\lista.c
+	"lista.h"
+
+1655254036 source:c:\users\pc\desktop\estructuras de datos\listasimple\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1655835382 c:\users\pc\desktop\estructuras de datos\listasimple\lista.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1657418135 source:c:\users\pc\desktop\estructuras de datos\listasimple\lista.c
+	"lista.h"
+

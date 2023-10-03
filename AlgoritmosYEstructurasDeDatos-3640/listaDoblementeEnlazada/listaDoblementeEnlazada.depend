@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1654635784 source:e:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\listadoblementeenlazada\lista.c
+	"lista.h"
+
+1655235316 e:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\listadoblementeenlazada\lista.h
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1655082936 source:e:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\listadoblementeenlazada\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1656897328 source:f:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\listadoblementeenlazada\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1655235316 f:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\listadoblementeenlazada\lista.h
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1656873024 source:f:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\listadoblementeenlazada\lista.c
+	"lista.h"
+
+1656873024 source:c:\users\pc\desktop\estructuras de datos\listadoblementeenlazada\lista.c
+	"lista.h"
+
+1655235316 c:\users\pc\desktop\estructuras de datos\listadoblementeenlazada\lista.h
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1656897328 source:c:\users\pc\desktop\estructuras de datos\listadoblementeenlazada\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+

@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1653171396 source:f:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\colaestatica\main.c
+	<stdio.h>
+	<stdlib.h>
+	"cola.h"
+
+1653170674 source:f:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\colaestatica\cola.c
+	"cola.h"
+
+1653170748 f:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\colaestatica\cola.h
+	<stdlib.h>
+	<string.h>
+

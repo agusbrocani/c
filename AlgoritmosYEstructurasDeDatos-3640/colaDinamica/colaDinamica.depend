@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1446667744 source:e:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\coladinamica\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1652831300 source:e:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\coladinamica\cola.c
+	"cola.h"
+
+1652831336 e:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\coladinamica\cola.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1652835530 source:f:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\coladinamica\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1653952590 source:f:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\coladinamica\cola.c
+	"cola.h"
+
+1652834918 f:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\coladinamica\cola.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
