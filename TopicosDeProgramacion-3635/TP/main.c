@@ -1,98 +1,93 @@
 #include "tp.h"
+///32398 REGISTROS
 
 int main()
 {
-    tPatente lectura;
-    long tamArchivo;
-    long cantRegistros;
-    //long double raw = 1;
+    FILE* pfDatos;
+    FILE* resultados;
+    void* lectura;
+    void* iniLectura;
+    unsigned cantBytesArchivo;
+    int endianness;
+    unsigned short vBatAverage;
+    double volts;
+    unsigned horaYFecha;
 
-    FILE* pf = fopen("../archivosBinarios/registros","rb");
-
-    if(!pf)
+    if(         !abrirArchivo(&pfDatos,"HKTMST.bin","rb")         )
     {
-        printf("No pude abrir el archivo\n");
+        printf("ERROR1\n");
         return 1;
     }
 
-    fread(&lectura,sizeof(tPatente),1,pf);
-
-    while(          !feof(pf)           )
+    if(         !abrirArchivo(&resultados,"resultados.txt","wt")         )
     {
-        printf("Patente: %s\nNro Cuota: %d\nNya: %s\nDNI: %d\nFecha->\tDia: %d Mes: %d Anio: %d\nImporte: U$D %.2f\n",lectura.patente,lectura.nroCuota,lectura.nya,lectura.dni,
-               lectura.fVencimiento.dia,lectura.fVencimiento.mes,lectura.fVencimiento.anio,lectura.importe);
-        printf("\n");
-        fread(&lectura,sizeof(tPatente),1,pf);
+        printf("ERROR2\n");
+        fclose(resultados);
+        return 1;
     }
-    rewind(pf);
 
-    fseek(pf, 0, SEEK_END);
+    endianness = checkEndianness();
 
-    tamArchivo = ftell(pf);
-    cantRegistros = tamArchivo/sizeof(tPatente);
-    rewind(pf);
-
-    printf("Tam del archivo en bytes:\t\t%li\n",tamArchivo);
-    printf("Cantidad de registros del archivo:\t%li\n",cantRegistros);
-
-/*
-    printf("ld with lf = %.335Lf \n",CORRECTION_RAW(raw));
-    printf("ld with lg = %.335Lg \n",CORRECTION_RAW(raw));
-    printf("ld with le = %.335Le \n",CORRECTION_RAW(raw));
-*/
-
-
-    fclose(pf);
-
-
-    /**
-    int endianness = checkEndianness();
-
-    if (endianness == 1)
+    if(         -1 == endianness            )
     {
-        printf("El hardware utiliza el formato little-endian.\n");
-        // Aquí puedes realizar el ajuste necesario para el formato big-endian si es necesario.
+        fclose(pfDatos);
+        fclose(resultados);
+        return 1;
     }
-    else if (endianness == 0)
+
+    fseek(pfDatos,0,SEEK_END);
+    cantBytesArchivo = ftell(pfDatos);
+    rewind(pfDatos);
+
+    if(         0 != cantBytesArchivo % 4000           )
+    {
+        fclose(pfDatos);
+        fclose(resultados);
+        return 1;
+    }
+
+    lectura = malloc( TAM_REGISTRO );
+    iniLectura = lectura;
+
+    if(         !lectura            )
+    {
+        printf("No pude reservar memoria\n");
+        fclose(pfDatos);
+        fclose(resultados);
+        return 1;
+    }
+
+
+    fread(lectura,TAM_REGISTRO,1,pfDatos);
+
+    while(          !feof(pfDatos)           )
+    {
+        if(         1 == endianness         )
         {
-            printf("El hardware utiliza el formato big-endian.\n");
-        // Aquí puedes realizar el ajuste necesario para el formato little-endian si es necesario.
+            swapRegister(lectura,TAM_REGISTRO);
+        }
+
+        memcpy(&vBatAverage,lectura+PCS+OFFSET_V_BAT_AVERAGE,2);    ///vBatAverage recibe correctamente los 2 bytes[ya está probado]
+        volts = CORRIGE_RAW(vBatAverage);
+
+        if (            volts >= LI_V && volts <= LS_V          )
+        {
+            printf("Voltaje: %.2lf\n", volts);
+            ///GRABO RESULTADOS EN ARCHIVO TXT "resultados.txt", tengo el FILE* resultados
         }
         else
         {
-            printf("El formato del hardware es desconocido o inusual.\n");
-            // Manejo de error si el formato no es reconocido.
+            printf("ERROR: Voltaje fuera de rango\n");
         }
-    */
+
+        memcpy(&horaYFecha,lectura+CDH+OFFSET_OBT,4);
+        printf("Hora y fecha: %u\n",horaYFecha);
+
+        fread(lectura,TAM_REGISTRO,1,pfDatos);
+    }
+
+    free(iniLectura);
+    fclose(pfDatos);
+    fclose(resultados);
     return 0;
 }
-
-/**
-    FILE* pf;
-    long tamArchivo;
-    long cantRegistros;
-
-    pf = fopen("HKTMST.bin","rb");
-
-    if(         !pf         )
-    {
-        printf("No se pudo abrir el archivo\n");
-    }
-
-    fseek(pf, 0, SEEK_END);
-    tamArchivo = ftell(pf);
-
-    if(         0 != tamArchivo % 4000            )
-    {
-        printf("Abortando el proceso...\n");
-        return 0;
-    }
-    cantRegistros = tamArchivo/4000;    // 4000 puede ser sizeof(tDato)
-    rewind(pf);
-
-    printf("Tam del archivo en bytes:\t\t%li\n",tamArchivo);
-    printf("Cantidad de registros del archivo:\t%li\n",cantRegistros);
-
-    fclose(pf);
-
-*/

@@ -1,5 +1,35 @@
 #include "tp.h"
 
+int abrirArchivo(FILE** pf,const char* nombreArchivo,const char* modo)
+{
+    *pf = fopen(nombreArchivo,modo);
+
+    if(!*pf)
+    {
+        printf("No pude abrir/crear el archivo\n");
+        return 0;
+    }
+
+    return 1;
+}
+
+void swapRegister(void* registro, size_t tam)
+{
+    void* ini = registro;
+    void* fin = registro + tam - 1;
+    char aux;
+
+    while(          ini < fin           )   ///PUEDO HACER ESTO YA QUE ES LITTLE ENDIAN
+    {
+        aux = *(char*)ini;
+        *(char*)ini = *(char*)fin;
+        *(char*)fin = aux;
+
+        ini++;
+        fin--;
+    }
+}
+
 int checkEndianness()
 {
     unsigned int value = 0x12345678; // Valor conocido
@@ -22,27 +52,4 @@ int checkEndianness()
         }
 }
 
-int abrirArchivo(FILE** pf,const char* nombreArchivo,const char* modo)
-{
-    *pf = fopen(nombreArchivo,modo);
 
-    if(!*pf)
-    {
-        printf("No pude abrir/crear el archivo\n");
-        return 0;
-    }
-
-    return 1;
-}
-
-void mostrarArchivoBinario(FILE* pf,void* dato,unsigned tam, void (*mostrar)(const void* dato))
-{
-    fread(dato,tam,1,pf);
-    while(!feof(pf))
-    {
-        mostrar(dato);
-        printf("\n");
-        fread(dato,tam,1,pf);
-    }
-    rewind(pf);
-}

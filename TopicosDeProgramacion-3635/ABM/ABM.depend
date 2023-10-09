@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1696805268 source:c:\users\pc\desktop\abm\abm.c
+	"ABM.h"
+
+1696796499 c:\users\pc\desktop\abm\abm.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1696798628 source:c:\users\pc\desktop\abm\main.c
+	"ABM.h"
+

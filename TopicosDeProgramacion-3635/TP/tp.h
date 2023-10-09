@@ -3,80 +3,36 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#define TAM_REGISTRO 4000
 
-#define TAM 100
-#define SIZE 1024
+#define CDH 8
+#define CDH_SIZE 272
 
-#define CORRECTION_RAW(RAW)  (RAW*0.01873128+(-38.682956))
+#define MM1 280             /// 8 + 272
+#define MM1_SIZE 150
 
+#define MM2 430             ///280+150
+#define MM2_SIZE 150
 
-typedef struct
-{
-    int anio;
-    int mes;
-    int dia;
-}tFecha;
+#define ACS 580             ///430+150
+#define ACS_SIZE 1024
 
-typedef struct
-{
-    char patente[TAM];
-    int nroCuota;
-    char nya[TAM];
-    int dni;
-    tFecha fVencimiento;
-    float importe;
-
-}tPatente;
+#define PCS 1604            ///580+1024
+#define PCS_SIZE 1024
+                            ///1604+1024 = 2628
+                                                            ///FULL RANGE                   ///EXPECTED RANGE       -> SI NO ESTA EN ESE RANGO, INFORMAR ERROR
+#define OFFSET_V_BAT_AVERAGE 750            ///0x000 a 0x FFF = 0 a 4095 SIN SIGNO          -> 3165 >= VALUE <= 4093        ///2BYTES DE DATO
+#define OFFSET_OBT  92          ///RANGO: UNSIGNED, 4 BYTES DE DATO
 
 
-typedef struct
-{
-    int index;
-    char name[TAM];
-    char description[TAM];
-    int sizeInBytes;
+#define CORRIGE_RAW(RAW) (RAW*0.01873128+(-38.682956))
 
-}tTabla1;
+#define LI_V 31.5
+#define LS_V 32
 
-typedef struct
-{
-    char id[SIZE];
-    int off;
-    char TSLId_VARroot[SIZE];
-    char description[SIZE];
-    int byte;
-    char type[SIZE];
-    char rangeOrExpectedValue[SIZE];
-    char alarms[SIZE];
-}tTabla2;
-
-typedef struct
-{
-    char name[SIZE];
-    char description[SIZE];
-    int sizeBytes[SIZE];
-    char label[SIZE];
-    char mnrFrame[SIZE];
-    long double flightModelPendent;
-    long double flightModelOffset;
-    char typeOfTemp[SIZE];
-
-}tTabla3;
-
-typedef struct
-{
-    int id;
-    int off;
-    char tslVar[SIZE];
-    char description[SIZE];
-    int byte;
-    char type[SIZE];
-    char rangeOrExpectedValue[SIZE];
-}tFigura3;
-
-int checkEndianness();
 int abrirArchivo(FILE** pf,const char* nombreArchivo,const char* modo);
-void mostrarArchivoBinario(FILE* pf,void* dato,unsigned tam, void (*mostrar)(const void* dato));
+int checkEndianness();
+void swapRegister(void* registro, size_t tam);
 
 
 #endif // TP_H_INCLUDED
