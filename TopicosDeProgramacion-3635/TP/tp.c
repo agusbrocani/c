@@ -1,35 +1,34 @@
 #include "tp.h"
 
-int abrirArchivo(FILE** pf,const char* nombreArchivo,const char* modo)
+int openFile(FILE** filePointer, const char* fileName, const char* mode)
 {
-    *pf = fopen(nombreArchivo,modo);
+    *filePointer = fopen(fileName, mode);
 
-    if(!*pf)
+    if(!*filePointer)
     {
-        printf("No pude abrir/crear el archivo\n");
-        return 0;
+        perror("Oops! Something wrong occurred.");
+        return OPEN_FILE_ERR;
     }
 
-    return 1;
+    return OK;
 }
 
-void swapRegister(void* registro, size_t tam)
+void reverseRegister(void* reg, size_t regSize)
 {
-    void* ini = registro;
-    void* fin = registro + tam - 1;
+    void* startOfReg = reg;
+    void* endOfReg = reg + regSize - 1;
     char aux;
 
-    while(          ini < fin           )   ///PUEDO HACER ESTO YA QUE ES LITTLE ENDIAN
+    while (startOfReg < endOfReg)
     {
-        aux = *(char*)ini;
-        *(char*)ini = *(char*)fin;
-        *(char*)fin = aux;
+        aux = *(char*)startOfReg;
+        *(char*)startOfReg = *(char*)endOfReg;
+        *(char*)endOfReg = aux;
 
-        ini++;
-        fin--;
+        startOfReg = (char*)startOfReg + 1;
+        endOfReg = (char*)endOfReg - 1;
     }
 }
-
 int checkEndianness()
 {
     unsigned int value = 0x12345678; // Valor conocido
@@ -52,4 +51,70 @@ int checkEndianness()
         }
 }
 
+size_t checkSizeOfFile(FILE* filePointer)
+{
+    size_t fileSize;
 
+    fseek(filePointer, 0, SEEK_END);
+    fileSize = ftell(filePointer);
+    rewind(filePointer);
+
+    return (0 !=  (fileSize % REGISTER_SIZE)? false : true);
+}
+
+int traverseFileAndRecordResults(FILE* dataFilePointer, FILE* resultsFilePointer, int endianness)
+{
+    void* dataRegister;
+    int16_t vBatAverage;
+    double volts;
+    int32_t dateTime;
+    struct tm* timeInfo;
+
+    dataRegister = malloc( REGISTER_SIZE );
+
+    if(         !dataRegister           )
+    {
+        perror("There is no memory available");
+        return MEM_ERR;
+    }
+
+    fprintf(resultsFilePointer,"Voltage;Datetime\n");
+
+    fread(dataRegister, REGISTER_SIZE, 1, dataFilePointer);
+    while(          !feof(dataFilePointer)           )
+    {
+        if(         LITTLE_ENDIAN == endianness         )
+        {
+            reverseRegister(dataRegister, REGISTER_SIZE);
+            memcpy(&vBatAverage, dataRegister + REGISTER_SIZE - PCS - V_BAT_AVERAGE_OFFSET - sizeof(int16_t), 2);
+            memcpy(&dateTime, dataRegister + REGISTER_SIZE - CDH - OBT_OFFSET - sizeof(int32_t), 4);///incrementa cada 8 segundos
+
+
+            if(         !(timeInfo = getDatetime(&dateTime))            )
+            {
+                perror("Error converting to time");
+                return TIME_ERR;
+            }
+        }
+        else
+        {
+            memcpy(&vBatAverage, dataRegister + PCS + V_BAT_AVERAGE_OFFSET, 2);
+            memcpy(&dateTime, dataRegister + CDH + OBT_OFFSET, 4);
+        }
+        volts = FIX_RAW(vBatAverage);
+        fprintf(resultsFilePointer,"%lf;%s", volts, asctime(timeInfo));///DEBE LEER EN HEXA: 0E F5 == 3829 en decimal
+        fread(dataRegister, REGISTER_SIZE, 1, dataFilePointer);
+    }
+
+    free(dataRegister);
+
+    return OK;
+}
+
+struct tm* getDatetime(const int32_t* dateTime)
+{
+    time_t time;
+
+    time = (time_t)(*dateTime);
+    return localtime(&time);
+}

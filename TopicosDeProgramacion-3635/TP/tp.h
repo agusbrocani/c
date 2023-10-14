@@ -3,7 +3,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define TAM_REGISTRO 4000
+#include <stdbool.h>
+#include <stdint.h>
+#include <time.h>
+
+#define REGISTER_SIZE 4000
+
+#define LITTLE_ENDIAN 1
+#define BIG_ENDIAN 0
+#define UNKNOWN_FORMAT -1
+
+#define OK 1
+//FILE ERRORS:
+#define OPEN_FILE_ERR -1
+#define FILE_FORMAT_ERR -2
+//MEMORY ERRORS:
+#define MEM_ERR -3
+//SYSTEM FORMAT ERRORS:
+#define UNKNOWN_FORMAT_ERR -4
+//TIME ERRORS:
+#define TIME_ERR -5
 
 #define CDH 8
 #define CDH_SIZE 272
@@ -21,18 +40,19 @@
 #define PCS_SIZE 1024
                             ///1604+1024 = 2628
                                                             ///FULL RANGE                   ///EXPECTED RANGE       -> SI NO ESTA EN ESE RANGO, INFORMAR ERROR
-#define OFFSET_V_BAT_AVERAGE 750            ///0x000 a 0x FFF = 0 a 4095 SIN SIGNO          -> 3165 >= VALUE <= 4093        ///2BYTES DE DATO
-#define OFFSET_OBT  92          ///RANGO: UNSIGNED, 4 BYTES DE DATO
+#define V_BAT_AVERAGE_OFFSET 750            ///0x000 a 0x FFF = 0 a 4095 SIN SIGNO          -> 3165 >= VALUE <= 4093        ///2BYTES DE DATO
+#define OBT_OFFSET  92          ///RANGO: UNSIGNED, 4 BYTES DE DATO
 
 
-#define CORRIGE_RAW(RAW) (RAW*0.01873128+(-38.682956))
+#define FIX_RAW(RAW) (RAW * 0.01873128 + (-38.682956))
 
-#define LI_V 31.5
-#define LS_V 32
+//#define LOWER_BOUND_V 31.5
+//#define UPPER_BOUND_V 32
 
-int abrirArchivo(FILE** pf,const char* nombreArchivo,const char* modo);
+int openFile(FILE** filePointer, const char* fileName, const char* mode);
 int checkEndianness();
-void swapRegister(void* registro, size_t tam);
-
-
+void reverseRegister(void* reg, size_t regSize);
+size_t checkSizeOfFile(FILE* filePointer);
+int traverseFileAndRecordResults(FILE* dataFilePointer, FILE* resultsFilePointer, int endianness);
+struct tm* getDatetime(const int32_t* dateTime);
 #endif // TP_H_INCLUDED

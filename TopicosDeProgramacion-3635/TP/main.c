@@ -3,91 +3,45 @@
 
 int main()
 {
-    FILE* pfDatos;
-    FILE* resultados;
-    void* lectura;
-    void* iniLectura;
-    unsigned cantBytesArchivo;
+    FILE* dataFilePointer;
+    FILE* resultsFilePointer;
     int endianness;
-    unsigned short vBatAverage;
-    double volts;
-    unsigned horaYFecha;
-
-    if(         !abrirArchivo(&pfDatos,"HKTMST.bin","rb")         )
-    {
-        printf("ERROR1\n");
-        return 1;
-    }
-
-    if(         !abrirArchivo(&resultados,"resultados.txt","wt")         )
-    {
-        printf("ERROR2\n");
-        fclose(resultados);
-        return 1;
-    }
+    int errorType;
 
     endianness = checkEndianness();
 
-    if(         -1 == endianness            )
+
+    if(         UNKNOWN_FORMAT == endianness            )
     {
-        fclose(pfDatos);
-        fclose(resultados);
-        return 1;
+        return UNKNOWN_FORMAT_ERR;
     }
 
-    fseek(pfDatos,0,SEEK_END);
-    cantBytesArchivo = ftell(pfDatos);
-    rewind(pfDatos);
-
-    if(         0 != cantBytesArchivo % 4000           )
+    if(         !openFile(&dataFilePointer, "HKTMST.bin", "rb")         )
     {
-        fclose(pfDatos);
-        fclose(resultados);
-        return 1;
+        return OPEN_FILE_ERR;
     }
 
-    lectura = malloc( TAM_REGISTRO );
-    iniLectura = lectura;
-
-    if(         !lectura            )
+    if(         !openFile(&resultsFilePointer, "results.txt", "wt")         )
     {
-        printf("No pude reservar memoria\n");
-        fclose(pfDatos);
-        fclose(resultados);
-        return 1;
+        fclose(resultsFilePointer);
+        return OPEN_FILE_ERR;
     }
 
-
-    fread(lectura,TAM_REGISTRO,1,pfDatos);
-
-    while(          !feof(pfDatos)           )
+    if(         !checkSizeOfFile(dataFilePointer)           )
     {
-        if(         1 == endianness         )
-        {
-            swapRegister(lectura,TAM_REGISTRO);
-        }
-
-        memcpy(&vBatAverage,lectura+PCS+OFFSET_V_BAT_AVERAGE,2);    ///vBatAverage recibe correctamente los 2 bytes[ya está probado]
-        volts = CORRIGE_RAW(vBatAverage);
-
-        if (            volts >= LI_V && volts <= LS_V          )
-        {
-            printf("Voltaje: %.2lf\n", volts);
-            ///GRABO RESULTADOS EN ARCHIVO TXT "resultados.txt", tengo el FILE* resultados
-        }
-        else
-        {
-            printf("ERROR: Voltaje fuera de rango\n");
-        }
-
-        memcpy(&horaYFecha,lectura+CDH+OFFSET_OBT,4);
-        printf("Hora y fecha: %u\n",horaYFecha);
-
-        fread(lectura,TAM_REGISTRO,1,pfDatos);
+        fclose(dataFilePointer);
+        fclose(resultsFilePointer);
+        return FILE_FORMAT_ERR;
     }
 
-    free(iniLectura);
-    fclose(pfDatos);
-    fclose(resultados);
+    if(         OK != (errorType = traverseFileAndRecordResults(dataFilePointer, resultsFilePointer, endianness))          )
+    {
+        fclose(dataFilePointer);
+        fclose(resultsFilePointer);
+        return errorType;
+    }
+
+    fclose(dataFilePointer);
+    fclose(resultsFilePointer);
     return 0;
 }
