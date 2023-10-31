@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1696194629 source:c:\users\pc\desktop\ingeniería en informática    -materias actuales - plan de estudio\materias 2do cuatrimestre 2023\progra 2023\topicosdeprogramacion-3635\unidad3pasajeparametros\mainunidad3pasajeparametros.c
+	"unidad3PasajeParametros.h"
+
+1696194153 c:\users\pc\desktop\ingeniería en informática    -materias actuales - plan de estudio\materias 2do cuatrimestre 2023\progra 2023\topicosdeprogramacion-3635\unidad3pasajeparametros\unidad3pasajeparametros.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1696195477 source:c:\users\pc\desktop\ingeniería en informática    -materias actuales - plan de estudio\materias 2do cuatrimestre 2023\progra 2023\topicosdeprogramacion-3635\unidad3pasajeparametros\unidad3pasajeparametros.c
+	"unidad3PasajeParametros.h"
+

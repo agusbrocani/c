@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1695354146 source:c:\users\pc\desktop\progra 2023\topicosdeprogramacion-3635\mapreducefiltergen\mainmapreducefiltergen.c
+	"mapReduceFilterGen.h"
+
+1695354063 c:\users\pc\desktop\progra 2023\topicosdeprogramacion-3635\mapreducefiltergen\mapreducefiltergen.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1695354326 source:c:\users\pc\desktop\progra 2023\topicosdeprogramacion-3635\mapreducefiltergen\mapreducefiltergen.c
+	"mapReduceFilterGen.h"
+

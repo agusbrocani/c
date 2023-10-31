@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1698721072 source:c:\users\pc\desktop\funcionestipoparcialquesemeocurren\f.c
+	"f.h"
+
+1698718694 c:\users\pc\desktop\funcionestipoparcialquesemeocurren\f.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1698720878 source:c:\users\pc\desktop\funcionestipoparcialquesemeocurren\main.c
+	"f.h"
+

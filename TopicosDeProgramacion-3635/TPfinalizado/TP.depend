@@ -1,0 +1,40 @@
+# depslib dependency file v1.0
+1696806137 source:c:\users\pc\desktop\tp\tp.c
+	"tp.h"
+
+1696472618 c:\users\pc\desktop\tp\tp.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1696473619 source:c:\users\pc\desktop\tp\main.c
+	"tp.h"
+
+1697503171 source:c:\users\user\desktop\c\topicosdeprogramacion-3635\tp\tp.c
+	"tp.h"
+
+1697503627 c:\users\user\desktop\c\topicosdeprogramacion-3635\tp\tp.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	<stdint.h>
+	<time.h>
+
+1697503060 source:c:\users\user\desktop\c\topicosdeprogramacion-3635\tp\main.c
+	"tp.h"
+
+1698612819 source:c:\devs\tp\main.c
+	"tp.h"
+
+1698612819 c:\devs\tp\tp.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	<stdint.h>
+	<time.h>
+
+1698613095 source:c:\devs\tp\tp.c
+	"tp.h"
+

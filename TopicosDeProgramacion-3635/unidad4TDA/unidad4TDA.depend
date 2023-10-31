@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1696179358 source:c:\users\pc\desktop\ingeniería en informática    -materias actuales - plan de estudio\materias 2do cuatrimestre 2023\progra 2023\topicosdeprogramacion-3635\unidad4tda\mainunidad4tda.c
+	"unidad4TDA.h"
+
+1696179478 c:\users\pc\desktop\ingeniería en informática    -materias actuales - plan de estudio\materias 2do cuatrimestre 2023\progra 2023\topicosdeprogramacion-3635\unidad4tda\unidad4tda.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1696179814 source:c:\users\pc\desktop\ingeniería en informática    -materias actuales - plan de estudio\materias 2do cuatrimestre 2023\progra 2023\topicosdeprogramacion-3635\unidad4tda\unidad4tda.c
+	"unidad4TDA.h"
+
