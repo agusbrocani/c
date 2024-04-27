@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1714176655 source:c:\users\pc\desktop\ordenarcondospilas\main.c
+	"ordenarConDosPilas.h"
+
+1714176261 c:\users\pc\desktop\ordenarcondospilas\ordenarcondospilas.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+
+1714176586 source:c:\users\pc\desktop\ordenarcondospilas\ordenarcondospilas.c
+	"ordenarConDosPilas.h"
+
+1714187133 source:c:\users\pc\desktop\ingeniería en informática\materias\topicos - algoritmos[github]\algoritmosyestructurasdedatos-3640\ordenarcondospilas\main.c
+	"ordenarConDosPilas.h"
+
+1714176261 c:\users\pc\desktop\ingeniería en informática\materias\topicos - algoritmos[github]\algoritmosyestructurasdedatos-3640\ordenarcondospilas\ordenarcondospilas.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+
+1714187109 source:c:\users\pc\desktop\ingeniería en informática\materias\topicos - algoritmos[github]\algoritmosyestructurasdedatos-3640\ordenarcondospilas\ordenarcondospilas.c
+	"ordenarConDosPilas.h"
+

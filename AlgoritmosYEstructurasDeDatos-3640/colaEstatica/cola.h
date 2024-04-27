@@ -2,7 +2,7 @@
 #define COLA_H_INCLUDED
 #include<stdlib.h>
 #include<string.h>
-#define TAM_COLA 500
+#define TAM_COLA 17
 typedef struct
 {
     unsigned pri,ult,tamDis;

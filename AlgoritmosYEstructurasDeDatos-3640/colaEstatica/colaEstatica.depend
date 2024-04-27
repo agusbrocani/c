@@ -11,3 +11,15 @@
 	<stdlib.h>
 	<string.h>
 
+1714260866 source:c:\users\pc\desktop\ingeniería en informática\materias\topicos - algoritmos[github]\algoritmosyestructurasdedatos-3640\colaestatica\cola.c
+	"cola.h"
+
+1714260776 c:\users\pc\desktop\ingeniería en informática\materias\topicos - algoritmos[github]\algoritmosyestructurasdedatos-3640\colaestatica\cola.h
+	<stdlib.h>
+	<string.h>
+
+1714260947 source:c:\users\pc\desktop\ingeniería en informática\materias\topicos - algoritmos[github]\algoritmosyestructurasdedatos-3640\colaestatica\main.c
+	<stdio.h>
+	<stdlib.h>
+	"cola.h"
+

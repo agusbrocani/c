@@ -1,4 +1,4 @@
-#include "tp.h"
+#include "tpNuevo.h"
 ///32398 REGISTROS
 
 int main()

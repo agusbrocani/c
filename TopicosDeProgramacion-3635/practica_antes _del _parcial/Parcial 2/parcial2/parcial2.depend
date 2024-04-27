@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1699291309 source:c:\users\pc\desktop\practica antes del parcial\parcial 2\parcial2\main.c
+	"parcial2.h"
+
+1699290143 c:\users\pc\desktop\practica antes del parcial\parcial 2\parcial2\parcial2.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1699292833 source:c:\users\pc\desktop\practica antes del parcial\parcial 2\parcial2\parcial2.c
+	"parcial2.h"
+

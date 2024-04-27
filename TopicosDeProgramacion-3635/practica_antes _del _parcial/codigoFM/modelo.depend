@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1699275155 source:c:\devs\modelo de examen\modelo\main.c
+	"model.h"
+
+1699274236 c:\devs\modelo de examen\modelo\model.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1699275136 source:c:\devs\modelo de examen\modelo\model.c
+	"model.h"
+
+1699285166 source:c:\devs\modelos de examen\modelo\model.c
+	"model.h"
+
+1699274236 c:\devs\modelos de examen\modelo\model.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1699284891 source:c:\devs\modelos de examen\modelo\main.c
+	"model.h"
+

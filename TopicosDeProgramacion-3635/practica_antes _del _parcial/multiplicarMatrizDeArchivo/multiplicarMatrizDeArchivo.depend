@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1699323997 source:c:\users\pc\desktop\practica antes del parcial\multiplicarmatrizdearchivo\main.c
+	"multiplicarMatrizDeArchivo.h"
+
+1699324354 c:\users\pc\desktop\practica antes del parcial\multiplicarmatrizdearchivo\multiplicarmatrizdearchivo.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1699324448 source:c:\users\pc\desktop\practica antes del parcial\multiplicarmatrizdearchivo\multiplicarmatrizdearchivo.c
+	"multiplicarMatrizDeArchivo.h"
+

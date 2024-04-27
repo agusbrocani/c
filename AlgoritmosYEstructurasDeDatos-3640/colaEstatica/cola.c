@@ -54,6 +54,7 @@ int acolar(tCola* c, const void *d, unsigned tam)
 int desacolar(tCola*c,void* d,unsigned tam)
 {
     unsigned tamInfo,ini,fin;
+    unsigned tamASacar; ///27/4/2024
 
     if(c->tamDis == TAM_COLA) //me fijo que no este vacio
     {
@@ -74,22 +75,28 @@ int desacolar(tCola*c,void* d,unsigned tam)
     c->pri = fin? fin: c->pri + ini;
 
     c->tamDis+=sizeof(unsigned) + tamInfo;
-    tamInfo = minimo(tam,tamInfo);
+
+    ///tamInfo = minimo(tam,tamInfo);
+    tamASacar = minimo( tam, tamInfo);
 
     //proceso la informacion
 
-    ini = minimo(tamInfo,TAM_COLA-c->pri);
+    ///ini = minimo(tamInfo,TAM_COLA-c->pri);
+    ini = minimo(tamASacar,TAM_COLA-c->pri);
     if(ini)
     {
         memcpy(d, c->cola+c->pri,ini);
     }
-    fin = tamInfo -ini;
+    ///fin = tamInfo -ini;
+    fin = tamASacar -ini;
     if(fin)
     {
         memcpy(((char*)d)+ini,c->cola,fin);
     }
-    //c->pri = fin? fin: c->pri+ini;
+    //c->pri = fin? fin: c->pri+ini;    -> MACABRO: me voy de mambo
+
     c->pri=(c->pri+tamInfo)%TAM_COLA;
+
     return 1;
 }
 

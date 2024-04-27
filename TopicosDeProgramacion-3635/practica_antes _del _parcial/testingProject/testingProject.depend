@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1698371473 source:c:\users\pc\desktop\codeoncerunseverywhere\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1699139351 source:c:\users\pc\desktop\testingproject\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+

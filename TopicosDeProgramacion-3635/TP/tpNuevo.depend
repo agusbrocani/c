@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1698614207 source:c:\users\pc\desktop\tpnuevo\main.c
+	"tpNuevo.h"
+
+1698614190 source:c:\users\pc\desktop\tpnuevo\tpnuevo.c
+	"tpNuevo.h"
+
+1698614190 c:\users\pc\desktop\tpnuevo\tpnuevo.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	<stdint.h>
+	<time.h>
+

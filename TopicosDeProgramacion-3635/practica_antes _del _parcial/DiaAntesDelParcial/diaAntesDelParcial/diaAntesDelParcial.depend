@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1699296247 source:c:\users\pc\desktop\practica antes del parcial\diaantesdelparcial\diaantesdelparcial\diaantesdelparcial.c
+	"diaAntesDelParcial.h"
+
+1699296251 c:\users\pc\desktop\practica antes del parcial\diaantesdelparcial\diaantesdelparcial\diaantesdelparcial.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1699296162 source:c:\users\pc\desktop\practica antes del parcial\diaantesdelparcial\diaantesdelparcial\main.c
+	"diaAntesDelParcial.h"
+

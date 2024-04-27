@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1699317404 source:c:\users\pc\desktop\practica antes del parcial\coordenadasdeviaje\main.c
+	"coordenadasDeViaje.h"
+
+1699317305 c:\users\pc\desktop\practica antes del parcial\coordenadasdeviaje\coordenadasdeviaje.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+
+1699317582 source:c:\users\pc\desktop\practica antes del parcial\coordenadasdeviaje\coordenadasdeviaje.c
+	"coordenadasDeViaje.h"
+

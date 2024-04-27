@@ -1,0 +1,6 @@
+006|Leonardo Barbaro|H|01|01|2003|2200.25
+003|Franco Ruggieri|H|30|10|2000|3001.90
+002|Federico Martucci|H|01|01|2000|2500.00
+005|Algun Nombre De Mujer|M|18|12|2022|1000.00
+001|Agustin Brocani|H|30|01|1998|1500.20
+004|Simon Bombon|H|29|02|2000|0.01

@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1698616826 source:c:\users\pc\desktop\preparcialtopicos\preparcialtopicos.c
+	"preParcialTopicos.h"
+
+1698623045 c:\users\pc\desktop\preparcialtopicos\preparcialtopicos.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1698627857 source:c:\users\pc\desktop\preparcialtopicos\main.c
+	"preParcialTopicos.h"
+

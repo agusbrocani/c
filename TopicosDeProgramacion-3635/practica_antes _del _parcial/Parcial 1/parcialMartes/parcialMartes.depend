@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1699166915 source:c:\users\pc\desktop\parcial\parcialmartes\parcialmartes.c
+	"parcialMartes.h"
+
+1699166938 c:\users\pc\desktop\parcial\parcialmartes\parcialmartes.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1699166847 source:c:\users\pc\desktop\parcial\parcialmartes\main.c
+	"parcialMartes.h"
+
+1699228820 source:c:\users\pc\desktop\practica antes del parcial\parcial\parcialmartes\main.c
+	"parcialMartes.h"
+
+1699227725 c:\users\pc\desktop\practica antes del parcial\parcial\parcialmartes\parcialmartes.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1699229034 source:c:\users\pc\desktop\practica antes del parcial\parcial\parcialmartes\parcialmartes.c
+	"parcialMartes.h"
+

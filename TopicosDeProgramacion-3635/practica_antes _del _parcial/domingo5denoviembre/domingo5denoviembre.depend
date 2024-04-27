@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1699213456 source:c:\users\pc\desktop\practica antes del parcial\domingo5denoviembre\domingo5denoviembre.c
+	"domingo5denoviembre.h"
+
+1699212393 c:\users\pc\desktop\practica antes del parcial\domingo5denoviembre\domingo5denoviembre.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1699212360 source:c:\users\pc\desktop\practica antes del parcial\domingo5denoviembre\main.c
+	"domingo5denoviembre.h"
+
