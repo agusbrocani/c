@@ -1,0 +1,45 @@
+
+CodProd: 1
+Descripcion: 9
+Proveedor: 3
+Fecha de compra: 1/1/2000
+Fecha de venta: 26/7/2024
+Precio de compra: 50.00
+Precio de venta: 100.00
+
+
+CodProd: 2
+Descripcion: 9
+Proveedor: 3
+Fecha de compra: 1/1/2000
+Fecha de venta: 26/7/2024
+Precio de compra: 50.00
+Precio de venta: 100.00
+
+
+CodProd: 3
+Descripcion: 9
+Proveedor: 3
+Fecha de compra: 1/1/2000
+Fecha de venta: 26/7/2024
+Precio de compra: 50.00
+Precio de venta: 100.00
+
+
+CodProd: 4
+Descripcion: 9
+Proveedor: 3
+Fecha de compra: 1/1/2000
+Fecha de venta: 26/7/2024
+Precio de compra: 50.00
+Precio de venta: 100.00
+
+
+CodProd: 5
+Descripcion: 9
+Proveedor: 3
+Fecha de compra: 1/1/2000
+Fecha de venta: 26/7/2024
+Precio de compra: 50.00
+Precio de venta: 100.00
+

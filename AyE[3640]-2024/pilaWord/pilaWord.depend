@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1722014505 source:c:\users\pc\desktop\aye[3640]-2024\pila\piladinamica.c
+	"./Dinamica/pila.h"
+
+1722014652 c:\users\pc\desktop\aye[3640]-2024\pila\dinamica\pila.h
+	<stdlib.h>
+
+1722114796 source:c:\users\pc\desktop\aye[3640]-2024\pilaword\funciones.c
+	"funciones.h"
+
+1722098142 c:\users\pc\desktop\aye[3640]-2024\pilaword\funciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../pila/Dinamica/pila.h"
+
+1722098158 source:c:\users\pc\desktop\aye[3640]-2024\pilaword\main.c
+	"funciones.h"
+
+1722116365 source:c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\pilaword\funciones.c
+	"funciones.h"
+
+1722908932 c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\pilaword\funciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../Bibliotecas/include/pila/Dinamica/pila.h"
+
+1722907955 c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\bibliotecas\include\pila\dinamica\pila.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1722098158 source:c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\pilaword\main.c
+	"funciones.h"
+
+1722908899 c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\bibliotecas\include\pila\estatica\pila.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1722908869 source:c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\bibliotecas\src\pila\pilaestatica.c
+	"../../include/pila/Estatica/pila.h"
+
+1722907930 source:c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\bibliotecas\src\pila\piladinamica.c
+	"../../include/pila/Dinamica/pila.h"
+

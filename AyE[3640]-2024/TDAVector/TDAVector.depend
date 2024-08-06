@@ -1,0 +1,59 @@
+# depslib dependency file v1.0
+1722888722 source:c:\users\pc\desktop\tdavector\main.c
+	"TDAVector.h"
+
+1722888459 c:\users\pc\desktop\tdavector\tdavector.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1722888581 source:c:\users\pc\desktop\tdavector\tdavector.c
+	"TDAVector.h"
+
+1722891879 source:c:\users\pc\desktop\tdavectordinamico\main.c
+	"TDAVector.h"
+
+1722889738 c:\users\pc\desktop\tdavectordinamico\tdavector.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1722891569 source:c:\users\pc\desktop\tdavectordinamico\tdavector.c
+	"TDAVector.h"
+
+1722894455 source:c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\tda vector\tdavectordinamico\tdavector.c
+	"TDAVector.h"
+
+1722892640 c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\tda vector\tdavectordinamico\tdavector.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1722894494 source:c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\tda vector\tdavectordinamico\main.c
+	"TDAVector.h"
+
+1722913023 source:c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\tdavector\main.c
+	"./bibliotecaGeneralDeTDAVector.h"
+
+1722892640 c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\bibliotecas\include\tdavector\dinamico\tdavector.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1722912657 source:c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\bibliotecas\src\tdavector\dinamico\tdavector.c
+	"../../../include/TDAVector/Dinamico/TDAVector.h"
+
+1722912785 source:c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\bibliotecas\src\tdavector\estatico\tdavector.c
+	"../../../include/TDAVector/Estatico/TDAVector.h"
+
+1722912821 c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\bibliotecas\include\tdavector\estatico\tdavector.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1722913042 c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\tdavector\bibliotecageneraldetdavector.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../Bibliotecas/include/TDAVector/Estatico/TDAVector.h"
+

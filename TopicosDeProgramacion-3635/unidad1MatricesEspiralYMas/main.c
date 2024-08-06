@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #define MAX_COL 50
 
-void recorrido1(int mat[][MAX_COL],unsigned cf,unsigned cc);
-void recorrido1I(int mat[][MAX_COL],unsigned cf,unsigned cc);
-void recorridoHorarioEspiral(int mat[][MAX_COL],unsigned cf,unsigned cc);
+void recorrido1( int mat[][MAX_COL], unsigned cf, unsigned cc );
+void recorrido1I( int mat[][MAX_COL], unsigned cf, unsigned cc );
+void recorridoHorarioEspiral( int mat[][MAX_COL], unsigned cf, unsigned cc );
 
 int main()
 {
@@ -47,19 +47,47 @@ int main()
 
 
     printf("Matriz 1:\n");
-    recorridoHorarioEspiral(matriz3x3, 3, 3);
+    recorridoHorarioEspiral( matriz3x3, 3, 3 );
 
     printf("\nMatriz 2:\n");
-    recorridoHorarioEspiral(matriz4x4, 4, 4);
+    recorridoHorarioEspiral( matriz4x4, 4, 4 );
 
     printf("\nMatriz 3:\n");
-    recorridoHorarioEspiral(matriz5x3, 5, 3);
+    recorridoHorarioEspiral( matriz5x3, 5, 3 );
 
     return 0;
 }
 
 
-void recorrido1(int mat[][MAX_COL],unsigned cf,unsigned cc)
+void recorrido1( int mat[][MAX_COL], unsigned cf, unsigned cc )
+{
+    int f;
+    int cp;
+    int ci;
+
+    printf("\n");
+
+    for( f = 0; f < cf; f++ )
+    {
+        if(         0 == (f % 2)            )    //hago la pregunta 1 vez por fila
+        {
+           for( cp = 0; cp < cc; cp++ )
+            {
+                printf( "%d\t", mat[f][cp] );
+            }
+        }
+        else
+        {
+            for( ci = (cc - 1); ci >= 0; ci-- )
+            {
+                printf( "%d\t", mat[f][ci] );
+            }
+        }
+        printf("\n");
+    }
+}
+
+void recorrido1I( int mat[][MAX_COL], unsigned cf, unsigned cc )
 {
     int f;
     int cp;
@@ -69,7 +97,7 @@ void recorrido1(int mat[][MAX_COL],unsigned cf,unsigned cc)
 
     for( f = 0; f < cf; f++)
     {
-        if(0 == (f % 2))    //hago la pregunta 1 vez por fila
+        if(         0 != (f % 2)            )    //hago la pregunta 1 vez por fila
         {
            for( cp = 0; cp < cc; cp++ )
             {
@@ -80,42 +108,14 @@ void recorrido1(int mat[][MAX_COL],unsigned cf,unsigned cc)
         {
             for( ci = (cc - 1); ci >= 0; ci--)
             {
-                printf("%d\t",mat[f][ci]);
+                printf( "%d\t", mat[f][ci] );
             }
         }
         printf("\n");
     }
 }
 
-void recorrido1I(int mat[][MAX_COL],unsigned cf,unsigned cc)
-{
-    int f;
-    int cp;
-    int ci;
-
-    printf("\n");
-
-    for( f = 0; f < cf; f++)
-    {
-        if(0 != (f % 2))    //hago la pregunta 1 vez por fila
-        {
-           for( cp = 0; cp < cc; cp++ )
-            {
-                printf("%d\t",mat[f][cp]);
-            }
-        }
-        else
-        {
-            for( ci = (cc - 1); ci >= 0; ci--)
-            {
-                printf("%d\t",mat[f][ci]);
-            }
-        }
-        printf("\n");
-    }
-}
-
-void recorridoHorarioEspiral(int mat[][MAX_COL],unsigned cf,unsigned cc)
+void recorridoHorarioEspiral( int mat[][MAX_COL], unsigned cf, unsigned cc )
 {
     int f;
     int c;
@@ -157,8 +157,6 @@ void recorridoHorarioEspiral(int mat[][MAX_COL],unsigned cf,unsigned cc)
             }
             inicioColumna++;
         }
-
     }
-
 }
 

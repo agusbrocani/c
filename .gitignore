@@ -1,0 +1,8 @@
+TopicosDeProgramacion-3635/
+curl-8.6.0_1-win64-mingw/
+bin/
+obj/
+*.rar
+*.exe
+*.zip
+*.layout

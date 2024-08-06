@@ -1,0 +1,50 @@
+# depslib dependency file v1.0
+1722475293 source:c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\cola\cola\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1722478305 source:c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\cola\colaestatica.c
+	"./Estatica/cola.h"
+
+1722478396 c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\cola\estatica\cola.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+
+1722911266 source:c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\cola\main.c
+	"bibliotecaGeneralDeCola.h"
+
+1722911291 c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\cola\bibliotecageneraldecola.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../Bibliotecas/include/cola/Estatica/cola.h"
+	"../Bibliotecas/include/lote.h"
+	"../Bibliotecas/include/generico.h"
+
+1722911058 source:c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\bibliotecas\src\cola\colaestatica.c
+	"../../include/cola/Estatica/cola.h"
+
+1722478416 c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\bibliotecas\include\cola\estatica\cola.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+
+1722905050 source:c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\bibliotecas\src\generico.c
+	"../include/generico.h"
+
+1722905209 c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\bibliotecas\include\generico.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1722905066 source:c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\bibliotecas\src\lote.c
+	"../include/lote.h"
+
+1722905538 c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\bibliotecas\include\lote.h
+	<stdlib.h>
+	<string.h>
+	"../include/generico.h"
+
