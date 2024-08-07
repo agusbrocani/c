@@ -57,3 +57,11 @@
 	<string.h>
 	"../Bibliotecas/include/TDAVector/Estatico/TDAVector.h"
 
+1722962465 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\bibliotecas\src\tdavector\dinamico\tdavector.c
+	"../../../include/TDAVector/Dinamico/TDAVector.h"
+
+1722892640 c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\bibliotecas\include\tdavector\dinamico\tdavector.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

@@ -5,8 +5,8 @@
 #include <string.h>
 #include "../include/generico.h"
 
-#define TAM_COD_PROD 8
-#define TAM_DESC_Y_PROV 16
+#define TAM_COD_PROD 800
+#define TAM_DESC_Y_PROV 1600
 
 typedef struct
 {
@@ -28,6 +28,9 @@ typedef struct
 
 void crearLote();
 int comparaProductosPorCodProd( const void* a, const void* b );
+void mostrarProducto( const void* dato );
 void grabarProductos( FILE* archivo, const void* dato );
+void cargarProductos( tProducto* productos, unsigned ce );
+
 
 #endif // LOTE_H_INCLUDED

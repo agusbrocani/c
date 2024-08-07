@@ -9,8 +9,8 @@ int main()
         {1,"Agustin Brocani",'M',8900},
         {3,"Franco Ruggieri",'M',6000},
         {2,"Federico Martucci",'M',8900}
-    }
-    ;
+    };
+
     int ce = sizeof( coleccion ) / sizeof( coleccion[0] );
     int tam = sizeof( coleccion[0] );
     char nombreArchivo[] = "LoteEnArchivoDeTexto.bin";

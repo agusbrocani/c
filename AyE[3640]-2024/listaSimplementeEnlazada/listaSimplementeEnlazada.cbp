@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="TDAVector" />
+		<Option title="listaSimplementeEnlazada" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/TDAVector" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/listaSimplementeEnlazada" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/TDAVector" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/listaSimplementeEnlazada" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -31,10 +31,16 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="../Bibliotecas/src/TDAVector/Dinamico/TDAVector.c">
+		<Unit filename="../Bibliotecas/include/listaSimplementeEnlazada/listaSimplementeEnlazada.h" />
+		<Unit filename="../Bibliotecas/src/generico.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="bibliotecaGeneralDeTDAVector.h" />
+		<Unit filename="../Bibliotecas/src/listaSimplementeEnlazada/listaSimplementeEnlazada.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Bibliotecas/src/lote.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

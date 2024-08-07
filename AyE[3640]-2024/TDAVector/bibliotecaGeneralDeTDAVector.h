@@ -5,8 +5,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-//#include "../Bibliotecas/include/TDAVector/Dinamico/TDAVector.h"
-#include "../Bibliotecas/include/TDAVector/Estatico/TDAVector.h"
+#include "../Bibliotecas/include/TDAVector/Dinamico/TDAVector.h"
+//#include "../Bibliotecas/include/TDAVector/Estatico/TDAVector.h"
 
 
 #endif // BIBLIOTECAGENERALDETDAVECTOR_H_INCLUDED
