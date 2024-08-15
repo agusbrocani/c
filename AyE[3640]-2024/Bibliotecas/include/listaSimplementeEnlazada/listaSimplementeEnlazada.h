@@ -45,5 +45,13 @@ int listaVacia( const tLista* pl );
 int sacarPrimero( tLista* pl, void* dato, unsigned tam );
 int sacarUltimo( tLista* pl, void* dato, unsigned tam );
 
+tNodo** buscarMenor( tLista* pl, int (*comparar)( const void* a, const void* b ) );
+void ordenarLista( tLista* pl, int (*comparar)( const void* a, const void* b ) );
+
+tNodo** buscarPrimeraAparicion( tLista* pl, const void* clave, int (*comparar)( const void* a, const void* b ) );
+tNodo** buscarInfoPorClaveListaOrdenada( tLista* pl, const void* clave, int (*comparar)( const void* a, const void* b ) );
+tNodo** buscarInfoPorClaveListaDesordenada( tLista* pl, const void* clave, int (*comparar)( const void* a, const void* b ) );
+void mostrarYEliminarDuplicados( tLista* pl, int (*comparar)( const void* a, const void* b ),void (*mostrar)( const void* dato ) );
+void actualizarEnLista( tLista* pl, const void* clave, int (*comparar)( const void* a, const void* b ),void (*accion)( void* dato) );
 
 #endif // LISTASIMPLEMENTEENLAZADA_H_INCLUDED

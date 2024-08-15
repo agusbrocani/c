@@ -1,14 +1,14 @@
 # depslib dependency file v1.0
-1722993163 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\bibliotecas\src\listasimplementeenlazada\listasimplementeenlazada.c
+1723072131 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\bibliotecas\src\listasimplementeenlazada\listasimplementeenlazada.c
 	"../../include/listaSimplementeEnlazada/listaSimplementeEnlazada.h"
 
-1722992352 c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\bibliotecas\include\listasimplementeenlazada\listasimplementeenlazada.h
+1723064467 c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\bibliotecas\include\listasimplementeenlazada\listasimplementeenlazada.h
 	"../lote.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1722993267 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\listasimplementeenlazada\main.c
+1723072007 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\listasimplementeenlazada\main.c
 	"../Bibliotecas/include/listaSimplementeEnlazada/listaSimplementeEnlazada.h"
 
 1722988794 c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\bibliotecas\include\lote.h
@@ -21,7 +21,7 @@
 	<stdlib.h>
 	<string.h>
 
-1722989307 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\bibliotecas\src\lote.c
+1723052358 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\bibliotecas\src\lote.c
 	"../include/lote.h"
 
 1722905050 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\bibliotecas\src\generico.c

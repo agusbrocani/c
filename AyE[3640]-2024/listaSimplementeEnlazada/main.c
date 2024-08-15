@@ -15,6 +15,11 @@ void acumulaProductos( void* dato, const void* aAcumular )
     strcpy( ( (tProducto*)dato )->proveedor , "NULL" );
 }
 
+void actualizarProducto( void* dato )
+{
+    strcpy( ((tProducto*)dato)->descripcion, "NULLABLE" );
+}
+
 
 int main()
 {
@@ -47,24 +52,27 @@ int main()
 
     insertarEnPosicion( &lista, &dato, tam, 2 );
 
-    //insertarColeccionEnListaAlFinal( &lista, coleccion, tam, ce );
+    mostrarYEliminarDuplicados( &lista, comparaProductosPorCodProd, mostrarProducto );
+
+    ordenarLista( &lista, comparaProductosPorCodProd );
+    printf("**********************ORDENADA**********************");
 
     mostrarLista( &lista, mostrarProducto );
 
-    verPrimero( &lista, &dato, tam );
-    printf( "\nViendo primero:\n" );
-    mostrarProducto( &dato );
-    verUltimo( &lista, &dato, tam );
-    printf( "\nViendo ultimo:\n" );
-    mostrarProducto( &dato );
-
-    printf( "Sacando primero:\n");
-    sacarPrimero( &lista, &dato, tam );
-    mostrarProducto( &dato );
-
-    printf( "Sacando ultimo:\n");
-    sacarUltimo( &lista, &dato, tam );
-    mostrarProducto( &dato );
+//    verPrimero( &lista, &dato, tam );
+//    printf( "\nViendo primero:\n" );
+//    mostrarProducto( &dato );
+//    verUltimo( &lista, &dato, tam );
+//    printf( "\nViendo ultimo:\n" );
+//    mostrarProducto( &dato );
+//
+//    printf( "Sacando primero:\n");
+//    sacarPrimero( &lista, &dato, tam );
+//    mostrarProducto( &dato );
+//
+//    printf( "Sacando ultimo:\n");
+//    sacarUltimo( &lista, &dato, tam );
+//    mostrarProducto( &dato );
 
     vaciarLista( &lista );
 

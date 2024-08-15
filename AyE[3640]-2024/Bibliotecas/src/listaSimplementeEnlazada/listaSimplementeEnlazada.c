@@ -405,3 +405,134 @@ int sacarUltimo( tLista* pl, void* dato, unsigned tam )
 
     return OK;
 }
+
+tNodo** buscarMenor( tLista* pl, int (*comparar)( const void* a, const void* b ) )
+{
+    tNodo** menor = pl; //inicialmente, va a tomar el valor 1000[cuyo contenido es 100-> direccion del primer nodo], que seria el tLista lista del main
+
+    if(         !*menor          )
+    {
+        return NULL;
+    }
+
+    pl = &( (*pl)->sig );   //dejo a pl apuntando a la direccion de donde esta el siguiente nodo, TODAVIA SIGO PARADO EN EL 1° NODO
+
+    while(          *pl         )
+    {
+        if(         comparar( (*menor)->dato,(*pl)->dato ) > 0           )
+        {
+            menor = pl;
+        }
+
+        pl = &( (*pl)->sig );
+    }
+
+    return menor;
+}
+
+void ordenarLista( tLista* pl, int (*comparar)( const void* a, const void* b ) )
+{
+    tNodo** menor;  //necesario para captar el resultado de buscarMenor y hacer el swap
+    tNodo* aux;     //necesario para realizar intercambios, sino, pisaria el valor del otro, como cuando quiero intercambiar de lugar x e y
+
+    while(          *pl         )
+    {
+        menor = buscarMenor( pl, comparar );
+
+        if(         *menor && comparar( (*menor)->dato, (*pl)->dato )           )
+        {
+            aux = *pl;      //actualizo el nodo antes del nodo que tengo que intercambiar, ya que apunta a la direccion del siguiente
+            *pl = *menor;   //si fuese el primer caso, actualizaria la variable del main con el nuevo primero
+            *menor = aux;
+
+            aux = (*pl)->sig;           //actualizo los nuevos siguientes de los nodos, ya que los cambie de lugar
+            (*pl)->sig = (*menor)->sig;
+            (*menor)->sig = aux;
+        }
+        pl = &( (*pl)->sig );   //me mueve al siguiente elemento, el primero ya quedo ordenado
+    }
+}
+
+tNodo** buscarPrimeraAparicion( tLista* pl, const void* clave, int (*comparar)( const void* a, const void* b ) )
+{
+    while(          *pl         )
+    {
+        if(         !comparar( clave, (*pl)->dato )           )
+        {
+            return pl;
+        }
+        pl = &( (*pl)->sig );
+    }
+
+    return NULL;
+}
+
+tNodo** buscarInfoPorClaveListaOrdenada( tLista* pl, const void* clave, int (*comparar)( const void* a, const void* b ) )
+{
+    while(          *pl         )
+    {
+        if(         comparar( clave, (*pl)->dato ) < 0          )
+        {
+            break;
+        }
+
+        if(         !comparar( clave, (*pl)->dato )           )
+        {
+            return pl;
+        }
+        pl = &( (*pl)->sig );
+    }
+
+    return NULL;
+}
+
+tNodo** buscarInfoPorClaveListaDesordenada( tLista* pl, const void* clave, int (*comparar)( const void* a, const void* b ) )
+{
+    while(          *pl         )
+    {
+        if(         !comparar( clave, (*pl)->dato )           )
+        {
+            return pl;
+        }
+        pl = &( (*pl)->sig );
+    }
+
+    return NULL;
+}
+
+void mostrarYEliminarDuplicados( tLista* pl, int (*comparar)( const void* a, const void* b ),void (*mostrar)( const void* dato ) )
+{
+    tNodo** actual = pl;
+    tNodo* nodoAEliminar;
+
+    while(          *actual         )
+    {
+        pl = &( (*actual)->sig );
+        while(          *pl         )
+        {
+            if(         !comparar( (*actual)->dato, (*pl)->dato )           )
+            {
+                nodoAEliminar = *pl;
+                *pl = nodoAEliminar->sig;
+                free( nodoAEliminar->dato );
+                free( nodoAEliminar );
+            }
+            pl = &( (*pl)->sig );
+        }
+        mostrar( (*actual)->dato );
+
+        actual = &( (*actual)->sig );
+    }
+}
+
+void actualizarEnLista( tLista* pl, const void* clave, int (*comparar)( const void* a, const void* b ),void (*accion)( void* dato ) )
+{
+    while(          *pl         )
+    {
+        if(         !comparar( clave, (*pl)->dato )           )
+        {
+            accion( (*pl)->dato );
+        }
+        pl = &( (*pl)->sig );
+    }
+}
