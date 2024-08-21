@@ -1,5 +1,4 @@
-#include "../../include/Dinamica/pila.h"
-//#include "../../include/Estatica/pila.h"
+#include "../../include/Estatica/pila.h"
 
 void crearPila( tPila* p )
 {
