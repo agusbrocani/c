@@ -165,7 +165,7 @@ void ejercicio5()
 
     for( i = 0; i < ce; i++ )
     {
-        fprintf( aAlumnos, "%50s-%3u-%50s\n", alumnos[i].nombre, alumnos[i].edad, alumnos[i].carrera );
+        fprintf( aAlumnos, "%50s%3u%50s\n", alumnos[i].nombre, alumnos[i].edad, alumnos[i].carrera );
     }
 
     rewind( aAlumnos );
@@ -173,7 +173,7 @@ void ejercicio5()
     i = 1;
     while(          fgets( buffer, TAM_BUFFER, aAlumnos )         )
     {
-        sscanf( buffer, "%50s-%3u-%50s", alumno.nombre, &alumno.edad, alumno.carrera );
+        sscanf( buffer, "%50s%3u%50s", alumno.nombre, &alumno.edad, alumno.carrera );
         alumno.nombre[TAM_NOMBRE] = '\0';
         alumno.carrera[TAM_CARRERA] = '\0';
 
@@ -220,7 +220,6 @@ void ejercicio6()
     i = 1;
     while(          fgets( buffer, TAM_BUFFER, aAlumnos )         )
     {
-
         sscanf( buffer, "%[^-]-%u-%[^-]", alumno.nombre, &alumno.edad, alumno.carrera );
         alumno.nombre[TAM_NOMBRE] = '\0';
         alumno.carrera[TAM_CARRERA] = '\0';
