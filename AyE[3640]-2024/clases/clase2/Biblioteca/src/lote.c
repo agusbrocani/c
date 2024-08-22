@@ -14,7 +14,7 @@ void grabarEntero( FILE* pf, const void* dato )
 {
     fprintf( stdout, "%02d\n", *(int*)dato );
 }
-
+/** //sin Strategy
 void grabar( FILE* pf, const void* dato, int opcion )
 {
     switch( opcion )
@@ -26,6 +26,11 @@ void grabar( FILE* pf, const void* dato, int opcion )
             grabarEmpleado( stdout, dato );
         break;
     }
+}
+*/
+void grabar( FILE* pf, const void* dato, void (*grabarSegunEstrategia)( FILE* pf, const void* dato ) )
+{
+    grabarSegunEstrategia( pf, dato );
 }
 
 void mostrarColeccion( const void* coleccion, unsigned tam, unsigned ce, void (*mostrar)( const void* dato ) )

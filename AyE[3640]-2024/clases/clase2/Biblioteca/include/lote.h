@@ -14,9 +14,10 @@ typedef struct
     float salario;
 }tEmpleado;
 
-void grabarEmpleado( FILE* pf,const void* dato );
+void grabarEmpleado( FILE* pf, const void* dato );
 void grabarEntero( FILE* pf, const void* dato );
-void grabar( FILE* pf, const void* dato, int opcion );
+///void grabar( FILE* pf, const void* dato, int opcion ); //sin Strategy
+void grabar( FILE* pf, const void* dato, void (*grabarSegunEstrategia)( FILE* pf, const void* dato ) );
 void mostrarColeccion( const void* dato, unsigned tam, unsigned ce, void (*mostrar)( const void* dato ) );
 
 #endif // LOTE_H_INCLUDED

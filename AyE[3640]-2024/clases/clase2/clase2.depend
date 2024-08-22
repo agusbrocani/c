@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1724227221 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\clases\clase2\main.c
+1724285599 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\clases\clase2\main.c
 	"./Biblioteca/include/Dinamica/pila.h"
 	"./Biblioteca/include/lote.h"
 
@@ -11,10 +11,10 @@
 1724225374 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\clases\clase2\biblioteca\src\dinamica\pila.c
 	"../../include/Dinamica/pila.h"
 
-1724222930 c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\clases\clase2\biblioteca\include\lote.h
+1724285382 c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\clases\clase2\biblioteca\include\lote.h
 	<stdio.h>
 
-1724222977 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\clases\clase2\biblioteca\src\lote.c
+1724285650 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\clases\clase2\biblioteca\src\lote.c
 	"../include/lote.h"
 
 1724226406 c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\clases\clase2\biblioteca\include\estatica\pila.h

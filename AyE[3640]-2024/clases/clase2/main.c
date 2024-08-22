@@ -31,10 +31,12 @@ int main()
         { 3, "Franco Ruggieri", 'M', 15000.2 },
         { 2, "Federico Martucci", 'M', 10000 }
     };
-    unsigned opcionAGrabar = T_EMPLEADO;
+    void* funcionAAplicar = grabarEmpleado;
+///    unsigned opcionAGrabar = T_EMPLEADO;  //versión sin Strategy
 
 //    int coleccion[] = {0,1,2,3,4,5,6,7,8,9};
-//    unsigned opcionAGrabar = T_ENTERO;
+//    void* funcionAAplicar = grabarEntero;
+///    unsigned opcionAGrabar = T_ENTERO;
 
     tPila pila;
     void* dato;
@@ -59,13 +61,15 @@ int main()
     if( verTope( &pila, dato, tam ) )
     {
         printf( "Viendo tope:\n" );
-        grabar( stdout, dato, opcionAGrabar );
-        printf( "*****************************" );
+///        grabar( stdout, dato, opcionAGrabar );
+        grabar( stdout, dato, funcionAAplicar );
+        printf( "*****************************\n" );
     }
 
     while( desapilar( &pila, dato, tam ) )
     {
-        grabar( stdout, dato, opcionAGrabar );
+///        grabar( stdout, dato, opcionAGrabar );
+        grabar( stdout, dato, funcionAAplicar );
     }
 
     printf( "\nTESTEANDO pilaVacia:" );
