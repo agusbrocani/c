@@ -133,16 +133,17 @@
 	<stdlib.h>
 	<string.h>
 
-1722907831 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\bibliotecas\src\pila\sumarenteroscondospilas.c
+1724744493 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\bibliotecas\src\pila\sumarenteroscondospilas.c
 	"../../include/pila/sumarEnterosConDosPilas.h"
 
-1722910847 c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\bibliotecas\include\pila\sumarenteroscondospilas.h
+1724744298 c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\bibliotecas\include\pila\sumarenteroscondospilas.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"./Dinamica/pila.h"
+	"../generico.h"
 
-1724740306 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\pila\main.c
+1724745106 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\pila\main.c
 	"bibliotecaGeneralDePila.h"
 
 1722909641 c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\pila\bibliotecageneraldepila.h

@@ -1,6 +1,6 @@
 #include "../../include/pila/sumarEnterosConDosPilas.h"
 
-void sumarEnterosConDosPilas( tPila* pilaResultado, tPila* pila1, tPila* pila2 )
+void sumarEnterosConDosPilas( tPila* pilaResultado, tPila* pila1, tPila* pila2, FILE* aResultado, void* grabarSegunEstrategia )
 {
     int buffer1;
     int buffer2;
@@ -39,12 +39,13 @@ void sumarEnterosConDosPilas( tPila* pilaResultado, tPila* pila1, tPila* pila2 )
     }
 
 
-    printf("Resultado: \n");
+    printf( "Resultado: \n" );
     while(          desapilar( pilaResultado, &resultado, tam )         )
     {
         printf( "%d", resultado );
+        grabar( aResultado, &resultado, grabarSegunEstrategia ); //grabar es una funcion generica que aplica el patron strategy(generico.h)
     }
-    printf("\n");
+    printf( "\n" );
 
     vaciarPila( pilaResultado );
     vaciarPila( pila1 );
