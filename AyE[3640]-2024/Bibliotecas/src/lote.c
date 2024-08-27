@@ -1,6 +1,6 @@
 #include "../include/lote.h"
 
-void crearLote()
+void crearLoteProductos()
 {
     FILE* pf;
     tProducto coleccion[] =
@@ -12,7 +12,7 @@ void crearLote()
       {"2","9","3",{1,1,2000},{26,7,2024},50,100}
     };
 
-    if(         !abrirArchivo( &pf, "datos.bin", "wb" )         )
+    if(         !abrirArchivo( &pf, NOMBRE_ARCHIVO_PRODUCTOS, "wb" )         )
     {
         return;
     }
@@ -30,7 +30,7 @@ int comparaProductosPorCodProd( const void* a, const void* b )
 
 void grabarProductos( FILE* archivo, const void* dato )
 {
-    fprintf( archivo ,"\nCodProd: %s\nDescripcion: %s\nProveedor: %s\nFecha de compra: %d/%d/%d\nFecha de venta: %d/%d/%d\nPrecio de compra: %0.2f\nPrecio de venta: %0.2f\n\n",
+    fprintf( archivo ,"CodProd: %s\nDescripcion: %s\nProveedor: %s\nFecha de compra: %d/%d/%d\nFecha de venta: %d/%d/%d\nPrecio de compra: %0.2f\nPrecio de venta: %0.2f\n",
            ((tProducto*)dato)->codProd,
            ((tProducto*)dato)->descripcion,
            ((tProducto*)dato)->proveedor,
@@ -43,6 +43,11 @@ void grabarProductos( FILE* archivo, const void* dato )
            ((tProducto*)dato)->precioDeCompra,
            ((tProducto*)dato)->precioDeVenta
            );
+
+    if(         stdout == archivo           )
+    {
+        printf("\n");
+    }
 }
 
 void mostrarProducto( const void* dato )

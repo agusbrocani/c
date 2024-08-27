@@ -7,4 +7,6 @@
 
 int abrirArchivo( FILE** pf, const char* nombreArchivo, const char* modo );
 void mostrarColeccion( const void* dato, int tam, int ce, void (*mostrar)( const void* dato ) );
+void grabar( FILE* pf, const void* dato, void (*grabarSegunEstrategia)( FILE* pf, const void* dato ) );
+
 #endif // GENERICO_H_INCLUDED

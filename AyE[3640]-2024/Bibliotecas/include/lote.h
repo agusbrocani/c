@@ -8,6 +8,8 @@
 #define TAM_COD_PROD 800
 #define TAM_DESC_Y_PROV 1600
 
+#define NOMBRE_ARCHIVO_PRODUCTOS "loteProductos.bin"
+
 typedef struct
 {
     int dia;
@@ -26,7 +28,7 @@ typedef struct
     float precioDeVenta;
 }tProducto;
 
-void crearLote();
+void crearLoteProductos();
 int comparaProductosPorCodProd( const void* a, const void* b );
 void mostrarProducto( const void* dato );
 void grabarProductos( FILE* archivo, const void* dato );

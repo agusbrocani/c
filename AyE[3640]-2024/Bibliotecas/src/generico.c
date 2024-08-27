@@ -26,3 +26,8 @@ void mostrarColeccion( const void* dato, int tam, int ce, void (*mostrar)( const
         dato += tam;
     }
 }
+
+void grabar( FILE* pf, const void* dato, void (*grabarSegunEstrategia)( FILE* pf, const void* dato ) )
+{
+    grabarSegunEstrategia( pf, dato );
+}

@@ -41,7 +41,7 @@
 		<Unit filename="../Bibliotecas/src/pila/ordenarConDosPilas.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../Bibliotecas/src/pila/pilaEstatica.c">
+		<Unit filename="../Bibliotecas/src/pila/pilaDinamica.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../Bibliotecas/src/pila/sumarEnterosConDosPilas.c">
