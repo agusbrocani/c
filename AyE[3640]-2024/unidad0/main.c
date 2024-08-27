@@ -13,16 +13,21 @@ int main()
 
     int ce = sizeof( coleccion ) / sizeof( coleccion[0] );
     int tam = sizeof( coleccion[0] );
-    char nombreArchivo[] = "LoteEnArchivoDeTexto.bin";
-//    ejercicio2();
-//    ejercicio3();
-//
-//    ejercicio4();
 
-//    ejercicio5( nombreArchivo, coleccion, tam, ce, comparaPersonasPorID, grabarPersona );
-
-//    ejercicio6( nombreArchivo, coleccion, tam, ce, comparaPersonasPorID, grabarPersona );
-
+    ///EJERCICIO 1: IMPLEMENTAR TDA VECTOR[posee su propio proyecto]
+    printf( "********************PUNTO 1********************\n" );
+    printf( "TDA Vector: IMPLEMENTADO\n" );
+    printf( "********************PUNTO 2********************\n" );
+    ejercicio2( 2, 0 );
+    printf( "\n\n********************PUNTO 3********************\n" );
+    ejercicio3();
+    printf( "\n\n********************PUNTO 4********************\n" );
+    ejercicio4();
+    printf( "\n\n********************PUNTO 5********************\n" );
+    ejercicio5( coleccion, tam, ce, comparaPersonasPorID, grabarPersona );
+    printf( "\n\n********************PUNTO 6********************\n" );
+    ejercicio6( coleccion, tam, ce, comparaPersonasPorID, grabarPersona );
+    printf( "\n\n********************PUNTO 7********************\n" );
     ejercicio7();
 
     return 0;

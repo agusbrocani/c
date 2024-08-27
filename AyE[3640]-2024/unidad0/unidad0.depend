@@ -1,15 +1,15 @@
 # depslib dependency file v1.0
-1722967558 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\unidad0\main.c
+1724733779 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\unidad0\main.c
 	"unidad0.h"
 
-1722972072 c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\unidad0\unidad0.h
+1724733812 c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\unidad0\unidad0.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"../Bibliotecas/include/TDAVector/Dinamico/TDAVector.h"
 	"../Bibliotecas/include/generico.h"
 
-1722974804 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\unidad0\unidad0.c
+1724733800 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\unidad0\unidad0.c
 	"unidad0.h"
 
 1722912821 c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\bibliotecas\include\tdavector\estatico\tdavector.h

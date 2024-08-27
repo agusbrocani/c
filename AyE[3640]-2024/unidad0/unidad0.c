@@ -1,5 +1,6 @@
 #include "unidad0.h"
 
+/********************PUNTO 2*********************/
 double sumar( double operando1, double operando2 )
 {
     return operando1 + operando2;
@@ -31,11 +32,8 @@ double calcular( double operando1, double operando2, double (*operacion)( double
     return operacion( operando1, operando2 );
 }
 
-void ejercicio2()
+void ejercicio2( double operando1, double operando2 )
 {
-    double operando1 = 2;
-    double operando2 = 0;
-
     printf( "OPERANDO 1: %.2f\nOPERANDO 2: %.2f\n\n", operando1, operando2 );
 
     printf( "Resultado[suma] \t\t= %.2f\n", calcular( operando1, operando2, sumar ) );
@@ -43,7 +41,9 @@ void ejercicio2()
     printf( "Resultado[multiplicacion] \t= %.2f\n", calcular( operando1, operando2, multiplicar ) );
     printf( "Resultado[division] \t\t= %.2f\n", calcular( operando1, operando2, dividir ) );
 }
+/******************FIN PUNTO 2*******************/
 
+/********************PUNTO 3*********************/
 void grabarEntero( FILE* pf, const void* dato )
 {
     fprintf( pf, "%d\n", *(int*)dato );
@@ -129,7 +129,9 @@ void ejercicio3()
     destruirVector( &vec );
     fclose( LoteNumerosEnArchivoDeTexto );
 }
+/******************FIN PUNTO 3*******************/
 
+/********************PUNTO 4*********************/
 int comparaPersonasPorID( const void* a, const void* b )
 {
     return ((tPersona*)a)->id - ((tPersona*)b)->id;
@@ -139,14 +141,14 @@ void trozar( char* buffer, tPersona* dato )
 {
     char* iniBuffer = buffer;
 
-    buffer = strrchr( iniBuffer,'\n');
+    buffer = strrchr( iniBuffer,'\n' );
 
     if(         buffer         )
     {
         *buffer = '\0';
     }
 
-    buffer = strrchr( iniBuffer,'-');
+    buffer = strrchr( iniBuffer,'-' );
 
     if(         buffer         )
     {
@@ -155,7 +157,7 @@ void trozar( char* buffer, tPersona* dato )
     buffer++;
     dato->salario = atof(buffer);
 
-    buffer = strrchr( iniBuffer,'-');
+    buffer = strrchr( iniBuffer,'-' );
 
     if(         buffer         )
     {
@@ -164,7 +166,7 @@ void trozar( char* buffer, tPersona* dato )
     buffer++;
     dato->sexo = *buffer;
 
-    buffer = strrchr( iniBuffer,'-');
+    buffer = strrchr( iniBuffer,'-' );
 
     if(         buffer         )
     {
@@ -181,7 +183,6 @@ void ejercicio4()
     tVector vec;
     FILE* LotePersonasEnArchivoDeTexto;
     char nombreArchivo[] = "LotePersonasEnArchivoDeTexto.txt";
-
     tPersona coleccion[] =
     {
         {5,"Pablo M",'M',5000},
@@ -189,8 +190,8 @@ void ejercicio4()
         {1,"Agustin Brocani",'M',8900},
         {3,"Franco Ruggieri",'M',6000},
         {2,"Federico Martucci",'M',8900}
-    }
-    ;
+    };//Este codigo esta asi porque era el primero, en las versiones siguientes recibio mejoras
+
     int ce = sizeof( coleccion ) / sizeof( coleccion[0] );
     int tam = sizeof( coleccion[0] );
 
@@ -220,7 +221,7 @@ void ejercicio4()
         insertarOrdenado( &vec, &dato, &ceInsertados, comparaPersonasPorID );
     }
 
-    printf( "Eliminando elementos del vector :\n");
+    printf( "Eliminando elementos del vector :\n" );
     while(          ceInsertados           )
     {
         eliminarElementoEnPosicion( &vec, &dato, 0, &ceInsertados );//importante usarlo desde el inicio o ceInsertados-1 si lo coloco dentro de un while
@@ -230,12 +231,15 @@ void ejercicio4()
     destruirVector( &vec );
     fclose( LotePersonasEnArchivoDeTexto );
 }
+/******************FIN PUNTO 4*******************/
 
-void ejercicio5( const void* nombreArchivo, void* coleccion, unsigned tam, unsigned ce, int (*comparar)( const void* a, const void* b), void (*grabar)( FILE* pf, const void* dato ) )
+/********************PUNTO 5*********************/
+void ejercicio5( void* coleccion, unsigned tam, unsigned ce, int (*comparar)( const void* a, const void* b), void (*grabar)( FILE* pf, const void* dato ) )
 {
     FILE* LoteEnArchivoDeTexto;
     void* dato;
     tVector vec;
+    char nombreArchivo[] = "LoteEnArchivoDeTexto.txt";
 
     char buffer[ TAM_BUFFER ];
     int cantidadDeRegistros;
@@ -260,7 +264,7 @@ void ejercicio5( const void* nombreArchivo, void* coleccion, unsigned tam, unsig
 
     if(         !dato           )
     {
-        printf("No pude reservar memoria para dato\n");
+        printf( "No pude reservar memoria para dato\n" );
         destruirVector( &vec );
         fclose( LoteEnArchivoDeTexto );
         return;
@@ -283,7 +287,9 @@ void ejercicio5( const void* nombreArchivo, void* coleccion, unsigned tam, unsig
     free( dato );
     fclose( LoteEnArchivoDeTexto );
 }
+/******************FIN PUNTO 5*******************/
 
+/********************PUNTO 6*********************/
 void crearLoteBinGenFormatoCRegColeccion( const char* nombreArchivo, const void* coleccion, unsigned tam, unsigned ce, void (*grabar)( FILE* pf, const void* dato ) )
 {
     FILE* pf;
@@ -294,16 +300,17 @@ void crearLoteBinGenFormatoCRegColeccion( const char* nombreArchivo, const void*
     }
 
     fwrite( &ce, sizeof( unsigned ), 1, pf );
-    fwrite( coleccion, ce * tam, 1, pf);
+    fwrite( coleccion, ce * tam, 1, pf );
 
     fclose( pf );
 }
 
-void ejercicio6( const void* nombreArchivo, void* coleccion, unsigned tam, unsigned ce, int (*comparar)( const void* a, const void* b), void (*grabar)( FILE* pf, const void* dato ) )
+void ejercicio6( void* coleccion, unsigned tam, unsigned ce, int (*comparar)( const void* a, const void* b), void (*grabar)( FILE* pf, const void* dato ) )
 {
     FILE* LoteEnArchivoBinario;
     void* dato;
     tVector vec;
+    char nombreArchivo[] = "LoteEnArchivoBinario.bin";
 
     int cantidadDeRegistros;
     unsigned ceInsertados = 0;
@@ -327,7 +334,7 @@ void ejercicio6( const void* nombreArchivo, void* coleccion, unsigned tam, unsig
 
     if(         !dato           )
     {
-        printf("No pude reservar memoria para dato\n");
+        printf( "No pude reservar memoria para dato\n" );
         destruirVector( &vec );
         fclose( LoteEnArchivoBinario );
         return;
@@ -340,7 +347,7 @@ void ejercicio6( const void* nombreArchivo, void* coleccion, unsigned tam, unsig
         fread( dato, tam, 1, LoteEnArchivoBinario );
     }
 
-    printf( "Eliminando elementos del vector :\n");
+    printf( "Eliminando elementos del vector :\n" );
     while(          ceInsertados           )
     {
         eliminarElementoEnPosicion( &vec, dato, 0, &ceInsertados );//importante usarlo desde el inicio o ceInsertados-1 si lo coloco dentro de un while
@@ -351,7 +358,9 @@ void ejercicio6( const void* nombreArchivo, void* coleccion, unsigned tam, unsig
     free( dato );
     fclose( LoteEnArchivoBinario );
 }
+/******************FIN PUNTO 6*******************/
 
+/********************PUNTO 7*********************/
 size_t mStrlenR( const char* cadena )
 {
     return '\0' == *cadena ? 0 : 1 + mStrlenR( cadena + 1 );
@@ -432,34 +441,58 @@ void mostrarConFormatoEspecialMueveInicioOrdenInversoR( const char* cadena )
     }
 }
 
-void mostrarConFormatoEspecialMueveFinRC( const char* ini, const char* fin )
+void mostrarConFormatoEspecialMueveFinRC2( const char* ini, const char* fin )
 {
+    if(         '\0' != *ini && ini <= fin           )
+    {
+        printf( "%c", *ini );
+        mostrarConFormatoEspecialMueveFinRC2( ini + 1, fin );
+    }
+}
 
+void mostrarConFormatoEspecialMueveFinRC( const char* ini, const char* fin,unsigned cantidadDeCaracteresExtraAMostrar )
+{
+    if(         ini + cantidadDeCaracteresExtraAMostrar < fin          )
+    {
+        mostrarConFormatoEspecialMueveFinRC2( ini, ini + cantidadDeCaracteresExtraAMostrar );
+        printf( "\n" );
+        mostrarConFormatoEspecialMueveFinRC( ini, fin, cantidadDeCaracteresExtraAMostrar + 1 );
+    }
 }
 
 void mostrarConFormatoEspecialMueveFinR( const char* cadena )
 {
-    const char* fin = cadena + mStrlenR( cadena );
+    char* fin = mStrchrR( (char*)cadena, '\0' );
+    unsigned cantidadDeCaracteresExtraAMostrar = 0;
 
-    if(         cadena < fin            )
+    mostrarConFormatoEspecialMueveFinRC( cadena, fin, cantidadDeCaracteresExtraAMostrar );
+}
+
+void mostrarConFormatoEspecialMueveFinOrdenInversoRC2( const char* ini, const char* fin )
+{
+    if(         '\0' != *ini && ini <= fin           )
     {
-        mostrarConFormatoEspecialMueveFinRC( cadena, fin - 1 );
+        printf( "%c", *ini );
+        mostrarConFormatoEspecialMueveFinOrdenInversoRC2( ini + 1, fin );
     }
 }
 
-void mostrarConFormatoEspecialMueveFinOrdenInversoRC( const char* ini, const char* fin )
+void mostrarConFormatoEspecialMueveFinOrdenInversoRC( const char* ini, const char* fin,unsigned cantidadDeCaracteresExtraAMostrar )
 {
-
+    if(         ini + cantidadDeCaracteresExtraAMostrar < fin          )
+    {
+        mostrarConFormatoEspecialMueveFinOrdenInversoRC( ini, fin, cantidadDeCaracteresExtraAMostrar + 1 );
+        mostrarConFormatoEspecialMueveFinOrdenInversoRC2( ini, ini + cantidadDeCaracteresExtraAMostrar );
+        printf( "\n" );
+    }
 }
 
 void mostrarConFormatoEspecialMueveFinOrdenInversoR( const char* cadena )
 {
-    const char* fin = cadena + mStrlenR( cadena );
+    char* fin = mStrchrR( (char*)cadena, '\0' );
+    unsigned cantidadDeCaracteresExtraAMostrar = 0;
 
-    if(         cadena < fin            )
-    {
-        mostrarConFormatoEspecialMueveFinOrdenInversoRC( cadena, fin - 1 );
-    }
+    mostrarConFormatoEspecialMueveFinOrdenInversoRC( cadena, fin, cantidadDeCaracteresExtraAMostrar );
 }
 
 void mostrarEnteroDescompuestoR( int entero )
@@ -501,75 +534,199 @@ void mostrarEnteroDisminuyendoOrdenInversoR( int entero )
     }
 }
 
+void mostrarEnteroCreciendoRC( int entero, int divisor )
+{
+    if(         divisor <= entero * 10            )
+    {
+        printf( "%d\n", entero % divisor );
+        mostrarEnteroCreciendoRC( entero, divisor * 10 );
+    }
+}
 void mostrarEnteroCreciendoR( int entero )
 {
+    mostrarEnteroCreciendoRC( entero, 10 );
+}
 
+void mostrarEnteroCreciendoOrdenInversoRC( int entero, int divisor )
+{
+    if(         divisor <= entero * 10            )
+    {
+        mostrarEnteroCreciendoOrdenInversoRC( entero, divisor * 10 );
+        printf( "%d\n", entero % divisor );
+    }
 }
 
 void mostrarEnteroCreciendoOrdenInversoR( int entero )
 {
+    mostrarEnteroCreciendoOrdenInversoRC( entero, 10 );
+}
 
+void mostrandoSumaDigitosEnteroRC( int entero, int divisor, int* suma )
+{
+    if(         divisor < entero            )
+    {
+        *suma += ( ( entero % ( 10* divisor ) )/ divisor );
+        mostrandoSumaDigitosEnteroRC( entero, divisor * 10, suma );
+    }
+}
+
+void mostrandoSumaDigitosEnteroR( int entero )
+{
+    int suma = entero % 10;
+
+    mostrandoSumaDigitosEnteroRC( entero, 10, &suma );
+    printf( "\nEntero: %d\n", entero );
+    printf( "Suma= %d\n", suma );
+}
+
+void mostrandoSumaCaracteresDigitosEnteroRC( const char* cadena, int* suma )
+{
+    if(         *cadena         )
+    {
+        if(         ES_NUMERO( *cadena )           )
+        {
+            *suma += A_NUMERO( *cadena );
+        }
+        mostrandoSumaCaracteresDigitosEnteroRC( cadena + 1, suma );
+    }
+}
+void mostrandoSumaCaracteresDigitosEnteroR( const char* cadena )
+{
+    int suma = 0;
+
+    mostrandoSumaCaracteresDigitosEnteroRC( cadena, &suma );
+    printf( "\nCadena: %s\n", cadena );
+    printf( "Suma= %d\n", suma );
+}
+
+void mostrarArrayEnterosYSuSumaIRC( int* vectorDeEnteros, unsigned ce, int* suma )
+{
+    if(         ce          )
+    {
+        *suma += *vectorDeEnteros;
+        mostrarArrayEnterosYSuSumaIRC( vectorDeEnteros + 1, ce - 1, suma );
+        printf( "%d\t", *vectorDeEnteros );
+    }
+}
+
+void mostrarArrayEnterosYSuSumaIR( int* vectorDeEnteros, unsigned ce )
+{
+    int suma = 0;
+
+    mostrarArrayEnterosYSuSumaIRC( vectorDeEnteros, ce, &suma );
+
+    printf( "\nSuma= %d\n", suma );
+}
+
+void mostrarArrayEnterosYSuSumaDigitosParesIRC( int* vectorDeEnteros, unsigned ce, int* suma )
+{
+    if(         ce          )
+    {
+        if(         0 == ( *vectorDeEnteros % 2 )            )
+        {
+           *suma += *vectorDeEnteros;
+        }
+
+        mostrarArrayEnterosYSuSumaDigitosParesIRC( vectorDeEnteros + 1, ce - 1, suma );
+        printf( "%d\t", *vectorDeEnteros );
+    }
+}
+
+void mostrarArrayEnterosYSuSumaDigitosParesIR( int* vectorDeEnteros, unsigned ce )
+{
+    int suma = 0;
+
+    mostrarArrayEnterosYSuSumaDigitosParesIRC( vectorDeEnteros, ce, &suma );
+
+    printf( "\nSuma= %d\n", suma );
+}
+
+void mostrarArrayEnterosYSuSumaDigitosEnPosParesIRC( int* vectorDeEnteros, unsigned ce, int* suma, unsigned pos )
+{
+    if (            ce > 0          )
+    {
+        if (            0 == pos % 2            )
+        {
+            *suma += *vectorDeEnteros;
+        }
+        printf( "%d\t", *vectorDeEnteros );
+        mostrarArrayEnterosYSuSumaDigitosEnPosParesIRC( vectorDeEnteros + 1, ce - 1, suma, pos + 1 );
+    }
+}
+
+void mostrarArrayEnterosYSuSumaDigitosEnPosParesIR( int* vectorDeEnteros, unsigned ce )
+{
+    int suma = 0;
+
+    mostrarArrayEnterosYSuSumaDigitosEnPosParesIRC( vectorDeEnteros, ce, &suma, 0 );
+
+    printf( "\nSuma = %d\n", suma );
 }
 
 void ejercicio7()
 {
     int n = 5;
-    char cadena[] = "HolaH";
-    int entero = 1234;
+    char cadena[] = "Hola";
+    int entero = 1234;//suma = 10
     char* retornoMStrchrR;
     char* retornoMStrrchrR;
     char caracterBuscado = '\0';
+    char cadenaConNumeros[] = "  a1aa2e3c@4";//suma = 10
+    int vectorDeEnteros[] = {10,2,2,3,4,5,6,7,8,9};//suma = 56 - sumaPares = 32 - sumaPosPares = 30
+    int ce = sizeof( vectorDeEnteros ) / sizeof( vectorDeEnteros[0] );
 
-    printf("Valor del factorial de %d: %d\n", n, factorial( n ) );
+    printf( "Valor del factorial de %d: %d\n", n, factorial( n ) );
 
-    printf("\nMostrar en orden:\n");
+    printf( "\nMostrar en orden:\n" );
     mostrarEnOrdenR( cadena );
 
-    printf("\nMostrar en orden inverso:\n");
+    printf( "\nMostrar en orden inverso:\n" );
     mostrarEnOrdenInversoR( cadena );
 
-    printf("\nMostrar con formato especial Mueve Inicio:\n");
+    printf( "\nMostrar con formato especial Mueve Inicio:\n" );
     mostrarConFormatoEspecialMueveInicioR( cadena );
 
-    printf("\nMostrar con formato especial Mueve Inicio orden inverso:\n");
+    printf( "\nMostrar con formato especial Mueve Inicio orden inverso:\n" );
     mostrarConFormatoEspecialMueveInicioOrdenInversoR( cadena );
 
-//    printf("\nMostrar con formato especial Mueve Fin:\n");
-//    mostrarConFormatoEspecialMueveFinR( cadena );
-//
-//    printf("\nMostrar con formato especial Mueve Fin orden inverso:\n");
-//    mostrarConFormatoEspecialMueveFinOrdenInversoR( cadena );
+    printf( "\nMostrar con formato especial Mueve Fin:\n" );
+    mostrarConFormatoEspecialMueveFinR( cadena );
 
-    printf("\nMostrando entero descompuesto:\n");
+    printf( "\nMostrar con formato especial Mueve Fin orden inverso:\n" );
+    mostrarConFormatoEspecialMueveFinOrdenInversoR( cadena );
+
+    printf( "\nMostrando entero descompuesto:\n" );
     mostrarEnteroDescompuestoR( entero );
 
-    printf("\nMostrando entero descompuesto orden inverso:\n");
+    printf( "\nMostrando entero descompuesto orden inverso:\n" );
     mostrarEnteroDescompuestoOrdenInversoR( entero );
 
-    printf("\nMostrando entero disminuyendo:\n");
+    printf( "\nMostrando entero disminuyendo:\n" );
     mostrarEnteroDisminuyendoR( entero );
 
-    printf("\nMostrando entero disminuyendo orden inverso:\n");
+    printf( "\nMostrando entero disminuyendo orden inverso:\n" );
     mostrarEnteroDisminuyendoOrdenInversoR( entero );
 
-//    printf("\nMostrando entero creciendo:\n");
-//    mostrarEnteroCreciendoR( entero );
-//
-//    printf("\nMostrando entero creciendo orden inverso:\n");
-//    mostrarEnteroCreciendoOrdenInversoR( entero );
+    printf( "\nMostrando entero creciendo:\n" );
+    mostrarEnteroCreciendoR( entero );
 
-    /**
-        Dado un número entero, retorne la suma de sus dígitos.
+    printf( "\nMostrando entero creciendo orden inverso:\n" );
+    mostrarEnteroCreciendoOrdenInversoR( entero );
 
-        Dada una cadena que solo contiene dígitos, retorne la suma de los caracteres que
-        representan dígitos.
+    printf( "\nMostrando suma de digitos de entero:\n" );
+    mostrandoSumaDigitosEnteroR( entero );
 
-        Muestre el contenido de un array de enteros en orden inverso, devolviendo la suma de todos
-        los elementos.
+    printf( "\nMostrando suma de los caracteres que representan digitos:\n" );
+    mostrandoSumaCaracteresDigitosEnteroR( cadenaConNumeros );
 
-        Ídem anterior, devolviendo la suma de los pares.
-        Ídem anterior, devolviendo la suma de los que están en posiciones pares.
-    */
+    printf( "\nMostrando array de enteros en orden inverso y la suma de sus digitos:\n" );
+    mostrarArrayEnterosYSuSumaIR( vectorDeEnteros, ce );
+
+    printf( "\nMostrando array de enteros en orden inverso y la suma de sus digitos pares:\n" );
+    mostrarArrayEnterosYSuSumaDigitosParesIR( vectorDeEnteros, ce );
+
+    printf( "\nMostrando array de enteros en orden inverso y la suma de sus digitos en posiciones pares:\n" );
+    mostrarArrayEnterosYSuSumaDigitosEnPosParesIR( vectorDeEnteros, ce );
 
     caracterBuscado = 'a';
     retornoMStrchrR = mStrchrR( cadena, caracterBuscado );
@@ -577,7 +734,7 @@ void ejercicio7()
 
     if(         mStrlenR( cadena ) == strlen( cadena ) && retornoMStrchrR == strchr( cadena, caracterBuscado ) && retornoMStrrchrR == strrchr( cadena, caracterBuscado )           )
     {
-        printf("\nLas funciones mStrlenR, mStrchrR y mStrrchrR estan bien programadas\n");
+        printf( "\nLas funciones mStrlenR, mStrchrR y mStrrchrR estan bien programadas\n" );
     }
-
 }
+/******************FIN PUNTO 7*******************/
