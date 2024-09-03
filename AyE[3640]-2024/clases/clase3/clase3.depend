@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1724873157 source:c:\users\laboratorios\desktop\clase3\main.c
+	"./clase3.h"
+
+1724878322 c:\users\laboratorios\desktop\clase3\clase3.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1724879959 source:c:\users\laboratorios\desktop\clase3\clase3.c
+	"./clase3.h"
+
+1724873157 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\clases\clase3\main.c
+	"./clase3.h"
+
+1724899313 c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\clases\clase3\clase3.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

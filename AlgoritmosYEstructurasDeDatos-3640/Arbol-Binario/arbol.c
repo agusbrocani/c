@@ -40,6 +40,12 @@ int insertarEnArbol(tArbol* a, const void* d,unsigned tam, int (*comparar)(const
     {
         return insertarEnArbol(&((*a)->der),d,tam,comparar);
     }
+
+    if(!cmp)
+    {
+        return 1;//hubo duplicados pero no me interesa, sigo insertando
+    }
+
     return 0;
 }
 
@@ -131,6 +137,14 @@ int esCompleto(const tArbol *a)
 int esBalanceado(const tArbol *a)
 {
     return esCompletoANivel(a,alturaArbol(a)-2);
+}
+
+void vaciarArbol(tArbol* a)///03-09-2024
+{
+    while(NULL != *a)
+    {
+        eliminarRaiz(a);
+    }
 }
 
 int eliminarRaiz(tArbol* a)
@@ -334,4 +348,4 @@ int insertarArchOrdenado(tArbol* a, FILE* pf, int li, int ls,unsigned tamReg)
 }
 
 //LI EN UN COMIENZO ES SIEMPRE 0 Y LS EN ARCHIVOS ES CANTREG -1 SIENDO LA CANTREG
-/* fseek(pf,0L,SEEK_END); cantReg = ftell(pf)/tamReg
+// fseek(pf,0L,SEEK_END); cantReg = ftell(pf)/tamReg

@@ -95,7 +95,7 @@
 1722908869 source:c:\users\pc\desktop\materias 2°c 2024\aye[3640]-2024\bibliotecas\src\pila\pilaestatica.c
 	"../../include/pila/Estatica/pila.h"
 
-1724736901 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\bibliotecas\src\generico.c
+1724812584 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\bibliotecas\src\generico.c
 	"../include/generico.h"
 
 1724736874 c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\bibliotecas\include\generico.h
@@ -114,7 +114,7 @@
 1722906668 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\bibliotecas\src\pila\ordenarcondospilas.c
 	"../../include/pila/ordenarConDosPilas.h"
 
-1722909475 c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\bibliotecas\include\pila\ordenarcondospilas.h
+1724777275 c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\bibliotecas\include\pila\ordenarcondospilas.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -143,7 +143,7 @@
 	"./Dinamica/pila.h"
 	"../generico.h"
 
-1724745106 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\pila\main.c
+1724812356 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\pila\main.c
 	"bibliotecaGeneralDePila.h"
 
 1722909641 c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\pila\bibliotecageneraldepila.h

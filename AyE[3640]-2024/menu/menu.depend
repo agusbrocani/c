@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1725351970 source:c:\users\pc\desktop\menu\main.c
+	"menu.h"
+
+1725351295 c:\users\pc\desktop\menu\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../MATERIAS2°C-2024/TOPICOS-ALGORITMOS[GITHUB]/AlgoritmosYEstructurasDeDatos-3640/Arbol-Binario/arbol.h"
+
+1725346046 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\algoritmosyestructurasdedatos-3640\arbol-binario\arbol.h
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1725351693 source:c:\users\pc\desktop\menu\menu.c
+	"menu.h"
+
+1725346046 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\algoritmosyestructurasdedatos-3640\arbol-binario\arbol.c
+	"arbol.h"
+
+1725385492 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\menu\main.c
+	"../Bibliotecas/include/menu.h"
+
+1725383018 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../../AlgoritmosYEstructurasDeDatos-3640/Arbol-Binario/arbol.h"
+
+1725385406 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\menu.c
+	"../include/menu.h"
+

@@ -56,7 +56,6 @@ int main()
     char numero1[] = "444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444";
     char numero2[] = "12";
 
-
     crearLoteProductos();
 
     if(         !abrirArchivo( &loteBinarioDeProductos, NOMBRE_ARCHIVO_PRODUCTOS, "rb" )         )
@@ -115,7 +114,7 @@ int main()
     system( "pause" );
     system( "cls" );
 
-    printf("Vaciando pila\n");
+    printf( "Vaciando pila\n");
     vaciarPila( &testTDAPila );
     vaciarPila( &pilaDeProductos );
     fclose( loteBinarioDeProductos );

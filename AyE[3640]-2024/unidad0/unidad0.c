@@ -643,9 +643,9 @@ void mostrarArrayEnterosYSuSumaDigitosParesIR( int* vectorDeEnteros, unsigned ce
 
 void mostrarArrayEnterosYSuSumaDigitosEnPosParesIRC( int* vectorDeEnteros, unsigned ce, int* suma, unsigned pos )
 {
-    if (            ce > 0          )
+    if(            ce > 0          )
     {
-        if (            0 == pos % 2            )
+        if(            0 == pos % 2            )
         {
             *suma += *vectorDeEnteros;
         }

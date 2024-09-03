@@ -28,6 +28,7 @@ int esCompletoANivel(const tArbol* a, int n);
 int esCompleto(const tArbol* a);
 int esBalanceado(const tArbol* a);
 int eliminarRaiz(tArbol* a);
+void vaciarArbol(tArbol* a);///03-09-2024
 tNodoa** menorNodo(const tArbol* a);
 tNodoa** mayorNodo(const tArbol* a);
 int eliminarNodoPorClave(tArbol *a, void* dato, int(*comparar)(const void* a, const void* b));
