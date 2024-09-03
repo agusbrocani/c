@@ -26,9 +26,6 @@ void switchMenuCasoPrueba(int opcion)
         case A_MAYUS(OPCIONa):
             printf("ACCION a\n");
         break;
-        default:
-            printf("ENTRE POR DEFAULT\n");
-        break;
     }
 }
 
@@ -123,9 +120,9 @@ int main()
       "[4]-Opcion 4",
       "[a]-Opcion a",
     };
-    unsigned cantidadDeRegistros = sizeof(textoMenu) / MAX_TAM_TEXTO;
+    unsigned cantidadDeFilas = sizeof(textoMenu) / MAX_TAM_TEXTO;
 
-    menu(textoMenu, cantidadDeRegistros, switchMenuCasoPrueba);
+    menu(textoMenu, cantidadDeFilas, switchMenuCasoPrueba, ACTIVAR_AYUDA_AL_USUARIO);
 
     return 0;
 }

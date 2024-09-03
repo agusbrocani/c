@@ -10,6 +10,9 @@
 #define RETORNO_LETRA 1
 #define RETORNO_NUMERO 2
 
+#define DESACTIVAR_AYUDA_AL_USUARIO 0
+#define ACTIVAR_AYUDA_AL_USUARIO 1
+
 #define SALIDA  0
 
 #define ES_INGRESO_VALIDO 1
@@ -47,7 +50,7 @@ int validaTipoDeDatoIngresado(const char* opcionIngresada);
 void mostrarMenu(char textoMenu[][MAX_TAM_TEXTO], unsigned cantidadDeRegistros);
 int ingresoDeOpcion(const tArbol* arbolDeOpciones, char textoMenu[][MAX_TAM_TEXTO], unsigned cantidadDeRegistros);
 int cargarMenuAArbolBinarioDeBusqueda(tArbol* arbolDeOpciones, char textoMenu[][MAX_TAM_TEXTO], unsigned cantidadDeRegistros);
-void menu(char textoMenu[][MAX_TAM_TEXTO], unsigned cantidadDeRegistros, void(*switchSegunCaso)(int opcion));
+void menu(char textoMenu[][MAX_TAM_TEXTO], unsigned cantidadDeRegistros, void(*switchSegunCaso)(int opcion), int ayudaAlUsuario);
 
 
 #endif // MENU_H_INCLUDED

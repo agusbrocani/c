@@ -70,7 +70,7 @@ int clasificaTextoMenu(const char* cadena, char* retorno)
                     *(retorno + 1) = '\0';
             break;
             case RETORNO_NUMERO:
-                strncpy(retorno, inicioValor, (finValor - inicioValor));  //esto sirve porque trabajamos en L.End
+                strncpy(retorno, inicioValor, (finValor - inicioValor));  //L.End
                 retorno[finValor - inicioValor] = '\0';
             break;
         }
@@ -175,8 +175,9 @@ int cargarMenuAArbolBinarioDeBusqueda(tArbol* arbolDeOpciones, char textoMenu[][
 }
 
 void menu(
-            char textoMenu[][MAX_TAM_TEXTO], unsigned cantidadDeRegistros,
-            void(*switchSegunCaso)(int opcion)
+            char textoMenu[][MAX_TAM_TEXTO], unsigned cantidadDeFilas,
+            void(*switchSegunCaso)(int opcion),
+            int ayudaAlUsuario
           )
 {
     tArbol arbolDeOpciones;
@@ -185,33 +186,38 @@ void menu(
 
     condicionDeSalida[0] = A_CARACTER(SALIDA);
     condicionDeSalida[1] = '\0';
-    printf("\nComo implementar el MENU Generico de manera adecuada:");
-    printf("\n***************************************************************************************************\n");
-    printf("El Usuario DEBE:\n");
-    printf("\t-DECLARAR la matriz de caracteres textoMenu.\n");
-    printf("\t\tEjemplo:\n");
-    printf("\t\t\tchar textoMenu[][MAX_TAM_TEXTO];\t//puede usar el nombre que prefiera\n");
-    printf("\t\t-IMPORTANTE: utilice el MACRO \"MAX_TAM_TEXTO\" para definir TAM COLUMNA.\n\n");
-    printf("\t-INICIALIZAR la matriz de caracteres textoMenu(MAXIMO 99 caracteres por linea).\n");
-    printf("\tFormatos validos de inicializacion:\n");
-    printf("\t\tEjemplos:\n");
-    printf("\t\t\t\"texto\"\n");
-    printf("\t\t\t\"[A]<texto_opcional>\" \t\tRANGO(A-Z a-z)\n");
-    printf("\t\t\t\"[0]<texto_opcional>\" \t\tRANGO(0-999999999)\n\n");
-    printf("\t\t-OPCIONAL: incluir texto al lado de los corchetes en las opciones.\n");
-    printf("\t\t-IMPORTANTE: las opciones deben estar entre corchetes y sus valores deben estar\n");
-    printf("\t\t en el rango de validez indicado, sino se tomaran como lineas de texto.\n\n");
-    printf("\t-INCLUIR la OPCION DE SALIDA \"[0]\" en la matriz de caracteres textoMenu.\n");
-    printf("\t-ASEGURAR que las opciones inicializadas en la matriz de caracteres textoMenu\n");
-    printf("\t esten implementadas en el switch.\n");
-    printf("***************************************************************************************************\n");
-    printf("Escrito por: AGUSTIN BROCANI 2024\n\n");
-    system("pause");
-    system("cls");
+
+    if(ACTIVAR_AYUDA_AL_USUARIO == ayudaAlUsuario)
+    {
+        printf("\nComo implementar el MENU Generico de manera adecuada:");
+        printf("\n***************************************************************************************************\n");
+        printf("El Usuario DEBE:\n");
+        printf("\t-DECLARAR la matriz de caracteres textoMenu.\n");
+        printf("\t\tEjemplo:\n");
+        printf("\t\t\tchar textoMenu[][MAX_TAM_TEXTO];\t//puede usar el nombre que prefiera\n");
+        printf("\t\t-IMPORTANTE: utilice el MACRO \"MAX_TAM_TEXTO\" para definir TAM COLUMNA.\n\n");
+        printf("\t-INICIALIZAR la matriz de caracteres textoMenu(MAXIMO 99 caracteres por linea).\n");
+        printf("\tFormatos validos de inicializacion:\n");
+        printf("\t\tEjemplos:\n");
+        printf("\t\t\t\"texto\"\n");
+        printf("\t\t\t\"[A]<texto_opcional>\" \t\tRANGO(A-Z a-z)\n");
+        printf("\t\t\t\"[0]<texto_opcional>\" \t\tRANGO(0-999999999)\n\n");
+        printf("\t\t-OPCIONAL: incluir texto al lado de los corchetes en las opciones.\n");
+        printf("\t\t-IMPORTANTE: las opciones deben estar entre corchetes y sus valores deben estar\n");
+        printf("\t\t en el rango de validez indicado, sino se tomaran como lineas de texto.\n\n");
+        printf("\t-INCLUIR la OPCION DE SALIDA \"[0]\" en la matriz de caracteres textoMenu.\n");
+        printf("\t-ASEGURAR que las opciones inicializadas en la matriz de caracteres textoMenu\n");
+        printf("\t esten implementadas en el switch.\n\n");
+        printf("Para desactivar los mensajes de ayuda: usar el MACRO \"DESACTIVAR_AYUDA_AL_USUARIO\".\n");
+        printf("***************************************************************************************************\n");
+        printf("Escrito por: AGUSTIN BROCANI 2024\n\n");
+        system("pause");
+        system("cls");
+    }
 
     crearArbol(&arbolDeOpciones);
 
-    if(NO_PUDE_CARGAR_ARBOL == cargarMenuAArbolBinarioDeBusqueda(&arbolDeOpciones, textoMenu, cantidadDeRegistros))
+    if(NO_PUDE_CARGAR_ARBOL == cargarMenuAArbolBinarioDeBusqueda(&arbolDeOpciones, textoMenu, cantidadDeFilas))
     {
         printf("NO PUDE CARGAR ARBOL - NO PUEDO CARGAR Menu\n");
     }else if(NULL == buscarPorClave(&arbolDeOpciones, &condicionDeSalida, comparaCadenas))
@@ -220,17 +226,20 @@ void menu(
             printf("No incluyo condicion de salida [0] en el texto del Menu\n");
         }else
             {
-                printf("\n***************************************************************************************************\n");
-                printf("\tNO OLVIDE implementar todas las opciones cargadas en su switch\n");
-                printf("\tPODRIA TENER OPCIONES QUE NO HACEN NADA\n");
-                printf("\t-TENGA CRITERIO!!!\n");
-                printf("***************************************************************************************************\n");
-                printf("INICIAR MENU\n\n");
-                system("pause");
+                if(ACTIVAR_AYUDA_AL_USUARIO == ayudaAlUsuario)
+                {
+                    printf("\n***************************************************************************************************\n");
+                    printf("\tNO OLVIDE implementar todas las opciones cargadas en su switch\n");
+                    printf("\tPODRIA TENER OPCIONES QUE NO HACEN NADA\n");
+                    printf("\t-TENGA CRITERIO!!!\n");
+                    printf("***************************************************************************************************\n");
+                    printf("INICIAR MENU\n\n");
+                    system("pause");
+                }
 //                mostrarArbol(&arbolDeOpciones, mostrarCadena);
                 do
                 {
-                    opcion = ingresoDeOpcion(&arbolDeOpciones, textoMenu, cantidadDeRegistros);
+                    opcion = ingresoDeOpcion(&arbolDeOpciones, textoMenu, cantidadDeFilas);
                     switchSegunCaso(opcion);
                     system("pause");
                 }while(SALIDA != opcion);
