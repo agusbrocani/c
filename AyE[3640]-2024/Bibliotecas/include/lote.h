@@ -28,7 +28,7 @@ typedef struct
     float precioDeVenta;
 }tProducto;
 
-void crearLoteProductos();
+void crearLoteProductosBinario();
 int comparaProductosPorCodProd( const void* a, const void* b );
 void mostrarProducto( const void* dato );
 void grabarProductos( FILE* archivo, const void* dato );

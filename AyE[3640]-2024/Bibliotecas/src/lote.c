@@ -1,6 +1,6 @@
 #include "../include/lote.h"
 
-void crearLoteProductos()
+void crearLoteProductosBinario()
 {
     FILE* pf;
     tProducto coleccion[] =

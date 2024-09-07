@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1725501776 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\clases\clase4\clase4.c
+	"./clase4.h"
+
+1725482439 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\clases\clase4\clase4.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1725485234 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\clases\clase4\main.c
+	"./clase4.h"
+

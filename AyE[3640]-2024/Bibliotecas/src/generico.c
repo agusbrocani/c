@@ -6,7 +6,7 @@ int abrirArchivo( FILE** pf, const char* nombreArchivo, const char* modo )
 
     if(         !*pf            )
     {
-        perror("No pude abrir/crear archivo");
+        fprintf(stderr,"No pude abrir/crear el archivo: %s\n", nombreArchivo);
         return 0;
     }
 

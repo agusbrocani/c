@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1725400051 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad2\main.c
+	"./unidad2.h"
+
+1725400119 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad2\unidad2.h
+	<stdio.h>
+	<stdlib.h>
+	"../Bibliotecas/include/Pila/Dinamica/pila.h"
+
+1722907955 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\pila\dinamica\pila.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1725400048 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad2\unidad2.c
+	"./unidad2.h"
+
+1722907930 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\pila\piladinamica.c
+	"../../include/pila/Dinamica/pila.h"
+

@@ -1,0 +1,133 @@
+# depslib dependency file v1.0
+1725609357 source:c:\users\pc\desktop\ordenarcon2pilas\funciones.c
+	"funciones.h"
+
+1725607614 c:\users\pc\desktop\ordenarcon2pilas\funciones.h
+	<stdio.h>
+	<stdlib.h>
+	"../MATERIAS2°C-2024/TOPICOS-ALGORITMOS[GITHUB]/AyE[3640]-2024/Bibliotecas/include/pila/Dinamica/pila.h"
+	"../MATERIAS2°C-2024/TOPICOS-ALGORITMOS[GITHUB]/AyE[3640]-2024/Bibliotecas/include/lote.h"
+	"../MATERIAS2°C-2024/TOPICOS-ALGORITMOS[GITHUB]/AyE[3640]-2024/Bibliotecas/include/generico.h"
+	"../MATERIAS2°C-2024/TOPICOS-ALGORITMOS[GITHUB]/AyE[3640]-2024/Bibliotecas/include/menu.h"
+
+1722907955 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\pila\dinamica\pila.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1725668935 source:c:\users\pc\desktop\ordenarcon2pilas\main.c
+	"./funcionesMain.h"
+
+1722907930 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\pila\piladinamica.c
+	"../../include/pila/Dinamica/pila.h"
+
+1725515551 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\lote.h
+	<stdlib.h>
+	<string.h>
+	"../include/generico.h"
+
+1724736874 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\generico.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1725523256 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\lote.c
+	"../include/lote.h"
+
+1725602549 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\generico.c
+	"../include/generico.h"
+
+1725399162 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../../AlgoritmosYEstructurasDeDatos-3640/Arbol-Binario/arbol.h"
+
+1725346046 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\algoritmosyestructurasdedatos-3640\arbol-binario\arbol.h
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1725399334 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\menu.c
+	"../include/menu.h"
+
+1725346046 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\algoritmosyestructurasdedatos-3640\arbol-binario\arbol.c
+	"arbol.h"
+
+1725671597 source:c:\users\pc\desktop\ordenarcon2pilas\bibliotecas\src\generico.c
+	"../include/generico.h"
+
+1725669633 c:\users\pc\desktop\ordenarcon2pilas\bibliotecas\include\generico.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1722907930 source:c:\users\pc\desktop\ordenarcon2pilas\bibliotecas\src\pila\piladinamica.c
+	"../../include/pila/Dinamica/pila.h"
+
+1722907955 c:\users\pc\desktop\ordenarcon2pilas\bibliotecas\include\pila\dinamica\pila.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1725667661 source:c:\users\pc\desktop\ordenarcon2pilas\bibliotecas\src\menu\arbol.c
+	"../../include/menu/arbol.h"
+
+1725346046 c:\users\pc\desktop\ordenarcon2pilas\bibliotecas\include\menu\arbol.h
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1725667741 source:c:\users\pc\desktop\ordenarcon2pilas\bibliotecas\src\menu\menu.c
+	"../../include/menu/menu.h"
+
+1725667770 c:\users\pc\desktop\ordenarcon2pilas\bibliotecas\include\menu\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"./arbol.h"
+
+1725669057 source:c:\users\pc\desktop\ordenarcon2pilas\bibliotecas\src\pila\ordenarcon2pilas.c
+	"../../include/pila/ordenarCon2Pilas.h"
+
+1725669333 c:\users\pc\desktop\ordenarcon2pilas\bibliotecas\include\pila\ordenarcon2pilas.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"./Dinamica/pila.h"
+
+1725668328 source:c:\users\pc\desktop\ordenarcon2pilas\bibliotecas\src\loteempleados.c
+	"../include/loteEmpleados/loteEmpleados.h"
+
+1725668318 c:\users\pc\desktop\ordenarcon2pilas\bibliotecas\include\loteempleados.h
+
+1725670191 c:\users\pc\desktop\ordenarcon2pilas\bibliotecas\include\loteempleados\loteempleados.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1725671946 source:c:\users\pc\desktop\ordenarcon2pilas\bibliotecas\src\loteempleados\archivoempleados.c
+	"../../include/loteEmpleados/archivoEmpleados.h"
+
+1725670710 c:\users\pc\desktop\ordenarcon2pilas\bibliotecas\include\loteempleados\archivoempleados.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"./loteEmpleados.h"
+
+1725669462 c:\users\pc\desktop\ordenarcon2pilas\funcionesmain.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"./Bibliotecas/include/menu/menu.h"
+	"./Bibliotecas/include/generico.h"
+	"./Bibliotecas/include/loteEmpleados/archivoEmpleados.h"
+	"./Bibliotecas/include/loteEmpleados/loteEmpleados.h"
+	"./Bibliotecas/include/pila/ordenarCon2Pilas.h"
+
+1725668934 source:c:\users\pc\desktop\ordenarcon2pilas\funcionesmain.c
+	"./funcionesMain.h"
+
+1725669929 source:c:\users\pc\desktop\ordenarcon2pilas\bibliotecas\src\loteempleados\loteempleados.c
+	"../../include/loteEmpleados/loteEmpleados.h"
+

@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../../../AlgoritmosYEstructurasDeDatos-3640/Arbol-Binario/arbol.h"
+#include "./arbol.h"
 #define OK 1
 #define NO_DEBO_CONVERTIR_LINEA -2147483647
 #define RETORNO_LETRA 1
