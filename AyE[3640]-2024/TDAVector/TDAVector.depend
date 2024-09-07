@@ -65,3 +65,20 @@
 	<stdlib.h>
 	<string.h>
 
+1722962465 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\tdavector\dinamico\tdavector.c
+	"../../../include/TDAVector/Dinamico/TDAVector.h"
+
+1722892640 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\tdavector\dinamico\tdavector.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1722984130 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\tdavector\main.c
+	"./bibliotecaGeneralDeTDAVector.h"
+
+1722984069 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\tdavector\bibliotecageneraldetdavector.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../Bibliotecas/include/TDAVector/Dinamico/TDAVector.h"
+
