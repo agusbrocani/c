@@ -78,6 +78,7 @@ int main()
         fprintf(stderr, "fallo descargando con solicitud HTTP: %s\n", curl_easy_strerror(resultadoDeSolicitudHTTP));
         curl_easy_cleanup(curl);
         free(iniMemoriaReservada);
+        free(dato.buffer);
         return ERROR_SOLICITUD_HTTP_EASY_PERFORM;
     }
 
@@ -85,6 +86,7 @@ int main()
 
     curl_easy_cleanup(curl);//CIERRO CONEXION A LA API
     free(iniMemoriaReservada);
+    free(dato.buffer);
 
     return 0;
 }

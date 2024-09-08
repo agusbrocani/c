@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1725769825 source:c:\dev\ayed\tp_ordenar_con_dos_pilas\funciones.c
+	"funciones.h"
+
+1725768932 c:\dev\ayed\tp_ordenar_con_dos_pilas\funciones.h
+	<stdio.h>
+	<stdlib.h>
+	"./pila/include/pila.h"
+
+1725768890 source:c:\dev\ayed\tp_ordenar_con_dos_pilas\main.c
+	"funciones.h"
+
+1725769213 c:\dev\ayed\tp_ordenar_con_dos_pilas\pila\include\pila.h
+	<stdlib.h>
+	<string.h>
+
+1725769815 source:c:\dev\ayed\tp_ordenar_con_dos_pilas\pila\src\pila.c
+	"../include/pila.h"
+
