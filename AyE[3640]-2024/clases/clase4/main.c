@@ -40,6 +40,7 @@ int main()
 
     if(verPrimero(&cola, dato, tam))
     {
+        printf("Ver primero:\t");
         mostrar(dato, mostrarDato);
         printf("\n");
     }

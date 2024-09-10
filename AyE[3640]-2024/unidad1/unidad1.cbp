@@ -31,10 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="../../AlgoritmosYEstructurasDeDatos-3640/Arbol-Binario/arbol.c">
+		<Unit filename="../Bibliotecas/src/menu/arbol.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../Bibliotecas/src/menu.c">
+		<Unit filename="../Bibliotecas/src/menu/menu.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main.c">

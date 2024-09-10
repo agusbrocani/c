@@ -2,7 +2,7 @@
 
 void opciones()
 {
-    printf("\nMenu:\n");
+    printf( "\nMenu:\n" );
     printf( "0-Salir\n" );
     printf( "1-Punto 1\n" );
     printf( "2-Punto 2\n" );
@@ -26,7 +26,7 @@ int ingresaOpcion()
 
     do
     {
-        printf("\nIngrese opcion:\t");
+        printf( "\nIngrese opcion:\t" );
         scanf( "%d", &opcion );
         fflush( stdin );
     }while(         !( opcion >= LI && opcion <= LS )           );
@@ -76,13 +76,13 @@ void ejercicio1()
         apilar( &pila1, &ingreso, tam );
     }
 
-    printf("\nDesapilando pilaAux1:\n");
+    printf( "\nDesapilando pilaAux1:\n" );
     while(          desapilar( &pilaAux1, &ingreso, tam )          )
     {
         printf( "Desapilando: %d\n", ingreso );
     }
 
-    printf("\nDesapilando pilaAux2:\n");
+    printf( "\nDesapilando pilaAux2:\n" );
     while(          desapilar( &pilaAux2, &ingreso, tam )          )
     {
         printf( "Desapilando: %d\n", ingreso );
@@ -113,10 +113,10 @@ void ejercicio2()
     crearPila( &pilaOrigen );
     crearPila( &pilaDestino );
 
-    printf("Ingrese cuantos elementos quiere apilar:\t");
+    printf( "Ingrese cuantos elementos quiere apilar:\t" );
     scanf( "%d", &ce );
 
-    printf("\n");
+    printf( "\n" );
     for( i = 0; i < ce; i++ )
     {
         printf( "Ingrese elemento %d:\t", i + 1 );
@@ -159,7 +159,7 @@ void ejercicio3()
     crearPila( &pilaOrigen );
     crearPila( &pilaDestino );
 
-    printf("Ingrese cuantos elementos quiere apilar:\t");
+    printf( "Ingrese cuantos elementos quiere apilar:\t" );
     scanf( "%d", &ce );
 
     printf("\n");
@@ -220,7 +220,7 @@ void ejercicio4()
     crearPila( &pilaDestino );
     crearPila( &pilaAux );
 
-    printf("Ingrese cuantos elementos quiere apilar:\t");
+    printf( "Ingrese cuantos elementos quiere apilar:\t" );
     scanf( "%d", &ce );
 
     printf("\n");
@@ -271,7 +271,7 @@ void ejercicio5()
     crearPila( &pilaAux1 );
     crearPila( &pilaAux2 );
 
-    printf("Ingrese cuantos elementos quiere apilar:\t");
+    printf( "Ingrese cuantos elementos quiere apilar:\t" );
     scanf( "%d", &ce );
 
     printf("\n");
@@ -329,10 +329,10 @@ void ejercicio6()
     crearPila( &pila1 );
     crearPila( &pilaAux );
 
-    printf("Ingrese cuantos elementos quiere apilar:\t");
+    printf( "Ingrese cuantos elementos quiere apilar:\t" );
     scanf( "%d", &ce );
 
-    printf("\n");
+    printf( "\n" );
     for( i = 0; i < ce; i++ )
     {
         printf( "Ingrese elemento %d:\t", i + 1 );
@@ -394,7 +394,7 @@ void ejercicio7()
     crearPila( &pila1 );
     crearPila( &pilaAux );
 
-    printf("Ingrese cuantos elementos quiere apilar:\t");
+    printf( "Ingrese cuantos elementos quiere apilar:\t" );
     scanf( "%d", &ce );
 
     printf("\n");
@@ -461,7 +461,7 @@ void ejercicio8()
     crearPila( &pilaJugador1 );
     crearPila( &pilaJugador2 );
 
-    printf("Ingrese cuantos elementos quiere apilar:\t");
+    printf( "Ingrese cuantos elementos quiere apilar:\t" );
     scanf( "%d", &ce );
 
     printf("\n");
@@ -527,7 +527,7 @@ void ejercicio9()
     crearPila( &pilaA );
     crearPila( &pilaB );
 
-    printf("\nIngrese cuantos elementos quiere apilar en pilaA:\t");
+    printf( "\nIngrese cuantos elementos quiere apilar en pilaA:\t" );
     scanf( "%d", &ce );
 
     printf("\n");
@@ -539,7 +539,7 @@ void ejercicio9()
         apilar( &pilaA, &ingreso, tam );
     }
 
-    printf("\nIngrese cuantos elementos quiere apilar en pilaB:\t");
+    printf( "\nIngrese cuantos elementos quiere apilar en pilaB:\t" );
     scanf( "%d", &ce );
 
     printf("\n");
@@ -596,7 +596,7 @@ void ejercicio10()
     crearPila( &pilaA );
     crearPila( &pilaB );
 
-    printf("\nIngrese cuantos elementos quiere apilar en pilaA:\t");
+    printf( "\nIngrese cuantos elementos quiere apilar en pilaA:\t" );
     scanf( "%d", &ce );
 
     printf("\n");
@@ -608,7 +608,7 @@ void ejercicio10()
         apilar( &pilaA, &ingreso, tam );
     }
 
-    printf("\nIngrese cuantos elementos quiere apilar en pilaB:\t");
+    printf( "\nIngrese cuantos elementos quiere apilar en pilaB:\t" );
     scanf( "%d", &ce );
 
     printf("\n");
@@ -661,15 +661,15 @@ void ejercicio10()
 
     if(         !( pilasIguales && cantElementosA == cantElementosB )         )
     {
-        printf( "\nLas pilas NO son iguales\n");
+        printf( "\nLas pilas NO son iguales\n" );
     }
     else if(            !( !cantElementosA && !cantElementosB )          )
     {
-        printf( "\nLas pilas son iguales\n");
+        printf( "\nLas pilas son iguales\n" );
     }
     else
     {
-        printf( "\nLas pilas estan vacias\n");
+        printf( "\nLas pilas estan vacias\n" );
     }
     vaciarPila( &pilaA );
     vaciarPila( &pilaB );
@@ -698,10 +698,10 @@ void ejercicio11()
     crearPila( &pilaModelo );
     crearPila( &resultado );
 
-    printf("\nIngrese cuantos elementos quiere apilar en pila1:\t");
+    printf( "\nIngrese cuantos elementos quiere apilar en pila1:\t" );
     scanf( "%d", &ce );
 
-    printf("\n");
+    printf( "\n" );
     for( i = 0; i < ce; i++ )
     {
         printf( "Ingrese elemento %d:\t", i + 1 );
@@ -710,7 +710,7 @@ void ejercicio11()
         apilar( &pila1, &ingreso, tam );
     }
 
-    printf("\nIngrese cuantos elementos quiere apilar en pilaModelo:\t");
+    printf( "\nIngrese cuantos elementos quiere apilar en pilaModelo:\t" );
     scanf( "%d", &ce );
 
     printf("\n");
@@ -738,7 +738,7 @@ void ejercicio11()
         }
     }
 
-    printf("\nPila resultado:\n");
+    printf( "\nPila resultado:\n" );
     while(          desapilar( &pila1, &ingreso, tam )          )
     {
         printf( "Elementos resultado: %d\n", ingreso );
@@ -787,7 +787,7 @@ void ejercicio12()
         apilar( &pila1, &ingreso, tam );
     }
 
-    printf("\nIngrese cuantos elementos quiere apilar en pilaModelo:\t");
+    printf( "\nIngrese cuantos elementos quiere apilar en pilaModelo:\t" );
     scanf( "%d", &ce );
 
     printf("\n");
@@ -799,7 +799,7 @@ void ejercicio12()
         apilar( &pilaModelo, &ingreso, tam );
     }
 
-    printf("\nPila resultado:\n");
+    printf( "\nPila resultado:\n" );
     if(         verTope( &pilaModelo, &ingreso, tam )           )
     {
         while(          desapilar( &pila1, &ingreso, tam )         )
@@ -872,7 +872,7 @@ void ejercicio13()
     crearPila( &pilaMayores );
     crearPila( &pilaMenores );
 
-    printf("\nIngrese cuantos elementos quiere apilar en pila1:\t");
+    printf( "\nIngrese cuantos elementos quiere apilar en pila1:\t" );
     scanf( "%d", &ce );
 
     printf("\n");
@@ -884,7 +884,7 @@ void ejercicio13()
         apilar( &pila1, &ingreso, tam );
     }
 
-    printf("\nIngrese cuantos elementos quiere apilar en pilaLimite:\t");
+    printf( "\nIngrese cuantos elementos quiere apilar en pilaLimite:\t" );
     scanf( "%d", &ce );
 
     printf("\n");
@@ -912,7 +912,7 @@ void ejercicio13()
         }
     }
 
-    printf("\nPila de mayores:\n");
+    printf( "\nPila de mayores:\n" );
     while(          desapilar( &pilaMayores, &ingreso, tam )           )
     {
         printf( "Elemento de pilaMayores: %d\n", ingreso );
@@ -948,7 +948,7 @@ void ejercicio14()
     crearPila( &pila1 );
     crearPila( &pilaAux );
 
-    printf("Ingrese cuantos elementos quiere apilar:\t");
+    printf( "Ingrese cuantos elementos quiere apilar:\t" );
     scanf( "%d", &ce );
 
     printf("\n");

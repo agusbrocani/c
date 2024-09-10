@@ -1,36 +1,5 @@
 #include "../../include/pila/ordenarCon2Pilas.h"
 
-
-void ordenarEnDosPilas(tPila* pilaMayores, tPila* pilaMenores, void* buffer, const void* dato, unsigned tam, int (*comparar)(const void* a, const void* b))
-{
-    if(pilaVacia(pilaMayores))
-    {
-        apilar(pilaMayores, dato, tam);
-        return;
-    }
-
-    while(verTope(pilaMayores, buffer, tam) && comparar(dato, buffer) > 0)
-    {
-        desapilar(pilaMayores, buffer, tam);
-        apilar(pilaMenores, buffer, tam);
-    }
-
-    while(verTope(pilaMenores, buffer, tam) && comparar(dato, buffer) < 0)
-    {
-        desapilar(pilaMenores, buffer, tam);
-        apilar(pilaMayores, buffer, tam);
-    }
-
-    if(comparar(dato, buffer) > 0)
-    {
-        apilar(pilaMayores, dato, tam);
-    }
-    else
-    {
-        apilar(pilaMenores, dato, tam);
-    }
-}
-
 void ordenarArchivoConDosPilasGen(
                                     FILE* origen, FILE* destino, unsigned tam,
                                     int (*comparar)(const void* a, const void* b),
@@ -67,7 +36,18 @@ void ordenarArchivoConDosPilasGen(
 
     while(FIN_DE_ARCHIVO != leerRegistroArchivoCargandoDatoRetornandoCondicionSegunCaso(origen, dato, tam))
     {
-        ordenarEnDosPilas(&pilaMayores, &pilaMenores, buffer, dato, tam, comparar);
+        while(verTope(&pilaMayores, buffer, tam) && (comparar(dato, buffer) > 0))
+        {
+            desapilar(&pilaMayores, buffer, tam);
+            apilar(&pilaMenores, buffer, tam);
+        }
+
+        while(verTope(&pilaMenores, buffer, tam) && (comparar(dato, buffer) < 0))
+        {
+            desapilar(&pilaMenores, buffer, tam);
+            apilar(&pilaMayores, buffer, tam);
+        }
+        apilar(&pilaMayores, dato, tam);
     }
 
     while(desapilar(&pilaMenores, dato, tam))

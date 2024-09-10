@@ -1,4 +1,3 @@
-/// Luca Arce, Agustin Brocani, Ezequiel Muñoz y Lautaro Vega
 #include "funciones.h"
 
 int abrirArchivo (FILE** fp, const char* nombreArch, const char* modo)

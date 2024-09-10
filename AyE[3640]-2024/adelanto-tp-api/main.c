@@ -14,39 +14,41 @@ typedef struct
     void* buffer;
     size_t cantBytesCopiados;
     size_t cantBytesReservados;
-}tDatoRecibidoReconstruido;
+}tReconstruccionDato;
 
-size_t datosObtenidosDeRespuestaURL(char* bufferParaDatosRecibidos, size_t itemSize, size_t nItems, void* sDato)
+size_t datosObtenidosDeRespuestaURL(const char* bufferParaDatosRecibidos, size_t itemSize, size_t nItems, void* sDato)
 {
     size_t cantidadDeBytesRecibidos = itemSize * nItems;
+    void* returnRealloc;
 
     while(
-       cantidadDeBytesRecibidos > ((tDatoRecibidoReconstruido*)sDato)->cantBytesReservados - ((tDatoRecibidoReconstruido*)sDato)->cantBytesCopiados
+       cantidadDeBytesRecibidos > ((tReconstruccionDato*)sDato)->cantBytesReservados - ((tReconstruccionDato*)sDato)->cantBytesCopiados
        )
     {
-        (((tDatoRecibidoReconstruido*)sDato)->cantBytesReservados) += CANT_BYTES_MEMORIA_RESERVADA;
-        ((tDatoRecibidoReconstruido*)sDato)->buffer = realloc(((tDatoRecibidoReconstruido*)sDato)->buffer, ((tDatoRecibidoReconstruido*)sDato)->cantBytesReservados);
+        (((tReconstruccionDato*)sDato)->cantBytesReservados) += CANT_BYTES_MEMORIA_RESERVADA;
+        returnRealloc = realloc(((tReconstruccionDato*)sDato)->buffer, ((tReconstruccionDato*)sDato)->cantBytesReservados);
 
-        if(NULL == ((tDatoRecibidoReconstruido*)sDato)->buffer)
+        if(NULL == returnRealloc)
         {
             return NO_PUDE_HACER_REALLOC;
         }
+        ((tReconstruccionDato*)sDato)->buffer = returnRealloc;
     }
 
-    memcpy(((tDatoRecibidoReconstruido*)sDato)->buffer + ((tDatoRecibidoReconstruido*)sDato)->cantBytesCopiados , bufferParaDatosRecibidos, cantidadDeBytesRecibidos);
-    (((tDatoRecibidoReconstruido*)sDato)->cantBytesCopiados) += cantidadDeBytesRecibidos;
-    ((char*)(((tDatoRecibidoReconstruido*)sDato)->buffer))[((tDatoRecibidoReconstruido*)sDato)->cantBytesCopiados] = '\0';
+    memcpy(((tReconstruccionDato*)sDato)->buffer + ((tReconstruccionDato*)sDato)->cantBytesCopiados , bufferParaDatosRecibidos, cantidadDeBytesRecibidos);
+    (((tReconstruccionDato*)sDato)->cantBytesCopiados) += cantidadDeBytesRecibidos;
+    ((char*)(((tReconstruccionDato*)sDato)->buffer))[((tReconstruccionDato*)sDato)->cantBytesCopiados] = '\0';
 
     return cantidadDeBytesRecibidos;
 }
 
 int main()
 {
-    CURL* curl = curl_easy_init();//ABRO CONEXION A LA API
-    char url[] = "https://jsonplaceholder.typicode.com/users";
-    tDatoRecibidoReconstruido dato;
-    void* iniMemoriaReservada;
+    CURL* curl;
     CURLcode resultadoDeSolicitudHTTP;
+    char url[] = "https://jsonplaceholder.typicode.com/users";
+    char certificadoSitioSeguro[] = "./CERTIFICADO-SITIO-jsonplaceholder.pem";
+    tReconstruccionDato dato;
 
     dato.buffer = malloc(CANT_BYTES_MEMORIA_RESERVADA);
     dato.cantBytesReservados = CANT_BYTES_MEMORIA_RESERVADA;
@@ -54,39 +56,42 @@ int main()
 
     if(NULL == dato.buffer)
     {
+        fprintf(stderr,"No pude reservar memoria.");
         return NO_PUDE_RESERVAR_MEMORIA;
     }
-    iniMemoriaReservada = dato.buffer;
+
+    curl = curl_easy_init();    //RESERVO RECURSOS PARA REALIZAR CONFIGURACIONES DE REQUEST
 
     if(NULL == curl)
     {
-        fprintf(stderr, "fallo init\n");
-        free(iniMemoriaReservada);
+        fprintf(stderr, "Fallo init.\n");
+        free(dato.buffer);
         return ERROR_INICIAR_ESTRUCTURA_CURL;
     }
+    //CONFIGURACION DE LOS RECURSOS RESERVADOS PARA HACER LA REQUEST
+    curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 1L);
+    curl_easy_setopt(curl, CURLOPT_CAINFO, certificadoSitioSeguro);
 
-    curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 0L);
     curl_easy_setopt(curl, CURLOPT_URL, url);
     curl_easy_setopt(curl, CURLOPT_TIMEOUT, 30L);
     curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 10L);
     curl_easy_setopt(curl, CURLOPT_WRITEDATA, &dato);
     curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, datosObtenidosDeRespuestaURL);
 
+    //SE HACE LA REQUEST Y SE REALIZA MANEJO DE ERRORES POR SI FALLA
     resultadoDeSolicitudHTTP = curl_easy_perform(curl);
     if(CURLE_OK != resultadoDeSolicitudHTTP)
     {
-        fprintf(stderr, "fallo descargando con solicitud HTTP: %s\n", curl_easy_strerror(resultadoDeSolicitudHTTP));
-        curl_easy_cleanup(curl);
-        free(iniMemoriaReservada);
-//        free(dato.buffer);
+        fprintf(stderr, "Fallo descargando con solicitud HTTP: %s.\n", curl_easy_strerror(resultadoDeSolicitudHTTP));
+        curl_easy_cleanup(curl);    //LIBERO RECURSOS RESERVADOS
+        free(dato.buffer);
         return ERROR_SOLICITUD_HTTP_EASY_PERFORM;
     }
 
-    fprintf(stdout, "%s",(char*)(dato.buffer));
+    fprintf(stdout, "%s",(char*)(dato.buffer)); //VERIFICACION VISUAL DE QUE SE RECIBIO CORRECTAMENTE LA INFO
 
-    curl_easy_cleanup(curl);//CIERRO CONEXION A LA API
-    free(iniMemoriaReservada);
-//    free(dato.buffer);
+    curl_easy_cleanup(curl);    //LIBERO RECURSOS RESERVADOS
+    free(dato.buffer);
 
     return 0;
 }
