@@ -7,7 +7,7 @@
 #define OPCION4 4
 #define OPCIONa 'a'
 
-void switchMenuCasoPrueba(int opcion)
+void switchMenuCasoPrueba(int opcion, void* parametroParaSwitchSegunCaso)
 {
     switch(opcion)
     {
@@ -122,7 +122,7 @@ int main()
     };
     unsigned cantidadDeFilas = sizeof(textoMenu) / MAX_TAM_TEXTO;
 
-    menu(textoMenu, cantidadDeFilas, switchMenuCasoPrueba, ACTIVAR_AYUDA_AL_USUARIO);
+    menu(textoMenu, cantidadDeFilas, switchMenuCasoPrueba, NULL, ACTIVAR_AYUDA_AL_USUARIO);
 
     return 0;
 }

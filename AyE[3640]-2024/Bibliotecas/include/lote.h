@@ -10,6 +10,8 @@
 
 #define NOMBRE_ARCHIVO_PRODUCTOS "loteProductos.bin"
 
+#define CE_PRODUCTOS 15
+
 typedef struct
 {
     int dia;

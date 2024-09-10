@@ -135,14 +135,14 @@ void ordenarArchivoConDosPilas (FILE* desordenado, FILE* ordenado, unsigned tamD
     dato = malloc(tamDato);
     if(!dato)
     {
-        fprintf(stderr,"No pude reserver memoria.");
+        fprintf(stderr,"No pude reservar memoria.");
         return;
     }
 
     buffer = malloc(tamDato);
     if(!buffer)
     {
-        fprintf(stderr,"No pude reserver memoria.");
+        fprintf(stderr,"No pude reservar memoria.");
         free(dato);
         return;
     }
@@ -150,10 +150,6 @@ void ordenarArchivoConDosPilas (FILE* desordenado, FILE* ordenado, unsigned tamD
     crearPila(&pMayores);
     crearPila(&pMenores);
 
-    fread(dato, tamDato, 1, desordenado);
-
-    if(!feof(desordenado))
-        apilar(&pMayores, dato, tamDato);
     fread(dato, tamDato, 1, desordenado);
     while(!feof(desordenado))
     {
@@ -168,15 +164,7 @@ void ordenarArchivoConDosPilas (FILE* desordenado, FILE* ordenado, unsigned tamD
             desapilar(&pMenores, buffer, tamDato);
             apilar(&pMayores, buffer, tamDato);
         }
-
-        if(comparar(dato, buffer) > 0) // Si el dato es mas grande que el mayor de los menores.
-        {
-            apilar(&pMayores, dato, tamDato);
-        }
-        else
-        {
-            apilar(&pMenores, dato, tamDato);
-        }
+        apilar(&pMayores, dato, tamDato);
 
         fread(dato, tamDato, 1, desordenado);
     }
@@ -202,7 +190,7 @@ void mostrarArchivoBinario (FILE* fp, unsigned tamDato, void (*mostrarEmpleado)(
     void* buffer = malloc(tamDato);
     if(!buffer)
     {
-        fprintf(stderr,"No pude reserver memoria.");
+        fprintf(stderr,"No pude reservar memoria.");
         return;
     }
 

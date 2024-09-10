@@ -16,25 +16,21 @@ int apilar( tPila* p, const void* dato, unsigned tam )
 {
     tNodo* nuevoNodo;
 
-    nuevoNodo = malloc( sizeof(tNodo) );
-
-    if(         !nuevoNodo         )
+    nuevoNodo = malloc(sizeof(tNodo));
+    if(NULL == nuevoNodo)
     {
         return NO_PUDE_APILAR;
     }
-
-    nuevoNodo->dato = malloc( tam );
-
-    if(         !nuevoNodo->dato            )
+    nuevoNodo->dato = malloc(tam);
+    if(NULL == nuevoNodo->dato)
     {
-        free( nuevoNodo );
+        free(nuevoNodo);
         return NO_PUDE_APILAR;
     }
 
-    memcpy( nuevoNodo->dato, dato, tam );
+    memcpy(nuevoNodo->dato, dato, tam);
     nuevoNodo->tam = tam;
     nuevoNodo->sig = *p;
-
     *p = nuevoNodo;
 
     return OK;
@@ -60,14 +56,14 @@ int desapilar( tPila* p, void* dato, unsigned tam )
 
 void vaciarPila( tPila* p )
 {
-    tNodo* nodoAEliminar;
+    tNodo* nodoAEliminar = *p;
 
-    while(          *p          )
+    while(NULL != nodoAEliminar)
     {
-        nodoAEliminar = *p;
         *p = nodoAEliminar->sig;
-        free( nodoAEliminar->dato );
-        free( nodoAEliminar );
+        free(nodoAEliminar->dato);
+        free(nodoAEliminar);
+        nodoAEliminar = *p;
     }
 }
 

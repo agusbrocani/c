@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1722911039 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\cola\coladinamica.c
+	"../../include/cola/Dinamica/cola.h"
+
+1722215161 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\cola\dinamica\cola.h
+	<stdlib.h>
+	<string.h>
+

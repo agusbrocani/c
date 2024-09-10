@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "../../../AlgoritmosYEstructurasDeDatos-3640/Arbol-Binario/arbol.h"
+#include "../../../../AlgoritmosYEstructurasDeDatos-3640/Arbol-Binario/arbol.h"
 #define OK 1
 #define NO_DEBO_CONVERTIR_LINEA -2147483647
 #define RETORNO_LETRA 1
@@ -50,7 +50,7 @@ int validaTipoDeDatoIngresado(const char* opcionIngresada);
 void mostrarMenu(char textoMenu[][MAX_TAM_TEXTO], unsigned cantidadDeRegistros);
 int ingresoDeOpcion(const tArbol* arbolDeOpciones, char textoMenu[][MAX_TAM_TEXTO], unsigned cantidadDeRegistros);
 int cargarMenuAArbolBinarioDeBusqueda(tArbol* arbolDeOpciones, char textoMenu[][MAX_TAM_TEXTO], unsigned cantidadDeRegistros);
-void menu(char textoMenu[][MAX_TAM_TEXTO], unsigned cantidadDeRegistros, void(*switchSegunCaso)(int opcion), int ayudaAlUsuario);
+void menu(char textoMenu[][MAX_TAM_TEXTO], unsigned cantidadDeRegistros, void(*switchSegunCaso)(int opcion, void* parametroParaSwitchSegunCaso), void* parametroParaSwitchSegunCaso, int ayudaAlUsuario);
 
 
 #endif // MENU_H_INCLUDED

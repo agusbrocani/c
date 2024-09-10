@@ -6,7 +6,7 @@
 #define PUNTO_4 4
 #define PUNTO_5 5
 
-void switchMenuUnidad1(int opcion)
+void switchMenuUnidad1(int opcion, void* parametroAdicional)
 {
     switch(opcion)
     {
@@ -47,7 +47,7 @@ int main()
     };
     unsigned cantRegistros = sizeof(textoMenu) / MAX_TAM_TEXTO;
 
-    menu(textoMenu, cantRegistros, switchMenuUnidad1, DESACTIVAR_AYUDA_AL_USUARIO);//ARGUMENTO AL MAIN, PARA QUE CUANDO CORRA DESDE EL .EXE, por consola pueda enviarle el parametro
+    menu(textoMenu, cantRegistros, switchMenuUnidad1, NULL, DESACTIVAR_AYUDA_AL_USUARIO);//ARGUMENTO AL MAIN, PARA QUE CUANDO CORRA DESDE EL .EXE, por consola pueda enviarle el parametro
 
     return 0;
 }

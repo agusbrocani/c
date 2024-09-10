@@ -1,4 +1,4 @@
-#include "../include/menu.h"
+#include "../../include/menu/menu.h"
 
 int comparaCadenasMenu(const void* a, const void* b)
 {
@@ -176,7 +176,7 @@ int cargarMenuAArbolBinarioDeBusqueda(tArbol* arbolDeOpciones, char textoMenu[][
 
 void menu(
             char textoMenu[][MAX_TAM_TEXTO], unsigned cantidadDeFilas,
-            void(*switchSegunCaso)(int opcion),
+            void(*switchSegunCaso)(int opcion, void* parametroParaSwitchSegunCaso), void* parametroParaSwitchSegunCaso,
             int ayudaAlUsuario
           )
 {
@@ -207,7 +207,8 @@ void menu(
         printf("\t\t en el rango de validez indicado, sino se tomaran como lineas de texto.\n\n");
         printf("\t-INCLUIR la OPCION DE SALIDA \"[0]\" en la matriz de caracteres textoMenu.\n");
         printf("\t-ASEGURAR que las opciones inicializadas en la matriz de caracteres textoMenu\n");
-        printf("\t esten implementadas en el switch.\n\n");
+        printf("\t esten implementadas en el switch.\n");
+        printf("\t-ASEGURAR enviar parametro adicional a funcion de switch si corresponde o NULL en su defecto.\n\n");
         printf("Para desactivar los mensajes de ayuda: usar el MACRO \"DESACTIVAR_AYUDA_AL_USUARIO\".\n");
         printf("***************************************************************************************************\n");
         printf("Escrito por: AGUSTIN BROCANI 2024\n\n");
@@ -240,7 +241,7 @@ void menu(
                 do
                 {
                     opcion = ingresoDeOpcion(&arbolDeOpciones, textoMenu, cantidadDeFilas);
-                    switchSegunCaso(opcion);
+                    switchSegunCaso(opcion, parametroParaSwitchSegunCaso);
                     printf("\n\n");
                     system("pause");
                 }while(SALIDA != opcion);

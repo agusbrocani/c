@@ -17,3 +17,18 @@
 1725769815 source:c:\dev\ayed\tp_ordenar_con_dos_pilas\pila\src\pila.c
 	"../include/pila.h"
 
+1725768892 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\tp_ordenar_con_dos_pilas\main.c
+	"funciones.h"
+
+1725768934 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\tp_ordenar_con_dos_pilas\funciones.h
+	<stdio.h>
+	<stdlib.h>
+	"./pila/include/pila.h"
+
+1725769214 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\tp_ordenar_con_dos_pilas\pila\include\pila.h
+	<stdlib.h>
+	<string.h>
+
+1725769892 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\tp_ordenar_con_dos_pilas\pila\src\pila.c
+	"../include/pila.h"
+

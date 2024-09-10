@@ -57,7 +57,7 @@ void mostrarProducto( const void* dato )
 
 void cargarProductos( tProducto* productos, unsigned ce )
 {
-    tProducto lote[] =
+    tProducto lote[CE_PRODUCTOS] =
     {
         {"5","Coca-Cola 2L","Coca-Cola Company",{1,1,2024},{26,7,2024},50.0,100.0},
         {"9","Pan Bimbo Integral","Bimbo",{2,2,2024},{27,7,2024},60.0,110.0},
