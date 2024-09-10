@@ -15,3 +15,5 @@ ALT+RIGHT	Moverme entre los archivos del proyecto, hacia adelante
 CTRL+F		Buscar la aparición de algo en el código
 CTRL+E		Selecciona la aparición de la palabra marcada en el resto del código de a una
 
+SHIFT+F2	Cerrar barra lateral
+F2		Cerrrar barra inferior

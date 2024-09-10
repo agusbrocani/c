@@ -2,6 +2,7 @@
 #define UNIDAD2_H_INCLUDED
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 #include "../Bibliotecas/include/pila/Dinamica/pila.h"
 //#include "../Bibliotecas/include/pila/Estatica/pila.h"
@@ -23,6 +24,12 @@
 #define OPCION_5 5
 #define OPCION_6 6
 #define OPCION_7 7
+
+///SUBMENU PUNTO 4 Y 5
+#define APILAR_4_Y_5 1
+#define VER_TOPE_4_Y_5 2
+#define DESAPILAR_4_Y_5 3
+
 
 ///SUBMENU ORDENAR CON 2 PILAS GENERICO
 #define VER_ARCHIVO_DESORDENADO 1
@@ -46,6 +53,13 @@
 
 #define A_NUMERO( X ) ( ( X ) - '0' )
 
+typedef struct
+{
+    tPila* p;
+    tProducto producto;
+    unsigned tam;
+    tProducto productos[CE_PRODUCTOS];
+}tPilaCargada;
 
 void cargarProductosAArchivoBinario();
 void switchMenu4y5(int opcion, void* parametro);

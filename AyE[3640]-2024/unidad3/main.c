@@ -5,6 +5,9 @@
 
 int main()
 {
-    simularColaCajero();
+//    simularColaCajero();
+    srand(time(NULL));
+
+    printf("%d", rand() % 15);
     return 0;
 }

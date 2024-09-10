@@ -6,3 +6,9 @@
 	<stdlib.h>
 	<string.h>
 
+1725969028 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad3\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"../Bibliotecas/include/cola/Dinamica/cola.h"
+

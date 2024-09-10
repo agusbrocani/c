@@ -47,9 +47,38 @@ void cargarProductosAArchivoBinario()
 
 void switchMenu4y5(int opcion, void* parametro)
 {
+    tPilaCargada* dato = (tPilaCargada*)parametro;
+    srand(time(NULL));
+
     switch(opcion)
     {
-        default:
+        case APILAR_4_Y_5:
+            printf("Apilando:\n");
+            (dato->producto) = ((dato->productos)[rand() % CE_PRODUCTOS]);
+            mostrarProducto(&(dato->producto));
+            apilar(dato->p, &(dato->producto), dato->tam);
+        break;
+        case VER_TOPE_4_Y_5:
+            if(!verTope(dato->p, &(dato->producto), dato->tam))
+            {
+                printf("Pila vacia.\n");
+            }
+            else
+            {
+                printf("Viendo tope:\n");
+                mostrarProducto(&(dato->producto));
+            }
+        break;
+        case DESAPILAR_4_Y_5:
+            if(!desapilar(dato->p, &(dato->producto), dato->tam))
+            {
+                printf("Pila Vacia.\n");
+            }
+            else
+            {
+                printf("Desapilando:\n");
+                mostrarProducto(&(dato->producto));
+            }
         break;
     }
 }
@@ -57,14 +86,19 @@ void switchMenu4y5(int opcion, void* parametro)
 void opcion4y5()
 {
     FILE* datosBin;
-    tPila pilaLectura;
+    tPila pilaCargada;
     tProducto producto;
     unsigned tam = sizeof(tProducto);
+    unsigned cantBytesArchivo;
+    tPilaCargada sPilaCargada;
 
     char textoMenu[][MAX_TAM_TEXTO] =
     {
-      "Menu:\n",
-      "[0]SALIR del submenu."
+      "Submenu pila con datos.bin:",
+      "[0]SALIR del submenu.",
+      "[1]Apilar.",
+      "[2]Ver Tope.",
+      "[3]Desapilar."
     };
     unsigned cantidadDeRegistros = sizeof(textoMenu)/MAX_TAM_TEXTO;
 
@@ -73,20 +107,61 @@ void opcion4y5()
         return;
     }
 
-    crearPila(&pilaLectura);
+    crearPila(&pilaCargada);
 
     fread(&producto, tam, 1, datosBin);
-
     while(!feof(datosBin))
     {
-        apilar(&pilaLectura, &producto, tam);
+        apilar(&pilaCargada, &producto, tam);
         fread(&producto, tam, 1, datosBin);
     }
-//    vaciarPila(&pilaLectura);
     fclose(datosBin);
 
-    //cambiar null por pila
-    menu(textoMenu, cantidadDeRegistros, switchMenu4y5, NULL, DESACTIVAR_AYUDA_AL_USUARIO);
+    sPilaCargada.p = &pilaCargada;
+    sPilaCargada.tam = tam;
+    cargarProductos(sPilaCargada.productos, CE_PRODUCTOS);
+
+    menu(textoMenu, cantidadDeRegistros, switchMenu4y5, &sPilaCargada, DESACTIVAR_AYUDA_AL_USUARIO);
+
+    if(!abrirArchivo(&datosBin, NOMBRE_ARCHIVO_BINARIO, "wb"))
+    {
+        return;
+    }
+
+    while(desapilar(&pilaCargada, &producto, tam))
+    {
+        fwrite(&producto, tam, 1, datosBin);
+    }
+
+    fseek(datosBin, 0L, SEEK_END);
+    cantBytesArchivo = ftell(datosBin);//cuenta cant bytes desde el inicio
+
+    vaciarPila(&pilaCargada);
+    fclose(datosBin);
+
+    if(!cantBytesArchivo)
+    {
+        printf("\nBorrando archivo...\n");
+        remove(NOMBRE_ARCHIVO_BINARIO);
+    }
+
+    system("pause");
+    system("cls");
+
+    if(!abrirArchivo(&datosBin, NOMBRE_ARCHIVO_BINARIO, "rb"))
+    {
+        return;
+    }
+
+    printf("Mostrando archivo grabado:\n\n");
+    fread(&producto, tam, 1, datosBin);
+    while(!feof(datosBin))
+    {
+        mostrarProducto(&producto);
+        fread(&producto, tam, 1, datosBin);
+    }
+
+    fclose(datosBin);
 }
 
 void switchMenuOrdenarArchivoConDosPilas(int opcion, void* parametro)

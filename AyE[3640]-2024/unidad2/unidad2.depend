@@ -2,9 +2,10 @@
 1725963424 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad2\main.c
 	"./unidad2.h"
 
-1725965443 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad2\unidad2.h
+1725969311 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad2\unidad2.h
 	<stdio.h>
 	<stdlib.h>
+	<time.h>
 	"../Bibliotecas/include/pila/Dinamica/pila.h"
 	"../Bibliotecas/include/generico.h"
 	"../Bibliotecas/include/lote.h"
@@ -19,7 +20,7 @@
 	<stdlib.h>
 	<string.h>
 
-1725963272 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad2\unidad2.c
+1725970091 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad2\unidad2.c
 	"./unidad2.h"
 
 1725825930 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\pila\piladinamica.c
