@@ -51,14 +51,15 @@ int main()
     tReconstruccionDato dato;
 
     dato.buffer = malloc(CANT_BYTES_MEMORIA_RESERVADA);
-    dato.cantBytesReservados = CANT_BYTES_MEMORIA_RESERVADA;
-    dato.cantBytesCopiados = 0;
 
     if(NULL == dato.buffer)
     {
         fprintf(stderr,"No pude reservar memoria.");
         return NO_PUDE_RESERVAR_MEMORIA;
     }
+    *((char*)(dato.buffer)) = '\0';
+    dato.cantBytesReservados = CANT_BYTES_MEMORIA_RESERVADA;
+    dato.cantBytesCopiados = 0;
 
     curl = curl_easy_init();    //RESERVO RECURSOS PARA REALIZAR CONFIGURACIONES DE REQUEST
 
@@ -68,10 +69,10 @@ int main()
         free(dato.buffer);
         return ERROR_INICIAR_ESTRUCTURA_CURL;
     }
+
     //CONFIGURACION DE LOS RECURSOS RESERVADOS PARA HACER LA REQUEST
     curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 1L);
     curl_easy_setopt(curl, CURLOPT_CAINFO, certificadoSitioSeguro);
-
     curl_easy_setopt(curl, CURLOPT_URL, url);
     curl_easy_setopt(curl, CURLOPT_TIMEOUT, 30L);
     curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 10L);
