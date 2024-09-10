@@ -31,28 +31,25 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="Bibliotecas/include/loteEmpleados.h" />
-		<Unit filename="Bibliotecas/include/loteEmpleados/archivoEmpleados.h" />
-		<Unit filename="Bibliotecas/include/pila/ordenarCon2Pilas.h" />
-		<Unit filename="Bibliotecas/src/generico.c">
+		<Unit filename="../Bibliotecas/src/generico.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Bibliotecas/src/loteEmpleados/archivoEmpleados.c">
+		<Unit filename="../Bibliotecas/src/loteEmpleados/archivoEmpleados.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Bibliotecas/src/loteEmpleados/loteEmpleados.c">
+		<Unit filename="../Bibliotecas/src/loteEmpleados/loteEmpleados.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Bibliotecas/src/menu/arbol.c">
+		<Unit filename="../Bibliotecas/src/menu/arbol.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Bibliotecas/src/menu/menu.c">
+		<Unit filename="../Bibliotecas/src/menu/menu.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Bibliotecas/src/pila/ordenarCon2Pilas.c">
+		<Unit filename="../Bibliotecas/src/pila/ordenarConDosPilas.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="Bibliotecas/src/pila/pilaDinamica.c">
+		<Unit filename="../Bibliotecas/src/pila/pilaDinamica.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="funcionesMain.c">

@@ -1,80 +1,71 @@
 #include "../../include/pila/ordenarConDosPilas.h"
 
-void ordenarConDosPilas( FILE* archivo, tPila* pilaEntrada, int tam, int(*comparar)( const void* a, const void* b ), void (*grabarArchivo)( FILE* archivo, const void* dato ) )
+void ordenarArchivoConDosPilasGen(
+                                    FILE* origen, FILE* destino, unsigned tam,
+                                    int (*comparar)(const void* a, const void* b),
+                                    int (*leerRegistroArchivoCargandoDatoRetornandoCondicionSegunCaso)(FILE* pf, void* dato, unsigned tam),
+                                    void (*grabarSegunCaso)(FILE* pf, const void* dato, unsigned tam)
+                                    )
 {
     tPila pilaMayores;
     tPila pilaMenores;
-    int cmp;
-    void* bufferEntrada;
     void* buffer;
+    void* iniBuffer;
+    void* dato;
+    void* iniDato;
 
-    crearPila( &pilaMayores);
-    crearPila( &pilaMenores );
-
-    bufferEntrada = malloc( tam );
-
-    if(         !bufferEntrada         )
+    buffer = malloc(tam);
+    if(NULL == buffer)
     {
-        printf( "No pude ordenar archivo\n" );
+        perror("No pude reservar memoria para buffer");
         return;
     }
+    iniBuffer = buffer;
 
-    buffer = malloc( tam );
-
-    if(         !buffer            )
+    dato = malloc(tam);
+    if(NULL == dato)
     {
-        free( bufferEntrada );
-        printf( "No pude ordenar archivo\n" );
+        perror("No pude reservar memoria para dato");
+        free(buffer);
         return;
     }
+    iniDato = dato;
 
-    ///grabo en pila mayores tope de la pila de entrada
+    crearPila(&pilaMayores);
+    crearPila(&pilaMenores);
 
-    if(         desapilar( pilaEntrada, bufferEntrada, tam )           )
+    while(FIN_DE_ARCHIVO != leerRegistroArchivoCargandoDatoRetornandoCondicionSegunCaso(origen, dato, tam))
     {
-        apilar( &pilaMayores, bufferEntrada, tam );
-    }
-
-    while(          desapilar( pilaEntrada, bufferEntrada, tam )         )
-    {
-        verTope( &pilaMayores, buffer, tam );
-        cmp = comparar( buffer, bufferEntrada );
-        if(         cmp < 0         )
+        while(verTope(&pilaMayores, buffer, tam) && (comparar(dato, buffer) > 0))
         {
-            while(          desapilar( &pilaMayores, buffer, tam )         )
-            {
-                apilar( &pilaMenores, buffer, tam );
-            }
-            apilar( &pilaMayores, bufferEntrada, tam );
+            desapilar(&pilaMayores, buffer, tam);
+            apilar(&pilaMenores, buffer, tam);
         }
-        else if(            cmp > 0          )
-            {
-                while(          desapilar( &pilaMenores, buffer, tam )         )
-                {
-                    apilar( &pilaMayores, buffer, tam );
-                }
-                apilar( &pilaMenores, bufferEntrada, tam );
-            }
-            else
-            {
-                //acumular
-                //Desapilar, acumular, apilar
-            }
+
+        while(verTope(&pilaMenores, buffer, tam) && (comparar(dato, buffer) < 0))
+        {
+            desapilar(&pilaMenores, buffer, tam);
+            apilar(&pilaMayores, buffer, tam);
+        }
+        apilar(&pilaMayores, dato, tam);
     }
 
-    while(          desapilar( &pilaMenores, buffer, tam )         )
+    while(desapilar(&pilaMenores, dato, tam))
     {
-        apilar( &pilaMayores, buffer, tam );
+        apilar(&pilaMayores, dato, tam);
     }
 
-    while(          desapilar( &pilaMayores, buffer, tam )         )
+    while(desapilar(&pilaMayores, dato, tam))
     {
-        grabarArchivo( archivo, buffer );
+        grabarSegunCaso(destino, dato, tam);
     }
 
-    free( bufferEntrada );
-    free( buffer );
-    vaciarPila( pilaEntrada );
-    vaciarPila( &pilaMayores );
-    vaciarPila( &pilaMenores );
+    rewind(origen);//dejo punteros al inicio como buena practica
+    rewind(destino);
+    free(iniBuffer);
+    free(iniDato);
+    vaciarPila(&pilaMayores);
+    vaciarPila(&pilaMenores);
 }
+
+

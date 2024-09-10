@@ -31,20 +31,13 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="../Bibliotecas/include/pila/ordenarConDosPilas.h" />
 		<Unit filename="../Bibliotecas/src/generico.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../Bibliotecas/src/lote.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../Bibliotecas/src/pila/ordenarConDosPilas.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="../Bibliotecas/src/pila/pilaDinamica.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="../Bibliotecas/src/pila/sumarEnterosConDosPilas.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="bibliotecaGeneralDePila.h" />

@@ -246,7 +246,7 @@ void menu(
                     system("pause");
                 }while(SALIDA != opcion);
                 system("cls");
-                printf("Saliendo del programa...\n");
+                printf("Saliendo...\n");
             }
 
     vaciarArbol(&arbolDeOpciones);

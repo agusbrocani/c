@@ -159,3 +159,66 @@
 1722907930 source:c:\users\pc\desktop\materias 2°c 2024\topicos - algoritmos[github]\aye[3640]-2024\bibliotecas\src\pila\piladinamica.c
 	"../../include/pila/Dinamica/pila.h"
 
+1722906668 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\pila\ordenarcondospilas.c
+	"../../include/pila/ordenarConDosPilas.h"
+
+1724777275 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\pila\ordenarcondospilas.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"./Dinamica/pila.h"
+
+1722907955 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\pila\dinamica\pila.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1725963595 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\pila\sumarenteroscondospilas.c
+	"../../include/pila/sumarEnterosConDosPilas.h"
+
+1724744298 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\pila\sumarenteroscondospilas.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"./Dinamica/pila.h"
+	"../generico.h"
+
+1725963750 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\generico.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1725963724 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\generico.c
+	"../include/generico.h"
+
+1725824980 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\lote.c
+	"../include/lote.h"
+
+1725824992 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\lote.h
+	<stdlib.h>
+	<string.h>
+	"../include/generico.h"
+
+1725825930 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\pila\piladinamica.c
+	"../../include/pila/Dinamica/pila.h"
+
+1725964663 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\pila\main.c
+	"bibliotecaGeneralDePila.h"
+
+1725964757 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\pila\bibliotecageneraldepila.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../Bibliotecas/include/pila/Dinamica/pila.h"
+	"../Bibliotecas/include/lote.h"
+	"../Bibliotecas/include/generico.h"
+
+1724777275 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\pila\ordenarcondospilas-legacy.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"./Dinamica/pila.h"
+
+1725964123 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\pila\ordenarcondospilas-legacy.c
+	"../../include/pila/ordenarConDosPilas-legacy.h"
+

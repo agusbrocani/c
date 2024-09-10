@@ -1,33 +1,31 @@
 #include "../include/generico.h"
 
-int abrirArchivo( FILE** pf, const char* nombreArchivo, const char* modo )
+int abrirArchivo(FILE** pf, const char* nombreArchivo, const char* modo)
 {
-    *pf = fopen( nombreArchivo, modo );
+    *pf = fopen(nombreArchivo, modo);
 
     if(         !*pf            )
     {
-        fprintf(stderr,"No pude abrir/crear el archivo: %s\n", nombreArchivo);
-        return 0;
+        fprintf(stderr, "No pude abrir/crear el archivo: %s\n", nombreArchivo);
+        return NO_PUDE_ABRIR_ARCHIVO_GENERICO;
     }
 
-    return 1;
+    return OK;
 }
 
-
-void mostrarColeccion( const void* dato, int tam, int ce, void (*mostrar)( const void* dato ) )
+void mostrarColeccion(const void* dato, int tam, int ce, void (*mostrar)(const void* dato))
 {
     int i;
 
     printf("Mostrando coleccion:\n");
-    for( i = 0; i < ce; i++ )
+    for(i = 0; i < ce; i++)
     {
-        mostrar( dato );
-        printf("\n");
+        mostrar(dato);
         dato += tam;
     }
 }
 
-void grabar( FILE* pf, const void* dato, void (*grabarSegunEstrategia)( FILE* pf, const void* dato ) )
+void grabar(FILE* pf, const void* dato, void (*grabarSegunEstrategia)(FILE* pf, const void* dato))
 {
-    grabarSegunEstrategia( pf, dato );
+    grabarSegunEstrategia(pf, dato);
 }

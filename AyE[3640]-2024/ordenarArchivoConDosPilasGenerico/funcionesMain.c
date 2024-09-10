@@ -1,6 +1,6 @@
 #include "./funcionesMain.h"
 
-void fSwitchMenu(int opcion)
+void switchMenu(int opcion, void* parametro)
 {
     tEmpleado empleados[CE_EMPLEADOS];
     unsigned ce = CE_EMPLEADOS;
@@ -10,6 +10,9 @@ void fSwitchMenu(int opcion)
 
     switch(opcion)
     {
+        case VER_ARCHIVO_DESORDENADO:
+            mostrarColeccion(empleados, tam, ce, mostrarEmpleado);
+        break;
         case LOTE_TEXTO_LF:
             printf("\n***************LOTE TextoLF***************\n");
             loteTextoLF(empleados, tam, ce);

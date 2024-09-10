@@ -37,13 +37,25 @@
 		<Unit filename="../Bibliotecas/src/lote.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../Bibliotecas/src/loteEmpleados/archivoEmpleados.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Bibliotecas/src/loteEmpleados/loteEmpleados.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="../Bibliotecas/src/menu/arbol.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="../Bibliotecas/src/menu/menu.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../Bibliotecas/src/pila/ordenarConDosPilas.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="../Bibliotecas/src/pila/pilaDinamica.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Bibliotecas/src/pila/sumarEnterosConDosPilas.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main.c">

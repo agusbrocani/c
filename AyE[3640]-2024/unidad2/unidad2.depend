@@ -1,30 +1,34 @@
 # depslib dependency file v1.0
-1725828191 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad2\main.c
+1725963424 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad2\main.c
 	"./unidad2.h"
 
-1725828610 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad2\unidad2.h
+1725965443 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad2\unidad2.h
 	<stdio.h>
 	<stdlib.h>
 	"../Bibliotecas/include/pila/Dinamica/pila.h"
-	"../Bibliotecas/include/lote.h"
 	"../Bibliotecas/include/generico.h"
+	"../Bibliotecas/include/lote.h"
 	"../Bibliotecas/include/menu/menu.h"
+	"../Bibliotecas/include/loteEmpleados/loteEmpleados.h"
+	"../Bibliotecas/include/loteEmpleados/archivoEmpleados.h"
+	"../Bibliotecas/include/pila/ordenarConDosPilas.h"
+	"../Bibliotecas/include/pila/SumarEnterosConDosPilas.h"
 
 1722907955 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\pila\dinamica\pila.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
-1725828611 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad2\unidad2.c
+1725963272 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad2\unidad2.c
 	"./unidad2.h"
 
 1725825930 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\pila\piladinamica.c
 	"../../include/pila/Dinamica/pila.h"
 
-1725602549 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\generico.c
+1725963724 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\generico.c
 	"../include/generico.h"
 
-1724736874 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\generico.h
+1725963750 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\generico.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -45,7 +49,7 @@
 	<string.h>
 	<stdio.h>
 
-1725828538 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\menu\menu.c
+1725959208 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\menu\menu.c
 	"../../include/menu/menu.h"
 
 1725828667 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\menu\menu.h
@@ -67,4 +71,49 @@
 	<stdlib.h>
 	<string.h>
 	<stdio.h>
+
+1725670191 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\loteempleados\loteempleados.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1725670710 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\loteempleados\archivoempleados.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"./loteEmpleados.h"
+
+1725672033 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\loteempleados\archivoempleados.c
+	"../../include/loteEmpleados/archivoEmpleados.h"
+
+1725960276 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\loteempleados\loteempleados.c
+	"../../include/loteEmpleados/loteEmpleados.h"
+
+1725669333 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\pila\ordenarcon2pilas.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"./Dinamica/pila.h"
+
+1725928097 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\pila\ordenarcon2pilas.c
+	"../../include/pila/ordenarCon2Pilas.h"
+
+1725965333 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\pila\sumarenteroscondospilas.c
+	"../../include/pila/sumarEnterosConDosPilas.h"
+
+1725965376 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\pila\sumarenteroscondospilas.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"./Dinamica/pila.h"
+	"../generico.h"
+
+1725965220 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\pila\ordenarcondospilas.c
+	"../../include/pila/ordenarConDosPilas.h"
+
+1725669333 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\pila\ordenarcondospilas.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"./Dinamica/pila.h"
 

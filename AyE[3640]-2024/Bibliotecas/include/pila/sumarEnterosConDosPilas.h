@@ -9,6 +9,6 @@
 #include "./Dinamica/pila.h"
 #include "../generico.h"
 
-void sumarEnterosConDosPilas( tPila* pilaResultado, tPila* pila1, tPila* pila2, FILE* aResultado, void* grabarSegunEstrategia );
+void sumarEnterosConDosPilas(tPila* pila1, tPila* pila2, tPila* pilaResultado);
 
 #endif // SUMARENTEROSCONDOSPILAS_H_INCLUDED

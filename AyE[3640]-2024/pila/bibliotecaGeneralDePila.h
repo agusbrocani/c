@@ -8,8 +8,6 @@
 #include "../Bibliotecas/include/pila/Dinamica/pila.h"
 //#include "../Bibliotecas/include/pila/Estatica/pila.h"
 
-#include "../Bibliotecas/include/pila/ordenarConDosPilas.h"
-#include "../Bibliotecas/include/pila/sumarEnterosConDosPilas.h"
 
 #include "../Bibliotecas/include/lote.h"
 #include "../Bibliotecas/include/generico.h"

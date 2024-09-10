@@ -51,7 +51,6 @@ int main()
     tReconstruccionDato dato;
 
     dato.buffer = malloc(CANT_BYTES_MEMORIA_RESERVADA);
-
     if(NULL == dato.buffer)
     {
         fprintf(stderr,"No pude reservar memoria.");
@@ -62,7 +61,6 @@ int main()
     dato.cantBytesCopiados = 0;
 
     curl = curl_easy_init();    //RESERVO RECURSOS PARA REALIZAR CONFIGURACIONES DE REQUEST
-
     if(NULL == curl)
     {
         fprintf(stderr, "Fallo init.\n");
