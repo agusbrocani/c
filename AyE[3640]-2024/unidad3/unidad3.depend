@@ -6,9 +6,90 @@
 	<stdlib.h>
 	<string.h>
 
-1725969028 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad3\main.c
+1726009498 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad3\main.c
+	"unidad3.h"
+
+1725963724 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\generico.c
+	"../include/generico.h"
+
+1725963750 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\generico.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1725672033 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\loteempleados\archivoempleados.c
+	"../../include/loteEmpleados/archivoEmpleados.h"
+
+1725670710 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\loteempleados\archivoempleados.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"./loteEmpleados.h"
+
+1725670191 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\loteempleados\loteempleados.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1725960276 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\loteempleados\loteempleados.c
+	"../../include/loteEmpleados/loteEmpleados.h"
+
+1725667661 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\menu\arbol.c
+	"../../include/menu/arbol.h"
+
+1725346046 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\menu\arbol.h
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1725959208 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\menu\menu.c
+	"../../include/menu/menu.h"
+
+1725828667 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\menu\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../../../../AlgoritmosYEstructurasDeDatos-3640/Arbol-Binario/arbol.h"
+
+1725346046 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\algoritmosyestructurasdedatos-3640\arbol-binario\arbol.h
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1726022532 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad3\unidad3.h
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	"../Bibliotecas/include/cola/Dinamica/cola.h"
+	"../Bibliotecas/include/pila/Dinamica/pila.h"
+	"../Bibliotecas/include/generico.h"
+	"../Bibliotecas/include/lote.h"
+	"../Bibliotecas/include/menu/menu.h"
+	"../Bibliotecas/include/loteEmpleados/loteEmpleados.h"
+	"../Bibliotecas/include/loteEmpleados/archivoEmpleados.h"
+
+1722478416 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\cola\estatica\cola.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<math.h>
+
+1725824992 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\lote.h
+	<stdlib.h>
+	<string.h>
+	"../include/generico.h"
+
+1726009987 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad3\unidad3.c
+	"unidad3.h"
+
+1725824980 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\lote.c
+	"../include/lote.h"
+
+1726022597 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\pila\dinamica\pila.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1725825930 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\pila\piladinamica.c
+	"../../include/pila/Dinamica/pila.h"
 

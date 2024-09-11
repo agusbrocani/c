@@ -143,10 +143,10 @@ void opcion4y5()
     {
         printf("\nBorrando archivo...\n");
         remove(NOMBRE_ARCHIVO_BINARIO);
+        system("pause");
+        system("cls");
+        return;
     }
-
-    system("pause");
-    system("cls");
 
     if(!abrirArchivo(&datosBin, NOMBRE_ARCHIVO_BINARIO, "rb"))
     {

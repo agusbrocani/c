@@ -34,9 +34,34 @@
 		<Unit filename="../Bibliotecas/src/cola/colaDinamica.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="../Bibliotecas/src/generico.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Bibliotecas/src/lote.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Bibliotecas/src/loteEmpleados/archivoEmpleados.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Bibliotecas/src/loteEmpleados/loteEmpleados.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Bibliotecas/src/menu/arbol.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Bibliotecas/src/menu/menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../Bibliotecas/src/pila/pilaDinamica.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="unidad3.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="unidad3.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

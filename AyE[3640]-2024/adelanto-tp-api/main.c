@@ -9,6 +9,10 @@
 #define ERROR_INICIAR_ESTRUCTURA_CURL -1
 #define ERROR_SOLICITUD_HTTP_EASY_PERFORM -2
 
+#define URL "https://jsonplaceholder.typicode.com/users"
+#define CERTIFICADO_SITIO_SEGURO "./CERTIFICADO-SITIO-jsonplaceholder.pem"
+
+
 typedef struct
 {
     void* buffer;
@@ -46,8 +50,6 @@ int main()
 {
     CURL* curl;
     CURLcode resultadoDeSolicitudHTTP;
-    char url[] = "https://jsonplaceholder.typicode.com/users";
-    char certificadoSitioSeguro[] = "./CERTIFICADO-SITIO-jsonplaceholder.pem";
     tReconstruccionDato dato;
 
     dato.buffer = malloc(CANT_BYTES_MEMORIA_RESERVADA);
@@ -70,8 +72,8 @@ int main()
 
     //CONFIGURACION DE LOS RECURSOS RESERVADOS PARA HACER LA REQUEST
     curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 1L);
-    curl_easy_setopt(curl, CURLOPT_CAINFO, certificadoSitioSeguro);
-    curl_easy_setopt(curl, CURLOPT_URL, url);
+    curl_easy_setopt(curl, CURLOPT_CAINFO, CERTIFICADO_SITIO_SEGURO);
+    curl_easy_setopt(curl, CURLOPT_URL, URL);
     curl_easy_setopt(curl, CURLOPT_TIMEOUT, 30L);
     curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 10L);
     curl_easy_setopt(curl, CURLOPT_WRITEDATA, &dato);

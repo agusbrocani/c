@@ -14,6 +14,7 @@
 #define PILA_LLENA 1
 #define HAY_LUGAR 0
 
+
 typedef struct sNodo
 {
     void* dato;

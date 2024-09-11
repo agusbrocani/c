@@ -37,7 +37,6 @@
 #define LOTE_TEXTO_LV 3
 #define LOTE_BINARIO 4
 
-
 #define NOMBRE_ARCHIVO_LOTE_TEXTO_LV "empleadoslv.txt"
 #define NOMBRE_ARCHIVO_LOTE_TEXTO_LV_ORDENADO "empleadoslv-ordenado.txt"
 
