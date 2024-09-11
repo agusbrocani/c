@@ -15,7 +15,7 @@
 
 #define PILA_VACIA 0
 
-#define MENOR(X,Y) (((X) < (Y)) ? (X) : (Y))
+#define MINIMO(X,Y) (((X) < (Y)) ? (X) : (Y))
 
 //Estatica
 //typedef struct

@@ -72,7 +72,7 @@ int desapilar(t_pila* p, void* dato, unsigned tam)
         return PILA_VACIA;
     }
 
-    memcpy(dato, nodoAEliminar->dato, MENOR(nodoAEliminar->tam, tam));
+    memcpy(dato, nodoAEliminar->dato, MINIMO(nodoAEliminar->tam, tam));
 
     *p = nodoAEliminar->sig;
 
@@ -89,7 +89,7 @@ int verTope(const t_pila* p, void* dato, unsigned tam)
         return PILA_VACIA;
     }
 
-    memcpy(dato, (*p)->dato, MENOR((*p)->tam,tam));
+    memcpy(dato, (*p)->dato, MINIMO((*p)->tam,tam));
 
     return OK;
 }

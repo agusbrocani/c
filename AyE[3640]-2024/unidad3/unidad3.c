@@ -21,7 +21,7 @@ void switchMenu(int opcion, void* parametro)
             printf("Cola de espera en cajero.\n");
         break;
         case OPCION_7:
-            printf("Grabar datos1 orden inverso y datos2 en orden.\n");
+            printf("Copiar archivo datos.bin en orden y orden inverso.\n");
             grabarDosArchivos();
         break;
     }
@@ -170,7 +170,7 @@ void grabarDosArchivos()
     FILE* datos2Bin;
     tProducto producto;
     unsigned tam = sizeof(tProducto);
-    tPila pila;
+    t_pila pila;
     tCola cola;
 
     if(!abrirArchivo(&datosBin, NOMBRE_ARCHIVO_BINARIO, "rb"))
@@ -194,25 +194,34 @@ void grabarDosArchivos()
     crearPila(&pila);
     crearCola(&cola);
 
-    fread(&producto, tam, 1, datos1Bin);
+    fread(&producto, tam, 1, datosBin);
     while(!feof(datosBin))
     {
         apilar(&pila, &producto, tam);
         acolar(&cola, &producto, tam);
-        fread(&producto, tam, 1, datos1Bin);
+        fread(&producto, tam, 1, datosBin);
     }
+    system("pause");
+    system("cls");
 
+    printf("Productos en orden inverso:\n");
     while(desapilar(&pila, &producto, tam))
     {
         mostrarProducto(&producto);
         fwrite(&producto, tam, 1, datos2Bin);
     }
 
+    system("pause");
+    system("cls");
+
+    printf("Productos en orden:\n");
     while(desacolar(&cola, &producto, tam))
     {
         mostrarProducto(&producto);
         fwrite(&producto, tam, 1, datos2Bin);
     }
+    system("pause");
+    system("cls");
 
     fclose(datosBin);
     fclose(datos1Bin);

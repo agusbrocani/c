@@ -6,8 +6,7 @@
 #include <time.h>
 #include "../Bibliotecas/include/cola/Dinamica/cola.h"
 //#include "../Bibliotecas/include/cola/Estatica/cola.h"
-#include "../Bibliotecas/include/pila/Dinamica/pila.h"
-//#include "../Bibliotecas/include/pila/Estatica/pila.h"
+#include "../clases/clase3/clase3.h"
 
 #include "../Bibliotecas/include/generico.h"
 #include "../Bibliotecas/include/lote.h"

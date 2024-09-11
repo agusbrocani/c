@@ -12,7 +12,7 @@ int main()
         "[4]Cargar Empleados desde archivo a Cola Estatica.",
         "[5]Cargar Empleados desde archivo a Cola Dinamica.",
         "[6]Cola de espera en cajero.",
-        "[7]Ejercicio raro",
+        "[7]Copiar archivo datos.bin en orden y orden inverso.",
     };
     unsigned cantRegistros = sizeof(textoMenu)/MAX_TAM_TEXTO;
 

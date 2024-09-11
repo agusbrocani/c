@@ -52,7 +52,7 @@
 		<Unit filename="../Bibliotecas/src/menu/menu.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../Bibliotecas/src/pila/pilaDinamica.c">
+		<Unit filename="../clases/clase3/clase3.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="main.c">

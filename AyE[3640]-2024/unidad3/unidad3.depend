@@ -56,12 +56,12 @@
 	<string.h>
 	<stdio.h>
 
-1726022532 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad3\unidad3.h
+1726039553 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad3\unidad3.h
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	"../Bibliotecas/include/cola/Dinamica/cola.h"
-	"../Bibliotecas/include/pila/Dinamica/pila.h"
+	"../clases/clase3/clase3.h"
 	"../Bibliotecas/include/generico.h"
 	"../Bibliotecas/include/lote.h"
 	"../Bibliotecas/include/menu/menu.h"
@@ -79,17 +79,25 @@
 	<string.h>
 	"../include/generico.h"
 
-1726009987 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad3\unidad3.c
+1726039594 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad3\unidad3.c
 	"unidad3.h"
 
 1725824980 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\lote.c
 	"../include/lote.h"
 
-1726022597 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\pila\dinamica\pila.h
+1726023301 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\pila\dinamica\pila.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 
 1725825930 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\pila\piladinamica.c
 	"../../include/pila/Dinamica/pila.h"
+
+1726039776 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\clases\clase3\clase3.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1726039809 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\clases\clase3\clase3.c
+	"./clase3.h"
 
