@@ -1,0 +1,34 @@
+# depslib dependency file v1.0
+1726076250 source:c:\users\laboratorios\desktop\clase5\clase5.c
+	"clase5.h"
+
+1726076272 c:\users\laboratorios\desktop\clase5\clase5.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1726076254 source:c:\users\laboratorios\desktop\clase5\main.c
+	"clase5.h"
+
+1726089456 source:c:\users\laboratorios\desktop\c-main\aye[3640]-2024\clases\clase5\clase5.c
+	"clase5.h"
+
+1726088967 c:\users\laboratorios\desktop\c-main\aye[3640]-2024\clases\clase5\clase5.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1726088003 source:c:\users\laboratorios\desktop\c-main\aye[3640]-2024\clases\clase5\main.c
+	"clase5.h"
+
+1726198536 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\clases\clase5\main.c
+	"clase5.h"
+
+1726198544 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\clases\clase5\clase5.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1726198380 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\clases\clase5\clase5.c
+	"clase5.h"
+

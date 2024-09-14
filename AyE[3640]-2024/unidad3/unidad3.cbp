@@ -31,6 +31,9 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../Bibliotecas/src/cola/colaDeEspera.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="../Bibliotecas/src/cola/colaDinamica.c">
 			<Option compilerVar="CC" />
 		</Unit>

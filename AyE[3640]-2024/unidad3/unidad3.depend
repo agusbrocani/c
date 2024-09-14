@@ -6,7 +6,7 @@
 	<stdlib.h>
 	<string.h>
 
-1726009498 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad3\main.c
+1726040077 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad3\main.c
 	"unidad3.h"
 
 1725963724 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\generico.c
@@ -42,13 +42,14 @@
 	<string.h>
 	<stdio.h>
 
-1725959208 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\menu\menu.c
+1726316759 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\menu\menu.c
 	"../../include/menu/menu.h"
 
-1725828667 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\menu\menu.h
+1726316872 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\menu\menu.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
+	<windows.h>
 	"../../../../AlgoritmosYEstructurasDeDatos-3640/Arbol-Binario/arbol.h"
 
 1725346046 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\algoritmosyestructurasdedatos-3640\arbol-binario\arbol.h
@@ -56,11 +57,12 @@
 	<string.h>
 	<stdio.h>
 
-1726039553 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad3\unidad3.h
+1726316215 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad3\unidad3.h
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	"../Bibliotecas/include/cola/Dinamica/cola.h"
+	"../Bibliotecas/include/cola/colaDeEspera.h"
 	"../clases/clase3/clase3.h"
 	"../Bibliotecas/include/generico.h"
 	"../Bibliotecas/include/lote.h"
@@ -79,7 +81,7 @@
 	<string.h>
 	"../include/generico.h"
 
-1726039594 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad3\unidad3.c
+1726316376 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad3\unidad3.c
 	"unidad3.h"
 
 1725824980 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\lote.c
@@ -100,4 +102,13 @@
 
 1726039809 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\clases\clase3\clase3.c
 	"./clase3.h"
+
+1726315987 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\cola\coladeespera.c
+	"../../include/cola/colaDeEspera.h"
+
+1726316156 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\cola\coladeespera.h
+	"./Dinamica/cola.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
 

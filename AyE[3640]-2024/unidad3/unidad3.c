@@ -2,6 +2,9 @@
 
 void switchMenu(int opcion, void* parametro)
 {
+    int intervalosDeDesacolado[] = {1, 3, 5};
+    int intervalosDeAcolado[] = {1, 5, 9};
+
     switch(opcion)
     {
         case OPCION_1:  //ejecuto 2 opciones en 1
@@ -18,7 +21,9 @@ void switchMenu(int opcion, void* parametro)
             opcion4y5();
         break;
         case OPCION_6:
-            printf("Cola de espera en cajero.\n");
+            printf("Cola de espera en cajero.\n\n");
+            simulacroColaDeEspera(intervalosDeAcolado, intervalosDeDesacolado);
+            printf("FIN\n");
         break;
         case OPCION_7:
             printf("Copiar archivo datos.bin en orden y orden inverso.\n");

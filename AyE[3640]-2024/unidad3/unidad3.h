@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "../Bibliotecas/include/cola/Dinamica/cola.h"
+#include "../Bibliotecas/include/cola/colaDeEspera.h"
 //#include "../Bibliotecas/include/cola/Estatica/cola.h"
 #include "../clases/clase3/clase3.h"
 
