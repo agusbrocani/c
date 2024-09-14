@@ -19,8 +19,8 @@
 1725346046 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\algoritmosyestructurasdedatos-3640\arbol-binario\arbol.c
 	"arbol.h"
 
-1725826843 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\menu\main.c
-	"../Bibliotecas/include/menu.h"
+1725964350 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\menu\main.c
+	"../Bibliotecas/include/menu/menu.h"
 
 1725827046 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\menu.h
 	<stdio.h>
@@ -30,4 +30,21 @@
 
 1725827301 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\menu.c
 	"../include/menu.h"
+
+1725667661 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\menu\arbol.c
+	"../../include/menu/arbol.h"
+
+1725346046 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\menu\arbol.h
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1726317186 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\menu\menu.c
+	"../../include/menu/menu.h"
+
+1726318196 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\menu\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"arbol.h"
 

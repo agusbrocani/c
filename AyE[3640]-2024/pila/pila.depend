@@ -168,7 +168,7 @@
 	<string.h>
 	"./Dinamica/pila.h"
 
-1722907955 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\pila\dinamica\pila.h
+1726039614 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\pila\dinamica\pila.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -202,7 +202,7 @@
 1725825930 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\pila\piladinamica.c
 	"../../include/pila/Dinamica/pila.h"
 
-1725964663 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\pila\main.c
+1725965008 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\pila\main.c
 	"bibliotecaGeneralDePila.h"
 
 1725964757 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\pila\bibliotecageneraldepila.h

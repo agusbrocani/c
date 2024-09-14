@@ -42,15 +42,14 @@
 	<string.h>
 	<stdio.h>
 
-1726316759 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\menu\menu.c
+1726317186 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\menu\menu.c
 	"../../include/menu/menu.h"
 
-1726316872 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\menu\menu.h
+1726318196 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\menu\menu.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
-	<windows.h>
-	"../../../../AlgoritmosYEstructurasDeDatos-3640/Arbol-Binario/arbol.h"
+	"arbol.h"
 
 1725346046 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\algoritmosyestructurasdedatos-3640\arbol-binario\arbol.h
 	<stdlib.h>

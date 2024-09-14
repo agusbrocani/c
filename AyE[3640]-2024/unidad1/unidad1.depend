@@ -43,9 +43,9 @@
 1725828538 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\menu\menu.c
 	"../../include/menu/menu.h"
 
-1725828667 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\menu\menu.h
+1726318196 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\menu\menu.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
-	"../../../../AlgoritmosYEstructurasDeDatos-3640/Arbol-Binario/arbol.h"
+	"arbol.h"
 

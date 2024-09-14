@@ -15,7 +15,7 @@
 	"../Bibliotecas/include/pila/ordenarConDosPilas.h"
 	"../Bibliotecas/include/pila/SumarEnterosConDosPilas.h"
 
-1726023301 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\pila\dinamica\pila.h
+1726039614 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\pila\dinamica\pila.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -53,11 +53,11 @@
 1725959208 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\menu\menu.c
 	"../../include/menu/menu.h"
 
-1725828667 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\menu\menu.h
+1726318196 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\menu\menu.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
-	"../../../../AlgoritmosYEstructurasDeDatos-3640/Arbol-Binario/arbol.h"
+	"arbol.h"
 
 1725827321 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\menu.c
 	"../include/menu.h"
