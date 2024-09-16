@@ -35,8 +35,10 @@ int insertarAlFinal(t_lista* pl, const void* dato, unsigned tam);
 //int sacarInicio(t_lista* pl, void* dato, unsigned tam);
 int sacarFinal(t_lista* pl, void* dato, unsigned tam);
 void mostrarListaEnOrden(const t_lista* pl, void (*mostrar)(const void* dato));
-void mostrarListaEnOrdenInverso(const t_lista* pl, void (*mostrar)(const void* dato));
 void vaciarLista(t_lista* pl);
+
+int insertarAlFinalR(t_lista* pl, const void* dato, unsigned tam);
+void mostrarListaEnOrdenInversoR(const t_lista* pl, void (*mostrar)(const void* dato));
 
 void* mapEnListaSimple(const t_lista* pl, void (*accion)(void* dato));
 

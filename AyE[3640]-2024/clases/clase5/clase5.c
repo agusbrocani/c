@@ -74,16 +74,6 @@ void mostrarListaEnOrden(const t_lista* pl, void (*mostrar)(const void* dato))
     }
 }
 
-void mostrarListaEnOrdenInverso(const t_lista* pl, void (*mostrar)(const void* dato))
-{
-    if(*pl && (*pl)->sig)
-    {
-        mostrarListaEnOrdenInverso(&((*pl)->sig), mostrar);
-    }
-    mostrar((*pl)->dato);
-    printf("\n");
-}
-
 void vaciarLista(t_lista* pl)
 {
     t_nodo* nodoAEliminar;
@@ -95,6 +85,46 @@ void vaciarLista(t_lista* pl)
         free(nodoAEliminar->dato);
         free(nodoAEliminar);
     }
+}
+
+void mostrarListaEnOrdenInversoR(const t_lista* pl, void (*mostrar)(const void* dato))
+{
+    if(*pl && (*pl)->sig)
+    {
+        mostrarListaEnOrdenInversoR(&((*pl)->sig), mostrar);
+    }
+    mostrar((*pl)->dato);
+}
+
+int insertarAlFinalR(t_lista* pl, const void* dato, unsigned tam)
+{
+    if(*pl)
+    {
+        return insertarAlFinalR(&((*pl)->sig), dato, tam);
+    }
+    t_nodo* nuevoNodo;
+
+    nuevoNodo = malloc(sizeof(t_nodo));
+    if(NULL == nuevoNodo)
+    {
+        fprintf(stderr, "No pude reservar memoria.");
+        return NO_HAY_LUGAR;
+    }
+
+    nuevoNodo->dato = malloc(tam);
+    if(NULL == nuevoNodo->dato)
+    {
+        free(nuevoNodo);
+        fprintf(stderr, "No pude reservar memoria.");
+        return NO_HAY_LUGAR;
+    }
+
+    memcpy(nuevoNodo->dato, dato, tam);
+    nuevoNodo->tam = tam;
+    nuevoNodo->sig = *pl;
+    *pl = nuevoNodo;
+
+    return OK;
 }
 
 void* mapEnListaSimple(const t_lista* pl, void (*accion)(void* dato))

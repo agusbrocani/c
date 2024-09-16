@@ -69,7 +69,7 @@ int main()
 
     for(i = 0; i < ce; i++)
     {
-        insertarAlFinal(&lista, &coleccion[i], tam);
+        insertarAlFinalR(&lista, &coleccion[i], tam);
     }
 
     printf("Mostrando lista en orden:\n");
@@ -84,7 +84,7 @@ int main()
     system("cls");
 
     printf("Mostrando lista en orden inverso:\n");
-    mostrarListaEnOrdenInverso(&lista, mostrar);
+    mostrarListaEnOrdenInversoR(&lista, mostrar);
 
     system("pause");
     system("cls");
