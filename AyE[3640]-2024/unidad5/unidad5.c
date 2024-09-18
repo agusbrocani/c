@@ -103,7 +103,7 @@ void decimalABinarioR(unsigned numeroAConvertir)
 
 int funcionAckermannR(int m, int n)
 {
-    if (0 == m)
+    if(0 == m)
     {
         return n + 1;
     }
@@ -173,5 +173,3 @@ void* mBsearch(const void* clave, const void* base, size_t ce, size_t tam, int (
             return mBsearch(clave, medio + tam, (medio - base)/tam, tam, comparar);
         }
 }
-
-

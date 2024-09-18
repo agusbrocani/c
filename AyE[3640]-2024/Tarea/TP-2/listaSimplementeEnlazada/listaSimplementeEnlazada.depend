@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1726207522 source:c:\users\pc\desktop\listasimplementeenlazada\listasimplementeenlazada.c
+	"listaSimplementeEnlazada.h"
+
+1726198544 c:\users\pc\desktop\listasimplementeenlazada\listasimplementeenlazada.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1726207522 source:c:\users\pc\desktop\tp2-algoritmos\listasimplementeenlazada\listasimplementeenlazada.c
+	"listaSimplementeEnlazada.h"
+
+1726198544 c:\users\pc\desktop\tp2-algoritmos\listasimplementeenlazada\listasimplementeenlazada.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1726207592 source:c:\users\pc\desktop\tp2-algoritmos\listasimplementeenlazada\main.c
+	"listaSimplementeEnlazada.h"
+

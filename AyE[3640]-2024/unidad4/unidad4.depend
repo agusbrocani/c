@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1726476547 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad4\main.c
+	"unidad4.h"
+
+1726476546 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad4\unidad4.h
+	<stdio.h>
+	<stdlib.h>
+
+1726476534 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad4\unidad4.c
+	"unidad4.h"
+

@@ -1,0 +1,57 @@
+# depslib dependency file v1.0
+1726205547 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\clases\empleadosreestructurados\empleadosreestructurados.c
+	"empleadosReestructurados.h"
+
+1726205554 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\clases\empleadosreestructurados\empleadosreestructurados.h
+	<stdio.h>
+	<stdlib.h>
+	"../clase4/clase4.h"
+	"generico.h"
+
+1726205555 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\clases\empleadosreestructurados\main.c
+	"empleadosReestructurados.h"
+
+1725501776 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\clases\clase4\clase4.c
+	"./clase4.h"
+
+1725482439 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\clases\clase4\clase4.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1725963750 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\clases\empleadosreestructurados\generico.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1726199770 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\clases\empleadosreestructurados\generico.c
+	"generico.h"
+
+1726205939 source:c:\users\pc\desktop\tp2-algoritmos\empleadosreestructurados\bibliotecas\src\cola.c
+	"../include/cola.h"
+
+1725482439 c:\users\pc\desktop\tp2-algoritmos\empleadosreestructurados\bibliotecas\include\cola.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1726205922 source:c:\users\pc\desktop\tp2-algoritmos\empleadosreestructurados\bibliotecas\src\generico.c
+	"../include/generico.h"
+
+1725963750 c:\users\pc\desktop\tp2-algoritmos\empleadosreestructurados\bibliotecas\include\generico.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1726623056 source:c:\users\pc\desktop\tp2-algoritmos\empleadosreestructurados\main.c
+	"empleadosReestructurados.h"
+
+1726621516 c:\users\pc\desktop\tp2-algoritmos\empleadosreestructurados\empleadosreestructurados.h
+	<stdio.h>
+	<stdlib.h>
+	"./Bibliotecas/include/cola.h"
+	"./Bibliotecas/include/generico.h"
+
+1726621517 source:c:\users\pc\desktop\tp2-algoritmos\empleadosreestructurados\empleadosreestructurados.c
+	"empleadosReestructurados.h"
+

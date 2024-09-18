@@ -1,0 +1,57 @@
+# depslib dependency file v1.0
+1726298299 source:c:\users\pc\desktop\colacajero\cola.c
+	"cola.h"
+
+1726308415 c:\users\pc\desktop\colacajero\cola.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1726315585 source:c:\users\pc\desktop\colacajero\main.c
+	"./Bibliotecas/include/colaDeEspera.h"
+
+1726298891 source:c:\users\pc\desktop\colacajero\colacajero.c
+	"cola.h"
+
+1726313795 source:c:\users\pc\desktop\colacajero\coladeespera.c
+	"colaDeEspera.h"
+
+1726314751 c:\users\pc\desktop\colacajero\coladeespera.h
+	"cola.h"
+	<time.h>
+
+1726315106 source:c:\users\pc\desktop\colacajero\bibliotecas\src\cola.c
+	"../include/cola.h"
+
+1726308415 c:\users\pc\desktop\colacajero\bibliotecas\include\cola.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1726314751 c:\users\pc\desktop\colacajero\bibliotecas\include\coladeespera.h
+	"cola.h"
+	<time.h>
+
+1726315626 source:c:\users\pc\desktop\colacajero\bibliotecas\src\coladeespera.c
+	"../include/colaDeEspera.h"
+
+1726621590 source:c:\users\pc\desktop\tp2-algoritmos\colacajero\bibliotecas\src\cola.c
+	"../include/cola.h"
+
+1726308415 c:\users\pc\desktop\tp2-algoritmos\colacajero\bibliotecas\include\cola.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1726621589 source:c:\users\pc\desktop\tp2-algoritmos\colacajero\bibliotecas\src\coladeespera.c
+	"../include/colaDeEspera.h"
+
+1726316188 c:\users\pc\desktop\tp2-algoritmos\colacajero\bibliotecas\include\coladeespera.h
+	"cola.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1726621591 source:c:\users\pc\desktop\tp2-algoritmos\colacajero\main.c
+	"./Bibliotecas/include/colaDeEspera.h"
+
