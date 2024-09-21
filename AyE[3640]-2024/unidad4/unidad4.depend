@@ -1,11 +1,47 @@
 # depslib dependency file v1.0
-1726476547 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad4\main.c
+1726646561 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad4\main.c
 	"unidad4.h"
 
-1726476546 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad4\unidad4.h
+1726643737 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad4\unidad4.h
 	<stdio.h>
 	<stdlib.h>
+	"listaSimple.h"
+	"../Bibliotecas/include/lote.h"
+	"../Bibliotecas/include/generico.h"
 
 1726476534 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad4\unidad4.c
 	"unidad4.h"
+
+1723072131 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\listasimplementeenlazada\listasimplementeenlazada.c
+	"../../include/listaSimplementeEnlazada/listaSimplementeEnlazada.h"
+
+1723064467 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\listasimplementeenlazada\listasimplementeenlazada.h
+	"../lote.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1725824992 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\lote.h
+	<stdlib.h>
+	<string.h>
+	"../include/generico.h"
+
+1725963750 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\generico.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1725824980 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\lote.c
+	"../include/lote.h"
+
+1725963724 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\generico.c
+	"../include/generico.h"
+
+1726647248 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad4\listasimple.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1726646500 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad4\listasimple.c
+	"listaSimple.h"
 

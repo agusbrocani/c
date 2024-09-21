@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1726739735 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad4\listasimple.c
+	"listaSimple.h"
+
+1726697095 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad4\listasimple.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1726886739 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\clases\clase6\clase6.c
+	"clase6.h"
+
+1726886603 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\clases\clase6\clase6.h
+	<stdio.h>
+	<stdlib.h>
+	"../../unidad4/listaSimple.h"
+
+1726886626 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\clases\clase6\main.c
+	"clase6.h"
+

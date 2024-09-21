@@ -1,4 +1,3 @@
-///AGUSTIN BROCANI-EZEQUIEL MUÑOZ-LAUTARO VEGA-LUCA ARCE
 #include "../include/cola.h"
 
 void crearCola(t_cola* c)

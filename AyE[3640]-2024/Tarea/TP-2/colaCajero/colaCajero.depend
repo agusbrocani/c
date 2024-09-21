@@ -55,3 +55,23 @@
 1726621591 source:c:\users\pc\desktop\tp2-algoritmos\colacajero\main.c
 	"./Bibliotecas/include/colaDeEspera.h"
 
+1726642625 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\tarea\tp-2\colacajero\bibliotecas\src\cola.c
+	"../include/cola.h"
+
+1726308415 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\tarea\tp-2\colacajero\bibliotecas\include\cola.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1726642628 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\tarea\tp-2\colacajero\bibliotecas\src\coladeespera.c
+	"../include/colaDeEspera.h"
+
+1726316188 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\tarea\tp-2\colacajero\bibliotecas\include\coladeespera.h
+	"cola.h"
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1726642632 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\tarea\tp-2\colacajero\main.c
+	"./Bibliotecas/include/colaDeEspera.h"
+

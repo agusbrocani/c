@@ -1,4 +1,3 @@
-///AGUSTIN BROCANI-EZEQUIEL MUÑOZ-LAUTARO VEGA-LUCA ARCE
 #include "../include/colaDeEspera.h"
 /**
     Biblioteca <stdlib.h>:

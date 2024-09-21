@@ -12,7 +12,6 @@
 #define URL "https://jsonplaceholder.typicode.com/users"
 #define CERTIFICADO_SITIO_SEGURO "./CERTIFICADO-SITIO-jsonplaceholder.pem"
 
-
 typedef struct
 {
     void* buffer;

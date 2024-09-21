@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1726887980 source:c:\users\pc\desktop\ordenarlistasimple\ordenarlistasimple.c
+	"ordenarListaSimple.h"
+
+1726887985 c:\users\pc\desktop\ordenarlistasimple\ordenarlistasimple.h
+	<stdio.h>
+	<stdlib.h>
+	"listaSimple.h"
+
+1726468687 c:\users\pc\desktop\ordenarlistasimple\listasimple.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1726887333 source:c:\users\pc\desktop\ordenarlistasimple\listasimple.c
+	"listaSimple.h"
+
+1726888132 source:c:\users\pc\desktop\ordenarlistasimple\main.c
+	"ordenarListaSimple.h"
+
