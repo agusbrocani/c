@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1727238543 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\cmon-dice\main.c
+	<stdio.h>
+	<stdlib.h>
+	<curl/curl.h>
+

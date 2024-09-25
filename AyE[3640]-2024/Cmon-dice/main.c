@@ -2,15 +2,15 @@
 #include <stdlib.h>
 #include <curl/curl.h>
 
-#define CANT_BYTES_MEMORIA_RESERVADA 10000
+#define CANT_BYTES_MEMORIA_RESERVADA 2
 
 #define NO_PUDE_HACER_REALLOC 0
 #define NO_PUDE_RESERVAR_MEMORIA 1
 #define ERROR_INICIAR_ESTRUCTURA_CURL -1
 #define ERROR_SOLICITUD_HTTP_EASY_PERFORM -2
 
-#define URL "https://jsonplaceholder.typicode.com/users"
-#define CERTIFICADO_SITIO_SEGURO "./CERTIFICADO-SITIO-jsonplaceholder.pem"
+#define URL "https://www.random.org/integers/?num=1&min=0&max=3&col=1&base=10&format=plain&rnd=new"
+#define CERTIFICADO_SITIO_SEGURO "random-org.pem"
 
 typedef struct
 {
