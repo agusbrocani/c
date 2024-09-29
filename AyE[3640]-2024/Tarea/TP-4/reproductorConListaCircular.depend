@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1727598468 source:c:\users\pc\desktop\reproductorconlistacircular\main.c
+1727648856 source:c:\users\pc\desktop\reproductorconlistacircular\main.c
 	"reproductorConListaCircular.h"
 
-1727598735 c:\users\pc\desktop\reproductorconlistacircular\reproductorconlistacircular.h
+1727648258 c:\users\pc\desktop\reproductorconlistacircular\reproductorconlistacircular.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -12,7 +12,7 @@
 	"./Biblioteca/include/menu/menu.h"
 	"./Biblioteca/include/generico.h"
 
-1727599684 source:c:\users\pc\desktop\reproductorconlistacircular\reproductorconlistacircular.c
+1727649049 source:c:\users\pc\desktop\reproductorconlistacircular\reproductorconlistacircular.c
 	"reproductorConListaCircular.h"
 
 1727394150 source:c:\users\pc\desktop\reproductorconlistacircular\lista.c
@@ -60,12 +60,12 @@
 	<stdlib.h>
 	<string.h>
 
-1727599217 c:\users\pc\desktop\reproductorconlistacircular\biblioteca\include\listacircular\listacircular.h
+1727645621 c:\users\pc\desktop\reproductorconlistacircular\biblioteca\include\listacircular\listacircular.h
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"../lista.h"
 
-1727599346 source:c:\users\pc\desktop\reproductorconlistacircular\biblioteca\src\listacircular\listacircular.c
+1727646368 source:c:\users\pc\desktop\reproductorconlistacircular\biblioteca\src\listacircular\listacircular.c
 	"../../include/listaCircular/listaCircular.h"
 

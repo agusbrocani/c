@@ -238,6 +238,14 @@ void crearListaSimpleOrdenadaSegunCriterio(void* estructuraTDA)
     menu(textoSubMenuListaSimpleOrdenadaSegunCriterio, cantidadDeRegistros, switchSubMenuListaSimpleOrdenadaSegunCriterio, estructuraTDA, DESACTIVAR_AYUDA_AL_USUARIO);
 }
 
+void cargarListaSimpleEnListaCircular(void* estructuraTDA)
+{
+    while(sacarPrimeroEnListaSimple(&((tRecursosMenu*)estructuraTDA)->listaSimpleDeTemas, &((tRecursosMenu*)estructuraTDA)->tema, sizeof(tListaDeTemas)))
+    {
+        insertarSegundoEnListaCircular(&((tRecursosMenu*)estructuraTDA)->listaCircularDeTemas, &((tRecursosMenu*)estructuraTDA)->tema, sizeof(tListaDeTemas));
+    }
+}
+
 void switchSubMenuCrearPlaylistCircular(int opcion, void* estructuraTDA)
 {
     switch(opcion)
@@ -249,7 +257,8 @@ void switchSubMenuCrearPlaylistCircular(int opcion, void* estructuraTDA)
             }
             else
             {
-                ///IMPLEMENTAR PRIMITIVA en listaCircular.c [sacar datos desde listaSimple de Temas]
+                printf("Se cargo exitosamente Lista Simple de Temas en Lista Circular de Temas - Lista Simple de Temas vacia.\n");
+                cargarListaSimpleEnListaCircular(estructuraTDA);
             }
         break;
         case CAMBIAR_DE_LUGAR_LISTA_CIRCULAR_DE_TEMAS:
@@ -259,7 +268,8 @@ void switchSubMenuCrearPlaylistCircular(int opcion, void* estructuraTDA)
             }
             else
             {
-                ///IMPLEMENTAR PRIMITIVA en listaCircular.c
+                printf("Cambiando Nodos de lugar en Lista Circular de Temas.\n");
+                cambiarNodosDeLugarEnListaCircular(&((tRecursosMenu*)estructuraTDA)->listaCircularDeTemas);
             }
         break;
         case ELIMINAR_TEMA_LISTA_CIRCULAR_DE_TEMAS:
@@ -269,7 +279,9 @@ void switchSubMenuCrearPlaylistCircular(int opcion, void* estructuraTDA)
             }
             else
             {
-                ///IMPLEMENTAR PRIMITIVA en listaCircular.c
+                sacarSiguienteDelPrimeroListaCircular(&((tRecursosMenu*)estructuraTDA)->listaCircularDeTemas, &((tRecursosMenu*)estructuraTDA)->tema, sizeof(tListaDeTemas));
+                printf("Tema sacado de Lista Circular de Temas.\n");
+                mostrarTema(&((tRecursosMenu*)estructuraTDA)->tema);
             }
         break;
         case VACIAR_LISTA_CIRCULAR_DE_TEMAS:
@@ -280,7 +292,7 @@ void switchSubMenuCrearPlaylistCircular(int opcion, void* estructuraTDA)
             else
             {
                 printf("Vaciando Lista Circular de Temas.\n");
-                vaciarListaCircular(&((tRecursosMenu*)estructuraTDA)->listaCircularDeTemas);///IMPLEMENTAR PRIMITIVA en listaCircular.c
+                vaciarListaCircular(&((tRecursosMenu*)estructuraTDA)->listaCircularDeTemas);
             }
         break;
     }
@@ -300,6 +312,32 @@ void crearPlaylistCircular(void* estructuraTDA)
     unsigned cantidadDeRegistros = sizeof(textoSubMenuCrearPlaylistCircular) / MAX_TAM_TEXTO;
 
     menu(textoSubMenuCrearPlaylistCircular, cantidadDeRegistros, switchSubMenuCrearPlaylistCircular, estructuraTDA, DESACTIVAR_AYUDA_AL_USUARIO);
+}
+
+void grabarListaCircularDeTemasEnArchivoDeTexto(void* estructuraTDA)
+{
+    FILE* archivoTxtPlaylist;
+    char nombreArchivoTxtPlaylist[TAM_NOMBRE_ARCHIVO_TXT_PLAYLIST];
+
+    sprintf(nombreArchivoTxtPlaylist, "PLAY-%u.txt", ((tRecursosMenu*)estructuraTDA)->cantidadDePlaylistGrabadasEnArchivo);
+
+    if(!abrirArchivo(&archivoTxtPlaylist, nombreArchivoTxtPlaylist, "wt"))
+    {
+        return;
+    }
+
+    while(sacarSiguienteDelPrimeroListaCircular(&((tRecursosMenu*)estructuraTDA)->listaCircularDeTemas, &((tRecursosMenu*)estructuraTDA)->tema, sizeof(tListaDeTemas)))
+    {
+        fprintf(archivoTxtPlaylist, "Autor: %s\nTema: %s\nDuracion: %u\n\n",
+            ((tRecursosMenu*)estructuraTDA)->tema.autor,
+            ((tRecursosMenu*)estructuraTDA)->tema.tema,
+            ((tRecursosMenu*)estructuraTDA)->tema.duracion
+        );
+    }
+
+    ((tRecursosMenu*)estructuraTDA)->cantidadDePlaylistGrabadasEnArchivo++;
+
+    fclose(archivoTxtPlaylist);
 }
 
 void switchMenuPrincipal(int opcion, void* estructuraTDA)
@@ -323,7 +361,7 @@ void switchMenuPrincipal(int opcion, void* estructuraTDA)
             }
         break;
         case CREAR_PLAYLIST_CIRCULAR:
-            crearPlaylistCircular(estructuraTDA); ///IMPLEMENTAR SWITCH CON ACCIONES
+            crearPlaylistCircular(estructuraTDA);
         break;
         case REPRODUCIR_PLAYLIST_CIRCULAR:
             if(listaCircularVacia(&((tRecursosMenu*)estructuraTDA)->listaCircularDeTemas))
@@ -332,7 +370,7 @@ void switchMenuPrincipal(int opcion, void* estructuraTDA)
             }
             else
             {
-                ///IMPLEMENTAR -> CREAR FUNCION QUE HAGA ACCION
+                mostrarListaCircular(&((tRecursosMenu*)estructuraTDA)->listaCircularDeTemas, mostrarTema);
             }
         break;
         case GUARDAR_PLAYLIST_CIRCULAR_EN_ARCHIVO_DE_TEXTO:
@@ -342,7 +380,8 @@ void switchMenuPrincipal(int opcion, void* estructuraTDA)
             }
             else
             {
-                ///IMPLEMENTAR -> CREAR FUNCION QUE HAGA ACCION
+                printf("Se ha grabado exitosamente la playlist en el archivo PLAY-%u.txt - Lista Circular Vacia.\n", ((tRecursosMenu*)estructuraTDA)->cantidadDePlaylistGrabadasEnArchivo);
+                grabarListaCircularDeTemasEnArchivoDeTexto(estructuraTDA);
             }
         break;
     }

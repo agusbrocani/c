@@ -10,9 +10,9 @@ int main()
       "[0]Salida.",
       "[1]Crear Lista Simple de Temas ordenada segun criterio.",
       "[2]Mezclar Lista Simple de Temas de forma aleatoria.",
-      "[3]Crear playlist circular.",                            ///TO DO
-      "[4]Reproducir playlist circular.",                       ///TO DO
-      "[5]Guardar playlist circular en archivo de texto."       ///TO DO
+      "[3]Crear playlist circular.",
+      "[4]Reproducir playlist circular.",
+      "[5]Guardar playlist circular en archivo de texto."
     };
     unsigned cantidadDeRegistros = sizeof(textoMenuPrincipal) / MAX_TAM_TEXTO;
 
@@ -22,13 +22,14 @@ int main()
         return NO_PUDE_ABRIR_ARCHIVO_ARCHIVO_BINARIO_LISTA_DE_TEMAS;
     }
 
+    punterosAListaYArchivoDeTemas.cantidadDePlaylistGrabadasEnArchivo = 1;
     crearListaSimple(&punterosAListaYArchivoDeTemas.listaSimpleDeTemas);
-    crearListaCircular(&punterosAListaYArchivoDeTemas.listaCircularDeTemas);///IMPLEMENTAR PRIMITIVA en listaCircular.c
+    crearListaCircular(&punterosAListaYArchivoDeTemas.listaCircularDeTemas);
 
     menu(textoMenuPrincipal, cantidadDeRegistros, switchMenuPrincipal, &punterosAListaYArchivoDeTemas, DESACTIVAR_AYUDA_AL_USUARIO);
 
     vaciarListaSimple(&punterosAListaYArchivoDeTemas.listaSimpleDeTemas);
-    vaciarListaCircular(&punterosAListaYArchivoDeTemas.listaCircularDeTemas);///IMPLEMENTAR PRIMITIVA en listaCircular.c
+    vaciarListaCircular(&punterosAListaYArchivoDeTemas.listaCircularDeTemas);
     fclose(punterosAListaYArchivoDeTemas.aListaDeTemas);
 
     return 0;

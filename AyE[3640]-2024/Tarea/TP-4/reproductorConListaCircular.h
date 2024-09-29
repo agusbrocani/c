@@ -31,6 +31,8 @@
 #define ELIMINAR_TEMA_LISTA_CIRCULAR_DE_TEMAS 3
 #define VACIAR_LISTA_CIRCULAR_DE_TEMAS 4
 
+#define TAM_NOMBRE_ARCHIVO_TXT_PLAYLIST 1000
+
 #define TAM_AUTOR 100
 #define TAM_TEMA 100
 typedef struct
@@ -46,6 +48,7 @@ typedef struct
     t_lista listaSimpleDeTemas;
     t_lista listaCircularDeTemas;
     tListaDeTemas tema;
+    unsigned cantidadDePlaylistGrabadasEnArchivo;
 }tRecursosMenu;
 
 void crearArchivoBinarioDeTemas();
@@ -58,8 +61,11 @@ int comparaTemasSegunDuracion(const void* a, const void* b);
 void switchSubMenuListaSimpleOrdenadaSegunCriterio(int opcion, void* estructuraTDA);
 void crearListaSimpleOrdenadaSegunCriterio(void* estructuraTDA);
 
+void cargarListaSimpleEnListaCircular(void* estructuraTDA);
 void switchSubMenuCrearPlaylistCircular(int opcion, void* estructuraTDA);
 void crearPlaylistCircular(void* estructuraTDA);
+
+void grabarListaCircularDeTemasEnArchivoDeTexto(void* estructuraTDA);
 
 void switchMenuPrincipal(int opcion, void* estructuraTDA);
 
