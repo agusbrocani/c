@@ -55,3 +55,31 @@
 1726621517 source:c:\users\pc\desktop\tp2-algoritmos\empleadosreestructurados\empleadosreestructurados.c
 	"empleadosReestructurados.h"
 
+1726205939 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\tarea\tp-2\empleadosreestructurados\bibliotecas\src\cola.c
+	"../include/cola.h"
+
+1725482439 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\tarea\tp-2\empleadosreestructurados\bibliotecas\include\cola.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1726205922 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\tarea\tp-2\empleadosreestructurados\bibliotecas\src\generico.c
+	"../include/generico.h"
+
+1725963750 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\tarea\tp-2\empleadosreestructurados\bibliotecas\include\generico.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1727324950 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\tarea\tp-2\empleadosreestructurados\empleadosreestructurados.c
+	"empleadosReestructurados.h"
+
+1726621516 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\tarea\tp-2\empleadosreestructurados\empleadosreestructurados.h
+	<stdio.h>
+	<stdlib.h>
+	"./Bibliotecas/include/cola.h"
+	"./Bibliotecas/include/generico.h"
+
+1726623056 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\tarea\tp-2\empleadosreestructurados\main.c
+	"empleadosReestructurados.h"
+

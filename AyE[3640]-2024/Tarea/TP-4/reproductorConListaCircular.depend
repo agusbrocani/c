@@ -1,0 +1,71 @@
+# depslib dependency file v1.0
+1727598468 source:c:\users\pc\desktop\reproductorconlistacircular\main.c
+	"reproductorConListaCircular.h"
+
+1727598735 c:\users\pc\desktop\reproductorconlistacircular\reproductorconlistacircular.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<string.h>
+	"./Biblioteca/include/listaSimple/listaSimple.h"
+	"./Biblioteca/include/listaCircular/listaCircular.h"
+	"./Biblioteca/include/menu/menu.h"
+	"./Biblioteca/include/generico.h"
+
+1727599684 source:c:\users\pc\desktop\reproductorconlistacircular\reproductorconlistacircular.c
+	"reproductorConListaCircular.h"
+
+1727394150 source:c:\users\pc\desktop\reproductorconlistacircular\lista.c
+	"lista.h"
+
+1727394141 c:\users\pc\desktop\reproductorconlistacircular\lista.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+
+1727598606 c:\users\pc\desktop\reproductorconlistacircular\biblioteca\include\listasimple\listasimple.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<time.h>
+	"../lista.h"
+
+1727591249 c:\users\pc\desktop\reproductorconlistacircular\biblioteca\include\lista.h
+
+1727598589 source:c:\users\pc\desktop\reproductorconlistacircular\biblioteca\src\listasimple\listasimple.c
+	"../../include/listaSimple/listaSimple.h"
+
+1726318196 c:\users\pc\desktop\reproductorconlistacircular\biblioteca\include\menu\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"arbol.h"
+
+1727584423 c:\users\pc\desktop\reproductorconlistacircular\biblioteca\include\menu\arbol.h
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1727589018 source:c:\users\pc\desktop\reproductorconlistacircular\biblioteca\src\menu\arbol.c
+	"../../include/menu/arbol.h"
+
+1727593889 source:c:\users\pc\desktop\reproductorconlistacircular\biblioteca\src\menu\menu.c
+	"../../include/menu/menu.h"
+
+1727585851 source:c:\users\pc\desktop\reproductorconlistacircular\biblioteca\src\generico.c
+	"../include/generico.h"
+
+1725963750 c:\users\pc\desktop\reproductorconlistacircular\biblioteca\include\generico.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1727599217 c:\users\pc\desktop\reproductorconlistacircular\biblioteca\include\listacircular\listacircular.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../lista.h"
+
+1727599346 source:c:\users\pc\desktop\reproductorconlistacircular\biblioteca\src\listacircular\listacircular.c
+	"../../include/listaCircular/listaCircular.h"
+
