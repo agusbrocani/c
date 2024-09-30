@@ -13,7 +13,8 @@ int sacarPrimeroEnListaSimple(t_lista* pl, void* dato, unsigned tam);
 void mostrarListaSimpleEnOrden(const t_lista* pl, void (*mostrar)(const void* dato));
 void vaciarListaSimple(t_lista *pl);
 int listaSimpleVacia(const t_lista* pl);
-int insertarOrdenadoSinDuplicados(t_lista* pl, const void* dato, unsigned tam, int (*comparar)(const void* a, const void* b));
+//int insertarOrdenadoSinDuplicados(t_lista* pl, const void* dato, unsigned tam, int (*comparar)(const void* a, const void* b));
+int insertarOrdenadoEnListaSimple(t_lista* pl, const void* dato, unsigned tam, int (*comparar)(const void* a, const void* b));
 
 void insertarArchivoBinarioEnListaSimple(FILE* pf, t_lista* pl, void* dato, unsigned tam, int (*comparar)(const void* a, const void* b));
 

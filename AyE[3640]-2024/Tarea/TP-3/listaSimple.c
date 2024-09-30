@@ -1,9 +1,3 @@
-/**
-    Integrantes:
-    ARCE, LUCA GERMAN
-    BROCANI, AGUSTIN NICOLAS
-    QUIROGA PIEGARI, LUCILA
-*/
 #include "listaSimple.h"
 
 void crearLista(t_lista* pl)

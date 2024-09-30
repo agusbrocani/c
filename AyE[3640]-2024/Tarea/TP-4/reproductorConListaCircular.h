@@ -3,14 +3,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <string.h>
 #include "./Biblioteca/include/listaSimple/listaSimple.h"
 #include "./Biblioteca/include/listaCircular/listaCircular.h"
 #include "./Biblioteca/include/menu/menu.h"
 #include "./Biblioteca/include/generico.h"
 
+///ERRORES
+#define NO_PUDE_ABRIR_ARCHIVO_ARCHIVO_BINARIO_LISTA_DE_TEMAS -1
+
+///CONFIGURACIONES
 #define NOMBRE_ARCHIVO_BINARIO_LISTA_DE_TEMAS "temas.dat"
 #define CE_TEMAS 97
+#define TAM_NOMBRE_ARCHIVO_TXT_PLAYLIST 1000
 
 ///MENU PRINCIPAL
 #define CREAR_LISTA_SIMPLE_DE_TEMAS_ORDENADA_SEGUN_CRITERIO 1
@@ -30,8 +34,6 @@
 #define CAMBIAR_DE_LUGAR_LISTA_CIRCULAR_DE_TEMAS 2
 #define ELIMINAR_TEMA_LISTA_CIRCULAR_DE_TEMAS 3
 #define VACIAR_LISTA_CIRCULAR_DE_TEMAS 4
-
-#define TAM_NOMBRE_ARCHIVO_TXT_PLAYLIST 1000
 
 #define TAM_AUTOR 100
 #define TAM_TEMA 100

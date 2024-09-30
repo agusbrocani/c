@@ -149,7 +149,6 @@ int ingresoDeOpcion(const tArbol* arbolDeOpciones, char textoMenu[][MAX_TAM_TEXT
     return A_MAYUS(opcionIngresada[0]);
 }
 
-
 int cargarMenuAArbolBinarioDeBusqueda(tArbol* arbolDeOpciones, char textoMenu[][MAX_TAM_TEXTO], unsigned cantidadDeRegistros)
 {
     char retorno[MAX_TAM_TEXTO];
@@ -189,10 +188,11 @@ void menu(
 
     if(ACTIVAR_AYUDA_AL_USUARIO == ayudaAlUsuario)
     {
-        printf("\nComo implementar el MENU Generico de manera adecuada:");
+        system("cls");
+        printf("Como implementar el MENU Generico de manera adecuada:");
         printf("\n***************************************************************************************************\n");
         printf("El Usuario DEBE:\n");
-        printf("\t-DECLARAR la matriz de caracteres textoMenu.\n");
+        printf("\t-DECLARAR la matriz de caracteres textoMenu[contiene a las opciones].\n");
         printf("\t\tEjemplo:\n");
         printf("\t\t\tchar textoMenu[][MAX_TAM_TEXTO];\t//puede usar el nombre que prefiera\n");
         printf("\t\t-IMPORTANTE: utilice el MACRO \"MAX_TAM_TEXTO\" para definir TAM COLUMNA.\n\n");
@@ -243,11 +243,11 @@ void menu(
                     opcion = ingresoDeOpcion(&arbolDeOpciones, textoMenu, cantidadDeFilas);
                     switchSegunCaso(opcion, parametroParaSwitchSegunCaso);
                     printf("\n\n");
-                    system("pause");
+                    if(SALIDA != opcion)
+                        system("pause");
                 }while(SALIDA != opcion);
                 system("cls");
                 printf("Saliendo...\n");
             }
-
     vaciarArbol(&arbolDeOpciones);
 }

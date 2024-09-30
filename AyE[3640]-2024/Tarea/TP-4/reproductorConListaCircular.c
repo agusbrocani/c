@@ -183,7 +183,7 @@ void switchSubMenuListaSimpleOrdenadaSegunCriterio(int opcion, void* estructuraT
             if(listaSimpleVacia(&((tRecursosMenu*)estructuraTDA)->listaSimpleDeTemas))
             {
                 insertarArchivoBinarioEnListaSimple(((tRecursosMenu*)estructuraTDA)->aListaDeTemas, &((tRecursosMenu*)estructuraTDA)->listaSimpleDeTemas,&(((tRecursosMenu*)estructuraTDA)->tema), sizeof(tListaDeTemas), comparaTemasSegunAutor);
-                printf("Lista Simple insertada en orden segun Autor:\n\n");
+                printf("Lista Simple insertada en orden segun Autor:\n");
                 mostrarListaSimpleEnOrden(&((tRecursosMenu*)estructuraTDA)->listaSimpleDeTemas, mostrarTema);
             }
             else
@@ -195,7 +195,7 @@ void switchSubMenuListaSimpleOrdenadaSegunCriterio(int opcion, void* estructuraT
             if(listaSimpleVacia(&((tRecursosMenu*)estructuraTDA)->listaSimpleDeTemas))
             {
                 insertarArchivoBinarioEnListaSimple(((tRecursosMenu*)estructuraTDA)->aListaDeTemas, &((tRecursosMenu*)estructuraTDA)->listaSimpleDeTemas,&(((tRecursosMenu*)estructuraTDA)->tema), sizeof(tListaDeTemas), comparaTemasSegunNombreTema);
-                printf("Lista Simple insertada en orden segun Tema:\n\n");
+                printf("Lista Simple insertada en orden segun Tema:\n");
                 mostrarListaSimpleEnOrden(&((tRecursosMenu*)estructuraTDA)->listaSimpleDeTemas, mostrarTema);
             }
             else
@@ -207,7 +207,7 @@ void switchSubMenuListaSimpleOrdenadaSegunCriterio(int opcion, void* estructuraT
             if(listaSimpleVacia(&((tRecursosMenu*)estructuraTDA)->listaSimpleDeTemas))
             {
                 insertarArchivoBinarioEnListaSimple(((tRecursosMenu*)estructuraTDA)->aListaDeTemas, &((tRecursosMenu*)estructuraTDA)->listaSimpleDeTemas,&(((tRecursosMenu*)estructuraTDA)->tema), sizeof(tListaDeTemas), comparaTemasSegunDuracion);
-                printf("Lista Simple insertada en orden segun Duracion:\n\n");
+                printf("Lista Simple insertada en orden segun Duracion:\n");
                 mostrarListaSimpleEnOrden(&((tRecursosMenu*)estructuraTDA)->listaSimpleDeTemas, mostrarTema);
             }
             else
@@ -226,7 +226,7 @@ void crearListaSimpleOrdenadaSegunCriterio(void* estructuraTDA)
 {
     char textoSubMenuListaSimpleOrdenadaSegunCriterio[][MAX_TAM_TEXTO] =
     {
-      "Menu:",
+      "Crear Lista Simple de Temas ordenada segun criterio:",
       "[0]Salida",
       "[1]Insertar ordenado segun Autor.",
       "[2]Insertar ordenado segun Tema.",
@@ -240,8 +240,11 @@ void crearListaSimpleOrdenadaSegunCriterio(void* estructuraTDA)
 
 void cargarListaSimpleEnListaCircular(void* estructuraTDA)
 {
-    while(sacarPrimeroEnListaSimple(&((tRecursosMenu*)estructuraTDA)->listaSimpleDeTemas, &((tRecursosMenu*)estructuraTDA)->tema, sizeof(tListaDeTemas)))
+    if(sacarPrimeroEnListaSimple(&((tRecursosMenu*)estructuraTDA)->listaSimpleDeTemas, &((tRecursosMenu*)estructuraTDA)->tema, sizeof(tListaDeTemas)))
     {
+        printf("Tema agregado a Lista Circular de Temas desde Lista Simple de Temas:\n\n");
+        mostrarTema(&((tRecursosMenu*)estructuraTDA)->tema);
+        printf("\n");
         insertarSegundoEnListaCircular(&((tRecursosMenu*)estructuraTDA)->listaCircularDeTemas, &((tRecursosMenu*)estructuraTDA)->tema, sizeof(tListaDeTemas));
     }
 }
@@ -253,23 +256,28 @@ void switchSubMenuCrearPlaylistCircular(int opcion, void* estructuraTDA)
         case INSERTAR_LISTA_CIRCULAR_DE_TEMAS:
             if(listaSimpleVacia(&((tRecursosMenu*)estructuraTDA)->listaSimpleDeTemas))
             {
-                printf("No puede insertar en Lista Circular de Temas, primero debe insertar temas en Lista Simple de Temas.\n");
+                printf("No puede insertar en Lista Circular de Temas, Lista Simple de Temas vacia, ingrese mas temas.\n");
             }
             else
             {
-                printf("Se cargo exitosamente Lista Simple de Temas en Lista Circular de Temas - Lista Simple de Temas vacia.\n");
                 cargarListaSimpleEnListaCircular(estructuraTDA);
             }
         break;
         case CAMBIAR_DE_LUGAR_LISTA_CIRCULAR_DE_TEMAS:
             if(listaCircularVacia(&((tRecursosMenu*)estructuraTDA)->listaCircularDeTemas))
             {
-                printf("No puede cambiar de lugar en Lista Circular de Temas, primero debe insertar temas en Lista Circular de Temas.\n");
+                printf("No puede cambiar de lugar, primero debe insertar temas en Lista Circular de Temas.\n");
             }
             else
             {
-                printf("Cambiando Nodos de lugar en Lista Circular de Temas.\n");
-                cambiarNodosDeLugarEnListaCircular(&((tRecursosMenu*)estructuraTDA)->listaCircularDeTemas);
+                if(cambiarNodosDeLugarEnListaCircular(&((tRecursosMenu*)estructuraTDA)->listaCircularDeTemas))
+                {
+                    printf("Cambiando temas de lugar en Lista Circular de Temas.\n");
+                }
+                else
+                {
+                    printf("Hay un solo tema en la Lista Circular de Temas.\n");
+                }
             }
         break;
         case ELIMINAR_TEMA_LISTA_CIRCULAR_DE_TEMAS:
@@ -302,7 +310,7 @@ void crearPlaylistCircular(void* estructuraTDA)
 {
     char textoSubMenuCrearPlaylistCircular[][MAX_TAM_TEXTO] =
     {
-      "Menu:",
+      "Crear playlist circular:",
       "[0]Salida",
       "[1]Agregar Tema a Lista Circular de Temas.",
       "[2]Cambiar Tema de lugar en Lista Circular de Temas.",
@@ -319,6 +327,7 @@ void grabarListaCircularDeTemasEnArchivoDeTexto(void* estructuraTDA)
     FILE* archivoTxtPlaylist;
     char nombreArchivoTxtPlaylist[TAM_NOMBRE_ARCHIVO_TXT_PLAYLIST];
 
+    ((tRecursosMenu*)estructuraTDA)->cantidadDePlaylistGrabadasEnArchivo ++;
     sprintf(nombreArchivoTxtPlaylist, "PLAY-%u.txt", ((tRecursosMenu*)estructuraTDA)->cantidadDePlaylistGrabadasEnArchivo);
 
     if(!abrirArchivo(&archivoTxtPlaylist, nombreArchivoTxtPlaylist, "wt"))
@@ -335,8 +344,6 @@ void grabarListaCircularDeTemasEnArchivoDeTexto(void* estructuraTDA)
         );
     }
 
-    ((tRecursosMenu*)estructuraTDA)->cantidadDePlaylistGrabadasEnArchivo++;
-
     fclose(archivoTxtPlaylist);
 }
 
@@ -346,7 +353,7 @@ void switchMenuPrincipal(int opcion, void* estructuraTDA)
     switch(opcion)
     {
         case CREAR_LISTA_SIMPLE_DE_TEMAS_ORDENADA_SEGUN_CRITERIO:
-            crearListaSimpleOrdenadaSegunCriterio(estructuraTDA);
+            crearListaSimpleOrdenadaSegunCriterio(estructuraTDA); //cargar lote de archivo binario a Lista Simple
         break;
         case MEZCLAR_LISTA_SIMPLE_DE_TEMAS:
             if(listaSimpleVacia(&((tRecursosMenu*)estructuraTDA)->listaSimpleDeTemas))
@@ -370,18 +377,19 @@ void switchMenuPrincipal(int opcion, void* estructuraTDA)
             }
             else
             {
-                mostrarListaCircular(&((tRecursosMenu*)estructuraTDA)->listaCircularDeTemas, mostrarTema);
+                mostrarListaCircular(&((tRecursosMenu*)estructuraTDA)->listaCircularDeTemas, mostrarTema);//no puedo escuchar playlist si grabamos playlist en archivo de texto[comportamiento deseado]
             }
         break;
         case GUARDAR_PLAYLIST_CIRCULAR_EN_ARCHIVO_DE_TEXTO:
             if(listaCircularVacia(&((tRecursosMenu*)estructuraTDA)->listaCircularDeTemas))
             {
-                printf("No hay temas para grabar en archivo de texto, Lista Circular de Temas vacia.\n");
+                printf("Lista Circular de Temas vacia, no puede grabar archivo de texto.\n");
             }
             else
             {
-                printf("Se ha grabado exitosamente la playlist en el archivo PLAY-%u.txt - Lista Circular Vacia.\n", ((tRecursosMenu*)estructuraTDA)->cantidadDePlaylistGrabadasEnArchivo);
                 grabarListaCircularDeTemasEnArchivoDeTexto(estructuraTDA);
+                printf("Se ha grabado exitosamente la playlist en el archivo PLAY-%u.txt - Lista Circular Vacia.\n", ((tRecursosMenu*)estructuraTDA)->cantidadDePlaylistGrabadasEnArchivo);
+                vaciarListaSimple(&((tRecursosMenu*)estructuraTDA)->listaSimpleDeTemas);//reseteamos lista simple de temas ya que se guardo playlist y queremos volver a armar otra[comportamiento deseado]
             }
         break;
     }

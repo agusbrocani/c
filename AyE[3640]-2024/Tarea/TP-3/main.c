@@ -1,9 +1,3 @@
-/**
-    Integrantes:
-    ARCE, LUCA GERMAN
-    BROCANI, AGUSTIN NICOLAS
-    QUIROGA PIEGARI, LUCILA
-*/
 #include "ordenarListaSimple.h"
 
 int main()

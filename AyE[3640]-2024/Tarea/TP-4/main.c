@@ -1,9 +1,8 @@
 #include "reproductorConListaCircular.h"
-#define NO_PUDE_ABRIR_ARCHIVO_ARCHIVO_BINARIO_LISTA_DE_TEMAS -1
 
 int main()
 {
-    tRecursosMenu punterosAListaYArchivoDeTemas;
+    tRecursosMenu punteroAArchivoPunterosAListasBufferYContador;
     char textoMenuPrincipal[][MAX_TAM_TEXTO] =
     {
       "Playlist:",
@@ -17,20 +16,20 @@ int main()
     unsigned cantidadDeRegistros = sizeof(textoMenuPrincipal) / MAX_TAM_TEXTO;
 
     crearArchivoBinarioDeTemas();
-    if(!abrirArchivo(&punterosAListaYArchivoDeTemas.aListaDeTemas, NOMBRE_ARCHIVO_BINARIO_LISTA_DE_TEMAS, "rb"))
+    if(!abrirArchivo(&punteroAArchivoPunterosAListasBufferYContador.aListaDeTemas, NOMBRE_ARCHIVO_BINARIO_LISTA_DE_TEMAS, "rb"))
     {
         return NO_PUDE_ABRIR_ARCHIVO_ARCHIVO_BINARIO_LISTA_DE_TEMAS;
     }
 
-    punterosAListaYArchivoDeTemas.cantidadDePlaylistGrabadasEnArchivo = 1;
-    crearListaSimple(&punterosAListaYArchivoDeTemas.listaSimpleDeTemas);
-    crearListaCircular(&punterosAListaYArchivoDeTemas.listaCircularDeTemas);
+    punteroAArchivoPunterosAListasBufferYContador.cantidadDePlaylistGrabadasEnArchivo = 0;
+    crearListaSimple(&punteroAArchivoPunterosAListasBufferYContador.listaSimpleDeTemas);
+    crearListaCircular(&punteroAArchivoPunterosAListasBufferYContador.listaCircularDeTemas);
 
-    menu(textoMenuPrincipal, cantidadDeRegistros, switchMenuPrincipal, &punterosAListaYArchivoDeTemas, DESACTIVAR_AYUDA_AL_USUARIO);
+    menu(textoMenuPrincipal, cantidadDeRegistros, switchMenuPrincipal, &punteroAArchivoPunterosAListasBufferYContador, DESACTIVAR_AYUDA_AL_USUARIO);
 
-    vaciarListaSimple(&punterosAListaYArchivoDeTemas.listaSimpleDeTemas);
-    vaciarListaCircular(&punterosAListaYArchivoDeTemas.listaCircularDeTemas);
-    fclose(punterosAListaYArchivoDeTemas.aListaDeTemas);
+    vaciarListaSimple(&punteroAArchivoPunterosAListasBufferYContador.listaSimpleDeTemas);
+    vaciarListaCircular(&punteroAArchivoPunterosAListasBufferYContador.listaCircularDeTemas);
+    fclose(punteroAArchivoPunterosAListasBufferYContador.aListaDeTemas);
 
     return 0;
 }

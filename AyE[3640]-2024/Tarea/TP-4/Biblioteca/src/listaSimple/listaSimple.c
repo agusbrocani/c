@@ -66,6 +66,7 @@ void vaciarListaSimple(t_lista *pl)
 
 void mostrarListaSimpleEnOrden(const t_lista* pl, void (*mostrar)(const void* dato))
 {
+    printf("\n");
     while(*pl)
     {
         mostrar((*pl)->dato);
@@ -79,35 +80,73 @@ int listaSimpleVacia(const t_lista* pl)
     return NULL == *pl;
 }
 
-int insertarOrdenadoSinDuplicados(t_lista* pl, const void* dato, unsigned tam, int (*comparar)(const void* a, const void* b))
+//int insertarOrdenadoSinDuplicados(t_lista* pl, const void* dato, unsigned tam, int (*comparar)(const void* a, const void* b))
+//{
+//    t_nodo* nuevoNodo;
+//
+//    while(*pl && comparar(dato, (*pl)->dato) > 0)
+//    {
+//        pl = &((*pl)->sig);
+//    }
+//
+//    if(!*pl || comparar(dato, (*pl)->dato) < 0)
+//    {
+//        nuevoNodo = malloc(sizeof(t_nodo));
+//        if(NULL == nuevoNodo)
+//        {
+//            return NO_PUDE_INSERTAR;
+//        }
+//
+//        nuevoNodo->dato = malloc(tam);
+//        if(NULL == nuevoNodo->dato)
+//        {
+//            free(nuevoNodo);
+//            return NO_PUDE_INSERTAR;
+//        }
+//
+//        memcpy(nuevoNodo->dato, dato, tam);
+//        nuevoNodo->tam = tam;
+//        nuevoNodo->sig = *pl;
+//        *pl = nuevoNodo;
+//    }
+//
+//    return OK;
+//}
+
+int insertarOrdenadoEnListaSimple(t_lista* pl, const void* dato, unsigned tam, int (*comparar)(const void* a, const void* b))
 {
     t_nodo* nuevoNodo;
 
-    while(*pl && comparar(dato, (*pl)->dato) > 0)
+    nuevoNodo = malloc(sizeof(t_nodo));
+    if(!nuevoNodo)
     {
-        pl = &((*pl)->sig);
+        return NO_PUDE_INSERTAR;
     }
 
-    if(!*pl || comparar(dato, (*pl)->dato) < 0)
+    nuevoNodo->dato = malloc(tam);
+    if(!nuevoNodo->dato)
     {
-        nuevoNodo = malloc(sizeof(t_nodo));
-        if(NULL == nuevoNodo)
-        {
-            return NO_PUDE_INSERTAR;
-        }
+        free(nuevoNodo);
+        return NO_PUDE_INSERTAR;
+    }
 
-        nuevoNodo->dato = malloc(tam);
-        if(NULL == nuevoNodo->dato)
-        {
-            free(nuevoNodo);
-            return NO_PUDE_INSERTAR;
-        }
+    memcpy(nuevoNodo->dato, dato, tam);
+    nuevoNodo->tam = tam;
 
-        memcpy(nuevoNodo->dato, dato, tam);
-        nuevoNodo->tam = tam;
+    if(!(*pl) || comparar(dato, (*pl)->dato) < 0)
+    {
         nuevoNodo->sig = *pl;
         *pl = nuevoNodo;
+        return OK;
     }
+
+    while((*pl)->sig && comparar(dato, (*pl)->sig->dato) > 0)
+    {
+        pl = &(*pl)->sig;
+    }
+
+    nuevoNodo->sig = (*pl)->sig;
+    (*pl)->sig = nuevoNodo;
 
     return OK;
 }
@@ -117,7 +156,7 @@ void insertarArchivoBinarioEnListaSimple(FILE* pf, t_lista* pl, void* dato, unsi
     fread(dato, tam, 1, pf);
     while(!feof(pf))
     {
-        insertarOrdenadoSinDuplicados(pl, dato, tam, comparar);
+        insertarOrdenadoEnListaSimple(pl, dato, tam, comparar);
         fread(dato, tam, 1, pf);
     }
 }

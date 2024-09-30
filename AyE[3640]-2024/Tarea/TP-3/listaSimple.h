@@ -1,9 +1,3 @@
-/**
-    Integrantes:
-    ARCE, LUCA GERMAN
-    BROCANI, AGUSTIN NICOLAS
-    QUIROGA PIEGARI, LUCILA
-*/
 #ifndef CLASE5_H_INCLUDED
 #define CLASE5_H_INCLUDED
 #include <stdio.h>

@@ -69,3 +69,64 @@
 1727646368 source:c:\users\pc\desktop\reproductorconlistacircular\biblioteca\src\listacircular\listacircular.c
 	"../../include/listaCircular/listaCircular.h"
 
+1727585851 source:c:\users\pc\desktop\tp-4\biblioteca\src\generico.c
+	"../include/generico.h"
+
+1725963750 c:\users\pc\desktop\tp-4\biblioteca\include\generico.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1727680920 source:c:\users\pc\desktop\tp-4\biblioteca\src\listacircular\listacircular.c
+	"../../include/listaCircular/listaCircular.h"
+
+1727678070 c:\users\pc\desktop\tp-4\biblioteca\include\listacircular\listacircular.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"../lista.h"
+
+1727591249 c:\users\pc\desktop\tp-4\biblioteca\include\lista.h
+
+1727680840 source:c:\users\pc\desktop\tp-4\biblioteca\src\listasimple\listasimple.c
+	"../../include/listaSimple/listaSimple.h"
+
+1727675384 c:\users\pc\desktop\tp-4\biblioteca\include\listasimple\listasimple.h
+	<stdlib.h>
+	<stdio.h>
+	<string.h>
+	<time.h>
+	"../lista.h"
+
+1727589018 source:c:\users\pc\desktop\tp-4\biblioteca\src\menu\arbol.c
+	"../../include/menu/arbol.h"
+
+1727584423 c:\users\pc\desktop\tp-4\biblioteca\include\menu\arbol.h
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1727677586 source:c:\users\pc\desktop\tp-4\biblioteca\src\menu\menu.c
+	"../../include/menu/menu.h"
+
+1726318196 c:\users\pc\desktop\tp-4\biblioteca\include\menu\menu.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"arbol.h"
+
+1727680116 source:c:\users\pc\desktop\tp-4\main.c
+	"reproductorConListaCircular.h"
+
+1727679871 c:\users\pc\desktop\tp-4\reproductorconlistacircular.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"./Biblioteca/include/listaSimple/listaSimple.h"
+	"./Biblioteca/include/listaCircular/listaCircular.h"
+	"./Biblioteca/include/menu/menu.h"
+	"./Biblioteca/include/generico.h"
+
+1727680617 source:c:\users\pc\desktop\tp-4\reproductorconlistacircular.c
+	"reproductorConListaCircular.h"
+
