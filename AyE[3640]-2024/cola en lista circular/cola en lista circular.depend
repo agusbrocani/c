@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1654449800 source:f:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\cola en lista circular\main.c
+	<stdio.h>
+	<stdlib.h>
+	"cola.h"
+
+1656871242 source:f:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\cola en lista circular\cola.c
+	"cola.h"
+
+1656871242 f:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\cola en lista circular\cola.h
+	<stdlib.h>
+	<string.h>
+
+1654451588 source:e:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\cola en lista circular\cola.c
+	"cola.h"
+
+1654449204 e:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\cola en lista circular\cola.h
+	<stdlib.h>
+	<string.h>
+
+1654449800 source:e:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\cola en lista circular\main.c
+	<stdio.h>
+	<stdlib.h>
+	"cola.h"
+

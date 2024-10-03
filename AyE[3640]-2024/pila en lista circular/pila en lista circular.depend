@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1656896948 source:f:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\pila en lista circular\main.c
+	<stdio.h>
+	<stdlib.h>
+	"pilaCircular.h"
+
+1584205420 source:e:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\pila en lista circular\main.c
+	<stdio.h>
+	<stdlib.h>
+
+1654313804 source:e:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\pila en lista circular\pilacircular.c
+	"pilaCircular.h"
+
+1654313686 e:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\pila en lista circular\pilacircular.h
+	<string.h>
+	<stdlib.h>
+
+1656871242 source:f:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\pila en lista circular\pilacircular.c
+	"pilaCircular.h"
+
+1654313686 f:\unlam\3 ∞ a—o - primer cuatrimestre\programacion\estructuras de datos\pila en lista circular\pilacircular.h
+	<string.h>
+	<stdlib.h>
+
