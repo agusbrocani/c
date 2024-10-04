@@ -331,7 +331,17 @@ void mostrarConfiguracionElegida(tConfiguracion* configuracion, unsigned indiceD
 
 #define CANT_RONDAS_PROMEDIO_JUGADAS 15
 #define ERROR_BUFFER_RECONSTRUCCION_DATO 0
-int consumoAPI(tReconstruccionDato* dato, unsigned cantidadDeJugadores)
+
+#define URL_BASE "https://www.random.org/integers/"
+#define QUERY_PARAMS_FORMATO "?min=0&max=3&col=1&base=10&format=plain&rnd=new"
+#define QUERY_PARAM_CANTIDAD_DE_ELEMENTOS "&num="
+
+void construccionURL(char* URL, unsigned tam, unsigned ce)//doy la flexibilidad de usar cantidad de elementos o no
+{
+    snprintf(URL, tam, "%s%s%s%u", URL_BASE, QUERY_PARAMS_FORMATO, QUERY_PARAM_CANTIDAD_DE_ELEMENTOS, ce * CANT_RONDAS_PROMEDIO_JUGADAS);
+}
+
+int consumoAPI(tReconstruccionDato* dato, unsigned cantidadDeJugadores, void (*construccionURL)(char* URL, unsigned tam, unsigned ce))
 {
     CURL* curl;
     char URL[TAM_URL];
@@ -341,7 +351,8 @@ int consumoAPI(tReconstruccionDato* dato, unsigned cantidadDeJugadores)
         fprintf(stderr, "No hay buffer para almacenar respuesta de API.");
         return ERROR_BUFFER_RECONSTRUCCION_DATO;
     }
-    sprintf(URL, "https://www.random.org/integers/?min=0&max=3&col=1&base=10&format=plain&rnd=new&num=%u", cantidadDeJugadores * CANT_RONDAS_PROMEDIO_JUGADAS);
+
+    construccionURL(URL, sizeof(URL),cantidadDeJugadores);
 
     if(ERROR_INICIAR_ESTRUCTURA_CURL == inicializacionEstructuraCURL(&curl))
     {
@@ -411,7 +422,7 @@ int jugar(tRecursos* recursos)
             return NO_PUDE_RESERVAR_MEMORIA;
         }
 
-        if(OK != (retornoCodigoError = consumoAPI(&(recursos->datoRespuestaAPI), recursos->cantidadDeJugadores)))
+        if(OK != (retornoCodigoError = consumoAPI(&(recursos->datoRespuestaAPI), recursos->cantidadDeJugadores, construccionURL)))
         {
             fprintf(stderr, "No pude consumir API. Codigo de error: %d.", retornoCodigoError);
             vaciarListaSimple(&(recursos->listaDeJugadores));
