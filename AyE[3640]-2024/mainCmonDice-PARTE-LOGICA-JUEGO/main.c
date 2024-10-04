@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <windows.h>
-#include <curl/curl.h>
-#include "./Biblioteca/include/listaSimple/listaSimple.h"
+#include <windows.h>//AJUSTAR CONSOLA
+#include <curl/curl.h>//CONSUMIR API
+#include "./Biblioteca/include/listaSimple/listaSimple.h"//JUEGO
 #include "./Biblioteca/include/menu/menu.h"
 #include "./Biblioteca/include/generico.h"
 
@@ -41,14 +41,14 @@ typedef struct
     void* buffer;
     size_t cantBytesCopiados;
     size_t cantBytesReservados;
-}tReconstruccionDato;
+} tReconstruccionDato;
 
 typedef struct
 {
     unsigned tiempoDeVisualizacionSecuenciaCorrecta;
     unsigned tiempoRespuestaPorRonda;
     unsigned cantidadDeVidas;
-}tConfiguracion;
+} tConfiguracion;
 
 typedef struct
 {
@@ -57,7 +57,7 @@ typedef struct
     unsigned cantidadDeVidas;
     t_lista rondasJugadas;
     t_lista secuenciaFinalRespondida;///COLA PARA GRABAR, PILA PARA USO DE VIDAS
-}tJugador;
+} tJugador;
 
 #define CANTIDAD_DE_NIVELES 3
 typedef struct
@@ -67,7 +67,7 @@ typedef struct
     t_lista listaDeJugadores;
     unsigned cantidadDeJugadores;
     tReconstruccionDato datoRespuestaAPI;
-}tRecursos;
+} tRecursos;
 
 ///***********************************************************CURL***********************************************************/
 size_t datosObtenidosDeRespuestaURL(const char* bufferParaDatosRecibidos, size_t itemSize, size_t nItems, void* sDato)
@@ -76,21 +76,20 @@ size_t datosObtenidosDeRespuestaURL(const char* bufferParaDatosRecibidos, size_t
     void* returnRealloc;
     //+1 para el \0
     while(
-       (cantidadDeBytesRecibidos + 1) > ((tReconstruccionDato*)sDato)->cantBytesReservados - ((tReconstruccionDato*)sDato)->cantBytesCopiados
-       )
+        (cantidadDeBytesRecibidos + 1) > ((tReconstruccionDato*)sDato)->cantBytesReservados - ((tReconstruccionDato*)sDato)->cantBytesCopiados
+    )
     {
-        system("pause");
         (((tReconstruccionDato*)sDato)->cantBytesReservados) += CANT_BYTES_MEMORIA_RESERVADA;
         returnRealloc = realloc(((tReconstruccionDato*)sDato)->buffer, ((tReconstruccionDato*)sDato)->cantBytesReservados);
         if(NULL == returnRealloc)
         {
-            fprintf(stderr, "No pude hacer realloc.");
+            fprintf(stderr, "No pude hacer realloc.\n");
             return NO_PUDE_HACER_REALLOC;
         }
         ((tReconstruccionDato*)sDato)->buffer = returnRealloc;
     }
 
-    memcpy(((tReconstruccionDato*)sDato)->buffer + ((tReconstruccionDato*)sDato)->cantBytesCopiados , bufferParaDatosRecibidos, cantidadDeBytesRecibidos);
+    memcpy(((tReconstruccionDato*)sDato)->buffer + ((tReconstruccionDato*)sDato)->cantBytesCopiados, bufferParaDatosRecibidos, cantidadDeBytesRecibidos);
     (((tReconstruccionDato*)sDato)->cantBytesCopiados) += cantidadDeBytesRecibidos;
     ((char*)(((tReconstruccionDato*)sDato)->buffer))[((tReconstruccionDato*)sDato)->cantBytesCopiados] = '\0';
 
@@ -139,7 +138,7 @@ void mostrarJugador(const void* dato)
     printf("[ID: %u]%s\n",
            ((tJugador*)dato)->id,
            ((tJugador*)dato)->nya
-           );
+          );
 }
 
 int validoIngresoDeNombre(const char* cadena)
@@ -152,7 +151,7 @@ int validoIngresoDeNombre(const char* cadena)
     while('\0' != *cadena)
     {
         if((!ES_LETRA(*cadena) && !ES_BLANCO(*cadena)) ||
-           ((ES_LETRA(*cadena) && '\0' != *(cadena + 1) && ES_BLANCO(*(cadena + 1)) && '\0' != *(cadena + 2) && !ES_LETRA(*(cadena + 2)))))
+                ((ES_LETRA(*cadena) && '\0' != *(cadena + 1) && ES_BLANCO(*(cadena + 1)) && '\0' != *(cadena + 2) && !ES_LETRA(*(cadena + 2)))))
         {
             return NOMBRE_INVALIDO;
         }
@@ -204,20 +203,22 @@ int ingresoDeNombresAListaSimple(t_lista* listaDeJugadores, unsigned* cantidadDe
 
         if(CARACTER_DE_SALIDA == *(jugador.nya) && '\0' == *(jugador.nya + 1))
         {
-                ingresoNombres = 0;
-        }else if(!validoIngresoDeNombre(jugador.nya))
-            {
-                printf("\nIngreso de nombre invalido, intente nuevamente.\n");
-                system("pause");
-            }
-            else
-            {
-                (jugador.id)++;///SOLO SI ES UN NOMBRE VALIDO LE ASIGNO ID
-                (*cantidadDeJugadores) = jugador.id;
-                insertarAlFinalEnListaSimple(listaDeJugadores, &jugador, sizeof(tJugador));
-            }
-            system("cls");
-    }while(ingresoNombres);
+            ingresoNombres = 0;
+        }
+        else if(!validoIngresoDeNombre(jugador.nya))
+        {
+            printf("\nIngreso de nombre invalido, intente nuevamente.\n");
+            system("pause");
+        }
+        else
+        {
+            (jugador.id)++;///SOLO SI ES UN NOMBRE VALIDO LE ASIGNO ID
+            (*cantidadDeJugadores) = jugador.id;
+            insertarAlFinalEnListaSimple(listaDeJugadores, &jugador, sizeof(tJugador));
+        }
+        system("cls");
+    }
+    while(ingresoNombres);
 
     if(!*cantidadDeJugadores)
     {
@@ -243,14 +244,15 @@ int defineIndiceDeNivelSegunCaracter(char caracter)
     if(FACIL == caracter)
     {
         return INDICE_NIVEL_FACIL;
-    }else if(MEDIO == caracter)
-        {
-            return INDICE_NIVEL_MEDIO;
-        }
-        else if(DIFICIL == caracter)
-        {
-            return INDICE_NIVEL_DIFICIL;
-        }
+    }
+    else if(MEDIO == caracter)
+    {
+        return INDICE_NIVEL_MEDIO;
+    }
+    else if(DIFICIL == caracter)
+    {
+        return INDICE_NIVEL_DIFICIL;
+    }
 
     return INDICE_INVALIDO;
 }
@@ -273,7 +275,8 @@ void ingresoDeNivel(unsigned* indiceDeNivelDeConfiguracionElegida)//aca no soy t
             system("pause");
         }
         system("cls");
-    }while(INDICE_INVALIDO == indiceNivelDeDificultad);
+    }
+    while(INDICE_INVALIDO == indiceNivelDeDificultad);
     printf("Nivel de dificultad ingresado: %c\n", nivelDeDificultadIngresado);
 
     *indiceDeNivelDeConfiguracionElegida = indiceNivelDeDificultad;
@@ -295,15 +298,15 @@ int cargarConfiguraciones(FILE* aConfiguracion, tConfiguracion* configuraciones)
     {
         if(INDICE_INVALIDO == (indice = defineIndiceDeNivelSegunCaracter(*buffer)))
         {
-            fprintf(stderr, "Error de grabacion de archivo de configuraciones: LETRA INICIAL INCORRECTA.");
+            fprintf(stderr, "Error de grabacion de archivo de configuraciones: LETRA INICIAL INCORRECTA.\n");
             return ARCHIVO_TXT_DE_CONFIGURACION_CON_ERRORES;
         }
 
         sscanf(buffer, "%*c|%u|%u|%u",
-           &(configuraciones[indice].tiempoDeVisualizacionSecuenciaCorrecta),
-           &(configuraciones[indice].tiempoRespuestaPorRonda),
-           &(configuraciones[indice].cantidadDeVidas)
-        );//%*c ignora la primer letra
+               &(configuraciones[indice].tiempoDeVisualizacionSecuenciaCorrecta),
+               &(configuraciones[indice].tiempoRespuestaPorRonda),
+               &(configuraciones[indice].cantidadDeVidas)
+              );//%*c ignora la primer letra
 
         if(
             !(configuraciones[indice].tiempoDeVisualizacionSecuenciaCorrecta > MIN_TIEMPO_JUEGO_POR_RONDA && configuraciones[indice].tiempoDeVisualizacionSecuenciaCorrecta <= MAX_TIEMPO_JUEGO_POR_RONDA) ||
@@ -311,7 +314,7 @@ int cargarConfiguraciones(FILE* aConfiguracion, tConfiguracion* configuraciones)
             !(configuraciones[indice].cantidadDeVidas >= MIN_CANT_VIDAS && configuraciones[indice].cantidadDeVidas <= MAX_CANT_VIDAS)
         )
         {
-            fprintf(stderr, "Error de grabacion de archivo de configuraciones: VALORES FUERA DE RANGO.");
+            fprintf(stderr, "Error de grabacion de archivo de configuraciones: VALORES FUERA DE RANGO.\n");
             return ARCHIVO_TXT_DE_CONFIGURACION_CON_ERRORES;
         }
     }
@@ -323,7 +326,7 @@ void mostrarConfiguracionElegida(tConfiguracion* configuracion, unsigned indiceD
     printf("Configuracion seleccionada:\n");
     printf("\tNivel de dificultad: %s.\n",
            INDICE_NIVEL_FACIL == indiceDeNivelDeConfiguracionElegida ? "FACIL" : INDICE_NIVEL_MEDIO == indiceDeNivelDeConfiguracionElegida ? "MEDIO" : "DIFICIL"
-           );
+          );
     printf("\tTiempo de visualizacion de secuencia: %u.\n", configuracion[indiceDeNivelDeConfiguracionElegida].tiempoDeVisualizacionSecuenciaCorrecta);
     printf("\tTiempo de respuesta: %u.\n", configuracion[indiceDeNivelDeConfiguracionElegida].tiempoRespuestaPorRonda);
     printf("\tCantidad de vidas: %u.\n", configuracion[indiceDeNivelDeConfiguracionElegida].cantidadDeVidas);
@@ -348,7 +351,7 @@ int consumoAPI(tReconstruccionDato* dato, unsigned cantidadDeJugadores, void (*c
 
     if(NULL == dato->buffer)
     {
-        fprintf(stderr, "No hay buffer para almacenar respuesta de API.");
+        fprintf(stderr, "No hay buffer para almacenar respuesta de API.\n");
         return ERROR_BUFFER_RECONSTRUCCION_DATO;
     }
 
@@ -370,7 +373,7 @@ int consumoAPI(tReconstruccionDato* dato, unsigned cantidadDeJugadores, void (*c
         return ERROR_SOLICITUD_HTTPS;
     }
 
-    fprintf(stdout, "%s",(char*)(dato->buffer));
+    fprintf(stdout, "%s\n",(char*)(dato->buffer));
 
     curl_easy_cleanup(curl);
 
@@ -417,27 +420,27 @@ int jugar(tRecursos* recursos)
         (recursos->datoRespuestaAPI).buffer = malloc(CANT_BYTES_MEMORIA_RESERVADA);
         if(NULL == (recursos->datoRespuestaAPI).buffer)
         {
-            fprintf(stderr,"No pude reservar memoria para buffer de respuesta de API. Codigo de error: %d.", NO_PUDE_RESERVAR_MEMORIA);
+            fprintf(stderr, "No pude reservar memoria para buffer de respuesta de API.\n");
             vaciarListaSimple(&(recursos->listaDeJugadores));
             return NO_PUDE_RESERVAR_MEMORIA;
         }
 
         if(OK != (retornoCodigoError = consumoAPI(&(recursos->datoRespuestaAPI), recursos->cantidadDeJugadores, construccionURL)))
         {
-            fprintf(stderr, "No pude consumir API. Codigo de error: %d.", retornoCodigoError);
+            fprintf(stderr, "No pude consumir API.\n");
             vaciarListaSimple(&(recursos->listaDeJugadores));
             free((recursos->datoRespuestaAPI).buffer);
             return retornoCodigoError;
         }
 
         ///TODO:
-            ///PASAR ESTO AL OTRO PROYECTO
+        ///PASAR ESTO AL OTRO PROYECTO
         ///CODEAR LOGICA DE RONDAS
-            //ANALIZAR USO DE ENUM
-            //char letrasDeSecuencia[] = {COLOR_VERDE, COLOR_AMARILLO, COLOR_ROJO, COLOR_NARANJA};
-            //CALCULAR PUNTOS POR JUGADOR POR RONDA
-            //IR CALCULANDO EL TOTAL DE PUNTOS PARA NO VOLVER A RECORRER
-            //COLA DE GANADORES[cuanto termina de jugar el primero, lo acolo, luego, comparo con el primero de la cola]-> solo guardar ID, NOMBRE Y PUNTOS que consiguio para ganr
+        //ANALIZAR USO DE ENUM
+        //char letrasDeSecuencia[] = {COLOR_VERDE, COLOR_AMARILLO, COLOR_ROJO, COLOR_NARANJA};
+        //CALCULAR PUNTOS POR JUGADOR POR RONDA
+        //IR CALCULANDO EL TOTAL DE PUNTOS PARA NO VOLVER A RECORRER
+        //COLA DE GANADORES[cuanto termina de jugar el primero, lo acolo, luego, comparo con el primero de la cola]-> solo guardar ID, NOMBRE Y PUNTOS que consiguio para ganr
         ///CODEAR FORMATO DEL INFORME
     }
     //RESETEO TODOS LOS PARAMETROS PARA VOLVER A JUGAR
@@ -450,8 +453,8 @@ void switchTextoMenu(int opcion, void* recursosMenu)
 {
     switch(opcion)
     {
-        case JUGAR:
-            jugar(recursosMenu);
+    case JUGAR:
+        jugar(recursosMenu);
         break;
     }
 }
@@ -476,7 +479,9 @@ void obtenerTamanoConsola()
 
         printf("Tamaño del buffer: %d x %d (ancho x alto)\n", tamBuffer.X, tamBuffer.Y);
         printf("Tamaño de la ventana: %d x %d (ancho x alto)\n", ventana.Right - ventana.Left + 1, ventana.Bottom - ventana.Top + 1);
-    } else {
+    }
+    else
+    {
         printf("No se pudo obtener la información de la consola.\n");
     }
 }
@@ -514,9 +519,9 @@ int main()
     FILE* aConfiguracion;
     char textoMenuPrincipal[][MAX_TAM_TEXTO] =
     {
-      "Cmon-dice:",
-      "[A] Jugar.",
-      "[B] Salida."
+        "Cmon-dice:",
+        "[A] Jugar.",
+        "[B] Salida."
     };
     unsigned cantidadDeRegistros = sizeof(textoMenuPrincipal) / MAX_TAM_TEXTO;
 
