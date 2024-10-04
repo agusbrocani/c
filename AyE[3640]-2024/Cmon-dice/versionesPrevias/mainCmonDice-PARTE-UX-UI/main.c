@@ -3,6 +3,7 @@
 #include "./Biblioteca/include/listaSimple/listaSimple.h"
 #include "./Biblioteca/include/menu/menu.h"
 #include "./Biblioteca/include/generico.h"
+#include <windows.h>
 
 #define JUGAR 'A'
 #define TAM_NyA 100
@@ -17,6 +18,8 @@
 #define FACIL 'F'
 #define MEDIO 'M'
 #define DIFICIL 'D'
+
+#define CARACTERES_VALIDOS_A_INGRESAR_PARA_SECUENCIA "X-V-A-R-N"
 
 typedef struct
 {
@@ -45,9 +48,9 @@ typedef struct
 
 void mostrarJugador(const void* dato)
 {
-    printf("Nya: %s\n[ID: %u]\n",
-           ((tJugador*)dato)->nya,
-           ((tJugador*)dato)->id
+    printf("[ID: %u]%s\n",
+           ((tJugador*)dato)->id,
+           ((tJugador*)dato)->nya
            );
 }
 
@@ -77,6 +80,7 @@ int validoIngresoDeNombre(const char* cadena)
     return OK;
 }
 
+#define CARACTER_DE_SALIDA 'X'
 int ingresoDeNombresAListaSimple(t_lista* listaDeJugadores, unsigned* cantidadDeJugadores)
 {
     tJugador jugador;
@@ -86,20 +90,20 @@ int ingresoDeNombresAListaSimple(t_lista* listaDeJugadores, unsigned* cantidadDe
     jugador.id = 0;
     *cantidadDeJugadores = 0;
 
-    printf("NOMBRES DE LOS JUGADORES.\n");
+    printf("\t\tINGRESO DE NOMBRES DE LOS JUGADORES\n");
     printf(" _______________________________________________________________________\n");
     printf("|Reglas de formato de ingreso:                                          |\n");
     printf("|-Solo puede hacer ingreso de caracteres LETRA o ESPACIO para nombre.   |\n");
     printf("|-Solo puede utilizar un ESPACIO entre dos caracteres LETRA para nombre.|\n");
     printf("|-Al finalizar ingreso de nombre, presione ENTER.                       |\n");
-    printf("|FINALIZAR INGRESO DE NOMBRES: ingrese 0 y presione ENTER.              |\n");
-    printf("|_______________________________________________________________________|\n");
+    printf("|FINALIZAR INGRESO DE NOMBRES: ingrese 'X' y presione ENTER.            |\n");
+    printf("|_______________________________________________________________________|\n\n");
     system("pause");
     system("cls");
 
     do
     {
-        printf("[FINALIZAR INGRESO DE NOMBRE DE LOS JUGADORES: ingrese 0 y presione ENTER]\n");
+        printf("[FINALIZAR INGRESO DE NOMBRE DE LOS JUGADORES: ingrese 'X' y presione ENTER]\n");
         printf("\nIngrese Nombre de Jugador con ID = %d:\t", jugador.id + 1);
         fflush(stdin);
         fgets(jugador.nya, TAM_NyA, stdin);
@@ -108,8 +112,9 @@ int ingresoDeNombresAListaSimple(t_lista* listaDeJugadores, unsigned* cantidadDe
         {
             *retorno = '\0';
         }
+        *(jugador.nya) = ES_LETRA(*(jugador.nya)) ? A_MAYUS(*(jugador.nya)) : *(jugador.nya);
 
-        if('0' == *(jugador.nya) && '\0' == *(jugador.nya + 1))
+        if(CARACTER_DE_SALIDA == *(jugador.nya) && '\0' == *(jugador.nya + 1))
         {
                 ingresoNombres = 0;
         }else if(!validoIngresoDeNombre(jugador.nya))
@@ -162,7 +167,7 @@ int defineIndiceDeNivelSegunCaracter(char caracter)
     return INDICE_INVALIDO;
 }
 
-void ingresoDeNivel(unsigned* indiceDeNivelDeConfiguracionElegida)
+void ingresoDeNivel(unsigned* indiceDeNivelDeConfiguracionElegida)//aca no soy tan estricto con lo que ingresa porque me interesa que elija uno
 {
     int indiceNivelDeDificultad;
     char nivelDeDificultadIngresado;
@@ -231,10 +236,16 @@ void mostrarConfiguracionElegida(tConfiguracion* configuracion, unsigned indiceD
     printf("\tNivel de dificultad: %s.\n",
            INDICE_NIVEL_FACIL == indiceDeNivelDeConfiguracionElegida ? "FACIL" : INDICE_NIVEL_MEDIO == indiceDeNivelDeConfiguracionElegida ? "MEDIO" : "DIFICIL"
            );
-    printf("\tTiempo de visualizacion de secuencia: %u\n", configuracion[indiceDeNivelDeConfiguracionElegida].tiempoDeVisualizacionSecuenciaCorrecta);
-    printf("\tTiempo de respuesta: %u\n", configuracion[indiceDeNivelDeConfiguracionElegida].tiempoRespuestaPorRonda);
-    printf("\tCantidad de vidas: %u\n", configuracion[indiceDeNivelDeConfiguracionElegida].cantidadDeVidas);
+    printf("\tTiempo de visualizacion de secuencia: %u.\n", configuracion[indiceDeNivelDeConfiguracionElegida].tiempoDeVisualizacionSecuenciaCorrecta);
+    printf("\tTiempo de respuesta: %u.\n", configuracion[indiceDeNivelDeConfiguracionElegida].tiempoRespuestaPorRonda);
+    printf("\tCantidad de vidas: %u.\n", configuracion[indiceDeNivelDeConfiguracionElegida].cantidadDeVidas);
 }
+
+#define USO_DE_VIDA 'X'
+#define COLOR_VERDE 'V'
+#define COLOR_AMARILLO 'A'
+#define COLOR_ROJO 'R'
+#define COLOR_NARANJA 'N'
 
 void jugar(void* recursos)
 {
@@ -248,16 +259,25 @@ void jugar(void* recursos)
         mezclarListaSimpleAleatoriamente(&(((tRecursosMenu*)recursos)->listaDeJugadores), ((tRecursosMenu*)recursos)->cantidadDeJugadores);
 
         system("cls");
+        mostrarConfiguracionElegida(((tRecursosMenu*)recursos)->configuraciones,((tRecursosMenu*)recursos)->indiceDeNivelDeConfiguracionElegida);
+        printf("\nCaracteres validos para ingreso en secuencias: %s\n", CARACTERES_VALIDOS_A_INGRESAR_PARA_SECUENCIA);
+        printf("\tX: uso de vida.\n");
+        printf("\tV: color verde.\n");
+        printf("\tA: color amarillo.\n");
+        printf("\tR: color rojo.\n");
+        printf("\tN: color naranja.\n\n");
+        system("pause");
+        system("cls");
         printf("Lista de jugadores en el orden que deben jugar:\n");
         mostrarListaSimpleEnOrden(&(((tRecursosMenu*)recursos)->listaDeJugadores), mostrarJugador);
-        mostrarConfiguracionElegida(((tRecursosMenu*)recursos)->configuraciones,((tRecursosMenu*)recursos)->indiceDeNivelDeConfiguracionElegida);
-        printf("\n");
         system("pause");
         system("cls");
         printf("\n**************************ARRANCA EL JUEGO**************************\n");
         ///TODO:
             ///PASAR ESTO AL OTRO PROYECTO
         ///CODEAR LOGICA DE RONDAS
+            //ANALIZAR USO DE ENUM
+            //char letrasDeSecuencia[] = {COLOR_VERDE, COLOR_AMARILLO, COLOR_ROJO, COLOR_NARANJA};
             //CALCULAR PUNTOS POR JUGADOR POR RONDA
             //IR CALCULANDO EL TOTAL DE PUNTOS PARA NO VOLVER A RECORRER
             //COLA DE GANADORES[cuanto termina de jugar el primero, lo acolo, luego, comparo con el primero de la cola]-> solo guardar ID, NOMBRE Y PUNTOS que consiguio para ganr
@@ -275,6 +295,55 @@ void switchTextoMenu(int opcion, void* recursosMenu)
             jugar(recursosMenu);
         break;
     }
+}
+
+///TAM CONSOLA: seria conveniente que por un tema de UX/UI siempre se fije el tam de la consola para ver los textos con el formato seteado.
+void obtenerTamanoConsola()
+{
+    // Obtener el handle de la consola
+    HANDLE hConsola = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    // Estructura para obtener la información de la consola
+    CONSOLE_SCREEN_BUFFER_INFO infoConsola;
+
+    // Obtener información actual de la consola
+    if(GetConsoleScreenBufferInfo(hConsola, &infoConsola))
+    {
+        // Tamaño del buffer de la consola
+        COORD tamBuffer = infoConsola.dwSize;
+
+        // Tamaño de la ventana de la consola
+        SMALL_RECT ventana = infoConsola.srWindow;
+
+        printf("Tamaño del buffer: %d x %d (ancho x alto)\n", tamBuffer.X, tamBuffer.Y);
+        printf("Tamaño de la ventana: %d x %d (ancho x alto)\n", ventana.Right - ventana.Left + 1, ventana.Bottom - ventana.Top + 1);
+    } else {
+        printf("No se pudo obtener la información de la consola.\n");
+    }
+}
+
+void ajustarTamConsola()
+{
+    // Obtener el handle de la consola
+    HANDLE hConsola = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    // Definir el tamaño del buffer (120 columnas x 9001 filas)
+    COORD tamBuffer;
+    tamBuffer.X = 120;   // Ancho del buffer
+    tamBuffer.Y = 9001;  // Alto del buffer
+
+    // Establecer el tamaño del buffer
+    SetConsoleScreenBufferSize(hConsola, tamBuffer);
+
+    // Definir el tamaño de la ventana (120x30 caracteres)
+    SMALL_RECT ventana;
+    ventana.Left = 0;
+    ventana.Top = 0;
+    ventana.Right = 120 - 1;  // Ancho de la ventana
+    ventana.Bottom = 30 - 1;  // Alto de la ventana
+
+    // Ajustar el tamaño de la ventana de la consola
+    SetConsoleWindowInfo(hConsola, TRUE, &ventana);
 }
 
 #define NOMBRE_ARCHIVO_TXT_CONFIGURACION "config.txt"
@@ -304,7 +373,11 @@ int main()
         fclose(aConfiguracion);
         return ARCHIVO_TXT_DE_CONFIGURACION_CON_ERRORES;
     }
-
+///*********************************TAM CONSOLA*********************************
+    ajustarTamConsola();
+//    obtenerTamanoConsola();
+//    system("pause");
+///*********************************TAM CONSOLA*********************************
     menu(textoMenuPrincipal, cantidadDeRegistros, switchTextoMenu, &recursos, DESACTIVAR_AYUDA_AL_USUARIO);
 
     vaciarListaSimple(&recursos.listaDeJugadores);

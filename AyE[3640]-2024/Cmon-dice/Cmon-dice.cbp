@@ -31,6 +31,29 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="Biblioteca/src/cola/cola.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Biblioteca/src/generico.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Biblioteca/src/listaSimple/listaSimple.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Biblioteca/src/menu/arbol.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Biblioteca/src/menu/menu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="curl.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="curl.h" />
+		<Unit filename="funciones.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="funciones.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

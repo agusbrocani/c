@@ -6,7 +6,8 @@ int main()
     tReconstruccionDato dato;
     char URL[TAM_URL];
     unsigned cantidadDeNumeros = 1000;///12 JUGADORES 10 A 15  RONDAS PROMEDIO -> 10 * 15
-    sprintf(URL, "https://www.random.org/integers/?min=0&max=3&col=1&base=10&format=plain&rnd=new&num=%u", cantidadDeNumeros);
+//    sprintf(URL, "https://www.random.org/integers/?min=0&max=3&col=1&base=10&format=plain&rnd=new&num=%u", cantidadDeNumeros);
+    sprintf(URL, "https://www.random.org/integers/?min=999999999999&max=999999999999&col=1&base=10&format=plain&rnd=new&num=%u", cantidadDeNumeros);
 
     ///INGRESO DE NOMBRES Y COSAS POR EL ESTILO
 

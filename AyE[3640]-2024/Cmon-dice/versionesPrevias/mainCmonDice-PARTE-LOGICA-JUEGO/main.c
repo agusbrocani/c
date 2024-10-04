@@ -1,22 +1,21 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h>///***PASADO***
+#include <stdlib.h>///***PASADO***
 #include <windows.h>//AJUSTAR CONSOLA
-#include <curl/curl.h>//CONSUMIR API
-#include "./Biblioteca/include/listaSimple/listaSimple.h"//JUEGO
-#include "./Biblioteca/include/menu/menu.h"
-#include "./Biblioteca/include/generico.h"
+#include <curl/curl.h>///***PASADO***
+#include "./Biblioteca/include/listaSimple/listaSimple.h"///***PASADO***
+#include "./Biblioteca/include/menu/menu.h"///***PASADO***
+#include "./Biblioteca/include/generico.h"///***PASADO***
 
 
 /**UX-UI JUEGO*/
 #define JUGAR 'A'
-#define TAM_NyA 100
+#define TAM_NyA 100 ///***PASADO***
 #define ES_LETRA(X) (((X) >= 'A' && (X) <= 'Z') || ((X) >= 'a' && (X) <= 'z'))
 #define ES_BLANCO(X) (' ' == (X))
 #define NOMBRE_INVALIDO 0
 #define OK 1
 #define NO_HAY_JUGADORES 0
 
-#define TAM_NyA 100
 
 #define FACIL 'F'
 #define MEDIO 'M'
@@ -29,26 +28,41 @@
 
 #define TAM_URL 1000
 
-#define NO_PUDE_HACER_REALLOC 0
-#define NO_PUDE_RESERVAR_MEMORIA -32767
-#define ERROR_INICIAR_ESTRUCTURA_CURL -1
-#define ERROR_SOLICITUD_HTTPS -2
+#define NO_PUDE_HACER_REALLOC 0///***PASADO***
+#define NO_PUDE_RESERVAR_MEMORIA -32767 ///***PASADO***
+#define ERROR_INICIAR_ESTRUCTURA_CURL -1///***PASADO***
+#define ERROR_SOLICITUD_HTTPS -2///***PASADO***
 
-#define CERTIFICADO_SITIO_SEGURO "random-org.pem"
+#define CERTIFICADO_SITIO_SEGURO "random-org.pem"///***PASADO***
 ///CURL
+#define RESPUESTA_SERVIDOR_OK_MIN 200///***PASADO***
+#define RESPUESTA_SERVIDOR_OK_MAX 299///***PASADO***
+
+#define RESPUESTA_SERVIDOR_ERROR_CLIENTE_MIN 400///***PASADO***
+#define RESPUESTA_SERVIDOR_ERROR_CLIENTE_MAX 499///***PASADO***
+
+#define RESPUESTA_SERVIDOR_ERROR_SERVIDOR_MIN 500///***PASADO***
+#define RESPUESTA_SERVIDOR_ERROR_SERVIDOR_MAX 599///***PASADO***
+
+#define RESPUESTA_SERVIDOR_INFORMATIVA_MIN 100///***PASADO***
+#define RESPUESTA_SERVIDOR_INFORMATIVA_MAX 199///***PASADO***
+
+#define RESPUESTA_SERVIDOR_REDIRECCION_MIN 300///***PASADO***
+#define RESPUESTA_SERVIDOR_REDIRECCION_MAX 399///***PASADO***
+
 typedef struct
 {
     void* buffer;
     size_t cantBytesCopiados;
     size_t cantBytesReservados;
-} tReconstruccionDato;
+} tReconstruccionDato;///***PASADO***
 
 typedef struct
 {
     unsigned tiempoDeVisualizacionSecuenciaCorrecta;
     unsigned tiempoRespuestaPorRonda;
     unsigned cantidadDeVidas;
-} tConfiguracion;
+} tConfiguracion;///***PASADO***
 
 typedef struct
 {
@@ -57,7 +71,7 @@ typedef struct
     unsigned cantidadDeVidas;
     t_lista rondasJugadas;
     t_lista secuenciaFinalRespondida;///COLA PARA GRABAR, PILA PARA USO DE VIDAS
-} tJugador;
+} tJugador;///***PASADO***
 
 #define CANTIDAD_DE_NIVELES 3
 typedef struct
@@ -67,7 +81,8 @@ typedef struct
     t_lista listaDeJugadores;
     unsigned cantidadDeJugadores;
     tReconstruccionDato datoRespuestaAPI;
-} tRecursos;
+    char* cadenaConIndices;
+} tRecursos;///***PASADO***
 
 ///***********************************************************CURL***********************************************************/
 size_t datosObtenidosDeRespuestaURL(const char* bufferParaDatosRecibidos, size_t itemSize, size_t nItems, void* sDato)
@@ -108,7 +123,7 @@ int inicializacionEstructuraCURL(CURL** curl)
     return OK;
 }
 
-void configuracionEstructuraCURL(CURL* curl, const char* URL,void* dato)
+void configuracionEstructuraCURL(CURL* curl, const char* URL, void* dato)
 {
     curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 1L);
     curl_easy_setopt(curl, CURLOPT_CAINFO, CERTIFICADO_SITIO_SEGURO);
@@ -122,13 +137,16 @@ void configuracionEstructuraCURL(CURL* curl, const char* URL,void* dato)
 int ejecutarSolicitudHTTPS(CURL* curl)
 {
     CURLcode resultadoDeSolicitudHTTPS;
+    long codigoDeRepuestaHTTPS = 0;
 
-    if(CURLE_OK != (resultadoDeSolicitudHTTPS = curl_easy_perform(curl)))
+    resultadoDeSolicitudHTTPS = curl_easy_perform(curl);
+    curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE, &codigoDeRepuestaHTTPS);
+    if(CURLE_OK != resultadoDeSolicitudHTTPS)
     {
         fprintf(stderr, "Fallo en la solicitud HTTPS: %s.\n", curl_easy_strerror(resultadoDeSolicitudHTTPS));
-        return ERROR_SOLICITUD_HTTPS;
     }
-    return OK;
+
+    return codigoDeRepuestaHTTPS;
 }
 
 /*****************************/
@@ -303,10 +321,10 @@ int cargarConfiguraciones(FILE* aConfiguracion, tConfiguracion* configuraciones)
         }
 
         sscanf(buffer, "%*c|%u|%u|%u",
-               &(configuraciones[indice].tiempoDeVisualizacionSecuenciaCorrecta),
-               &(configuraciones[indice].tiempoRespuestaPorRonda),
-               &(configuraciones[indice].cantidadDeVidas)
-              );//%*c ignora la primer letra
+            &(configuraciones[indice].tiempoDeVisualizacionSecuenciaCorrecta),
+            &(configuraciones[indice].tiempoRespuestaPorRonda),
+            &(configuraciones[indice].cantidadDeVidas)
+        );//%*c ignora la primer letra
 
         if(
             !(configuraciones[indice].tiempoDeVisualizacionSecuenciaCorrecta > MIN_TIEMPO_JUEGO_POR_RONDA && configuraciones[indice].tiempoDeVisualizacionSecuenciaCorrecta <= MAX_TIEMPO_JUEGO_POR_RONDA) ||
@@ -348,6 +366,7 @@ int consumoAPI(tReconstruccionDato* dato, unsigned cantidadDeJugadores, void (*c
 {
     CURL* curl;
     char URL[TAM_URL];
+    int retornoCodigoDeError;
 
     if(NULL == dato->buffer)
     {
@@ -367,10 +386,19 @@ int consumoAPI(tReconstruccionDato* dato, unsigned cantidadDeJugadores, void (*c
     dato->cantBytesCopiados = 0;
 
     configuracionEstructuraCURL(curl, URL, dato);
-    if(ERROR_SOLICITUD_HTTPS == ejecutarSolicitudHTTPS(curl))
+    retornoCodigoDeError = ejecutarSolicitudHTTPS(curl);
+    if(!(retornoCodigoDeError >= RESPUESTA_SERVIDOR_OK_MIN && retornoCodigoDeError <= RESPUESTA_SERVIDOR_OK_MAX))
     {
+        fprintf(stderr, "Codigo de error: %d. %s.\n", retornoCodigoDeError,
+                retornoCodigoDeError >= RESPUESTA_SERVIDOR_ERROR_CLIENTE_MIN && retornoCodigoDeError <= RESPUESTA_SERVIDOR_ERROR_CLIENTE_MAX ? "Error del Cliente" :
+                retornoCodigoDeError >= RESPUESTA_SERVIDOR_ERROR_SERVIDOR_MIN && retornoCodigoDeError <= RESPUESTA_SERVIDOR_ERROR_SERVIDOR_MAX ? "Error del Servidor" :
+                retornoCodigoDeError >= RESPUESTA_SERVIDOR_INFORMATIVA_MIN && retornoCodigoDeError <= RESPUESTA_SERVIDOR_INFORMATIVA_MAX ? "Mensaje informativo del Servidor" :
+                retornoCodigoDeError >= RESPUESTA_SERVIDOR_REDIRECCION_MIN && retornoCodigoDeError <= RESPUESTA_SERVIDOR_REDIRECCION_MAX ? "Redireccion" :
+                "Ocurrio un error en el codigo de CURL"
+                );
+
         curl_easy_cleanup(curl);
-        return ERROR_SOLICITUD_HTTPS;
+        return retornoCodigoDeError;
     }
 
     fprintf(stdout, "%s\n",(char*)(dato->buffer));
@@ -380,15 +408,117 @@ int consumoAPI(tReconstruccionDato* dato, unsigned cantidadDeJugadores, void (*c
     return OK;
 }
 
+void imprimirResultados(FILE* pf, tRecursos* recursos)
+{
+    fprintf(pf, "\nIMPLEMENTAR FORMATO DE INFORME EN LA FUNCION imprimirResultado\n"
+            );
+}
+
+void construccionNombreArchivoTxtInforme(char* NOMBRE_ARCHIVO_TXT_INFORME, unsigned tam, struct tm* fechaYHora)
+{
+        snprintf(NOMBRE_ARCHIVO_TXT_INFORME, tam,
+            "informe-juego_%4d-%02d-%02d-%02d-%02d.txt",
+            fechaYHora->tm_year + 1900,
+            fechaYHora->tm_mon + 1,
+            fechaYHora->tm_mday,
+            fechaYHora->tm_hour,
+            fechaYHora->tm_min
+        );
+}
+
+#define TAM_NOMBRE_ARCHIVO_INFORME 100
+#define NO_PUDE_ABRIR_ARCHIVO_TXT_INFORME 0
+
+int generarInforme(tRecursos* recursos, void (*construccionNombreArchivoTxtInforme)(char* NOMBRE_ARCHIVO_TXT_INFORME, unsigned tam, struct tm* fechaYHora))
+{
+    FILE* aInforme;
+    char NOMBRE_ARCHIVO_TXT_INFORME[TAM_NOMBRE_ARCHIVO_INFORME];
+    time_t tiempoTranscurrido;
+    struct tm* fechaYHora;
+
+    imprimirResultados(stdout, recursos);
+
+    tiempoTranscurrido = time(NULL);
+    fechaYHora = localtime(&tiempoTranscurrido);
+
+    construccionNombreArchivoTxtInforme(NOMBRE_ARCHIVO_TXT_INFORME, sizeof(NOMBRE_ARCHIVO_TXT_INFORME), fechaYHora);
+
+    if(!abrirArchivo(&aInforme, NOMBRE_ARCHIVO_TXT_INFORME, "wt"))
+    {
+        return NO_PUDE_ABRIR_ARCHIVO_TXT_INFORME;
+    }
+
+    imprimirResultados(aInforme, recursos);
+
+    fclose(aInforme);
+
+    return OK;
+}
+
 #define USO_DE_VIDA 'X'
 #define COLOR_VERDE 'V'
 #define COLOR_AMARILLO 'A'
 #define COLOR_ROJO 'R'
 #define COLOR_NARANJA 'N'
+#define A_NUMERO(X) ((X) - '0')
+
+#define RESPUESTA_SERVIDOR_ERROR_FORMATO 422
+
+char obtenerCaracterDeSecuencia(const char* cadenaConIndices, const char* caracteresDeSecuencia)
+{
+    return '\0' == *cadenaConIndices ? CARACTER_DE_SALIDA : caracteresDeSecuencia[A_NUMERO(*cadenaConIndices)];
+}
+
+int validaFormatoRespuestaAPI(const char* respuesta)
+{
+    if(0 != strlen(respuesta) % 2)//SIEMPRE ES 1 CARACTER y 1 \n => la cantidad recibida es PAR(NO INCLUYO EL \0 en la validacion, se asume que esta-> lo pone mi funcion de write callback)
+    {
+        fprintf(stderr, "Respuesta de API en formato erroneo.\n");
+        return RESPUESTA_SERVIDOR_ERROR_FORMATO;
+    }
+    return OK;
+}
+
+int generarRondas(tRecursos* recursos)
+{
+    char caracteresDeSecuencia[] = {COLOR_VERDE, COLOR_AMARILLO, COLOR_ROJO, COLOR_NARANJA};
+    int retornoCodigoError;
+
+    if(
+        OK != (retornoCodigoError = consumoAPI(&(recursos->datoRespuestaAPI), recursos->cantidadDeJugadores, construccionURL)) ||
+        OK != (retornoCodigoError = validaFormatoRespuestaAPI((recursos->datoRespuestaAPI).buffer))
+    )
+    {
+        fprintf(stderr, "No pude generar rondas.\n");
+        return retornoCodigoError;
+    }
+
+    recursos->cadenaConIndices = (recursos->datoRespuestaAPI).buffer;
+    while('\0' != *(recursos->cadenaConIndices))
+    {
+        printf("LETRA OBTENIDA: %c\n", obtenerCaracterDeSecuencia(recursos->cadenaConIndices, caracteresDeSecuencia));
+        (recursos->cadenaConIndices) += 2;///porque 2?, 1 por el caracter que ya utilice y 1 por el \n
+    }
+
+    return OK;
+}
+
+int iniciarJuego(tRecursos* recursos)
+{
+    int retornoCodigoError;
+
+    if(OK != (retornoCodigoError = generarRondas(recursos)))
+    {
+        return retornoCodigoError;
+    }
+
+    return OK;
+}
 
 int jugar(tRecursos* recursos)
 {
     int retornoCodigoError;
+
     (recursos->datoRespuestaAPI).buffer = NULL;//si no hago esto, va a romper al final porque hice free de basura
 
     if(!ingresoDeNombresAListaSimple(&(recursos->listaDeJugadores), &(recursos->cantidadDeJugadores)))
@@ -402,7 +532,7 @@ int jugar(tRecursos* recursos)
 
         system("cls");
         mostrarConfiguracionElegida(recursos->configuraciones, recursos->indiceDeNivelDeConfiguracionElegida);
-        printf("\nCaracteres validos para ingreso en secuencias: %s\n", CARACTERES_VALIDOS_A_INGRESAR_PARA_SECUENCIA);
+        printf("\nCaracteres validos para ingreso en secuencias: %s.\n", CARACTERES_VALIDOS_A_INGRESAR_PARA_SECUENCIA);
         printf("\tX: uso de vida.\n");
         printf("\tV: color verde.\n");
         printf("\tA: color amarillo.\n");
@@ -425,9 +555,9 @@ int jugar(tRecursos* recursos)
             return NO_PUDE_RESERVAR_MEMORIA;
         }
 
-        if(OK != (retornoCodigoError = consumoAPI(&(recursos->datoRespuestaAPI), recursos->cantidadDeJugadores, construccionURL)))
+        if(OK != (retornoCodigoError = iniciarJuego(recursos)))
         {
-            fprintf(stderr, "No pude consumir API.\n");
+            fprintf(stderr, "No pude iniciar el juego.\n");
             vaciarListaSimple(&(recursos->listaDeJugadores));
             free((recursos->datoRespuestaAPI).buffer);
             return retornoCodigoError;
@@ -442,6 +572,12 @@ int jugar(tRecursos* recursos)
         //IR CALCULANDO EL TOTAL DE PUNTOS PARA NO VOLVER A RECORRER
         //COLA DE GANADORES[cuanto termina de jugar el primero, lo acolo, luego, comparo con el primero de la cola]-> solo guardar ID, NOMBRE Y PUNTOS que consiguio para ganr
         ///CODEAR FORMATO DEL INFORME
+
+        if(OK != (retornoCodigoError = generarInforme(recursos, construccionNombreArchivoTxtInforme)))
+        {
+            fprintf(stderr, "No pude grabar archivo de informe.\n");
+            return retornoCodigoError;
+        }
     }
     //RESETEO TODOS LOS PARAMETROS PARA VOLVER A JUGAR
     vaciarListaSimple(&(recursos->listaDeJugadores));
@@ -449,12 +585,12 @@ int jugar(tRecursos* recursos)
     return OK;
 }
 
-void switchTextoMenu(int opcion, void* recursosMenu)
+void switchTextoMenu(int opcion, void* recursos)
 {
     switch(opcion)
     {
-    case JUGAR:
-        jugar(recursosMenu);
+        case JUGAR:
+            jugar(recursos);
         break;
     }
 }
@@ -525,6 +661,12 @@ int main()
     };
     unsigned cantidadDeRegistros = sizeof(textoMenuPrincipal) / MAX_TAM_TEXTO;
 
+///*********************************TAM CONSOLA*********************************
+    ajustarTamConsola();
+//    obtenerTamanoConsola();
+//    system("pause");
+///*********************************TAM CONSOLA*********************************
+
     crearListaSimple(&recursos.listaDeJugadores);
 
     if(!abrirArchivo(&aConfiguracion, NOMBRE_ARCHIVO_TXT_CONFIGURACION, "rt"))
@@ -538,11 +680,7 @@ int main()
         fclose(aConfiguracion);
         return ARCHIVO_TXT_DE_CONFIGURACION_CON_ERRORES;
     }
-///*********************************TAM CONSOLA*********************************
-    ajustarTamConsola();
-//    obtenerTamanoConsola();
-//    system("pause");
-///*********************************TAM CONSOLA*********************************
+
     menu(textoMenuPrincipal, cantidadDeRegistros, switchTextoMenu, &recursos, DESACTIVAR_AYUDA_AL_USUARIO);
 
     vaciarListaSimple(&recursos.listaDeJugadores);

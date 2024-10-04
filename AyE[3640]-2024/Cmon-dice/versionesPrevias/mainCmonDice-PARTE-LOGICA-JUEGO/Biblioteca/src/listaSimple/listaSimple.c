@@ -179,14 +179,12 @@ void swapDeNodos(t_nodo** nodo1, t_nodo** nodo2)
 
 t_nodo** direccionDeSigNodoAnteriorAlAzar(t_nodo** base, unsigned cantidadDeElementos)
 {
-    unsigned hayQueMezclar;
     unsigned cantidadDeAvance;
 
     srand(time(NULL));
-    hayQueMezclar = rand() % 2;
-    cantidadDeAvance = rand() % cantidadDeElementos + hayQueMezclar;
+    cantidadDeAvance = rand() % cantidadDeElementos;
 
-    if(NULL == *base || !hayQueMezclar)
+    if(NULL == *base)
     {
         return NULL;
     }

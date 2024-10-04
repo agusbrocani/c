@@ -57,6 +57,7 @@ int ejecutarSolicitudHTTPS(CURL* curl)
     if(CURLE_OK != (resultadoDeSolicitudHTTPS = curl_easy_perform(curl)))
     {
         fprintf(stderr, "Fallo la solicitud HTTPS: %s.\n", curl_easy_strerror(resultadoDeSolicitudHTTPS));
+
         return ERROR_SOLICITUD_HTTPS;
     }
     return OK;
