@@ -42,6 +42,7 @@ void configuracionEstructuraCURL(CURL* curl, const char* URL, void* dato)
 {
     curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 1L);
     curl_easy_setopt(curl, CURLOPT_CAINFO, CERTIFICADO_SITIO_SEGURO);
+    curl_easy_setopt(curl, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1_3);//asegurarme que utilizo TLS[la version 1.3 utiliza mejores algoritmos de cifrado] y no SSL porque esta obsoleto, tiene vulnerabilidades[La macro se llama SSL por motivos historicos, pero es TLS].
     curl_easy_setopt(curl, CURLOPT_URL, URL);
     curl_easy_setopt(curl, CURLOPT_TIMEOUT, 30L);
     curl_easy_setopt(curl, CURLOPT_CONNECTTIMEOUT, 10L);

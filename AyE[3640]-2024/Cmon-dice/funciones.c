@@ -201,13 +201,13 @@ void construccionURL(char* URL, unsigned tam, unsigned ce)//doy la flexibilidad 
     snprintf(URL, tam, "%s%s%s%u", URL_BASE, QUERY_PARAMS_FORMATO, QUERY_PARAM_CANTIDAD_DE_ELEMENTOS, ce * CANT_RONDAS_PROMEDIO_JUGADAS);
 }
 
-int consumoAPI(tReconstruccionDato* datoRespuestaAPI, unsigned cantidadDeJugadores,void (*construccionURL)(char* URL, unsigned tam, unsigned ce))
+int consumoAPI(tReconstruccionDato* datoRespuestaAPI, unsigned cantidadDeJugadores, void (*construccionURL)(char* URL, unsigned tam, unsigned ce))
 {
     CURL* curl;
     char URL[TAM_URL];
     int retornoCodigoDeError;
 
-    construccionURL(URL, sizeof(URL),cantidadDeJugadores);
+    construccionURL(URL, sizeof(URL), cantidadDeJugadores);
 
     if(ERROR_INICIAR_ESTRUCTURA_CURL == inicializacionEstructuraCURL(&curl))
     {
@@ -293,7 +293,7 @@ char obtenerCaracterDeSecuencia(const char* cadenaConIndices, const char* caract
 int generarRondas(tRecursos* recursos)
 {
     char caracteresDeSecuencia[] = {COLOR_VERDE, COLOR_AMARILLO, COLOR_ROJO, COLOR_NARANJA};
-    int retornoCodigoDeError = OK;
+    int retornoCodigoDeError;
 
     (recursos->datoRespuestaAPI).cantBytesFijosAReservar = recursos->cantidadDeJugadores * CANT_RONDAS_PROMEDIO_JUGADAS * INCLUIR_BARRA_N + CONTAR_BARRA_CERO;
     (recursos->datoRespuestaAPI).buffer = malloc((recursos->datoRespuestaAPI).cantBytesFijosAReservar);
@@ -338,7 +338,9 @@ int iniciarJuego(tRecursos* recursos)
 
 int jugar(tRecursos* recursos)
 {
-    int retornoCodigoDeError;
+    int retornoCodigoDeError = OK;
+
+    (recursos->datoRespuestaAPI).buffer = NULL;//si no hago esto, va a romper al final porque hice free de basura
 
     if(!ingresoDeNombresAListaSimple(&(recursos->listaDeJugadores), &(recursos->cantidadDeJugadores)))
     {
@@ -364,8 +366,8 @@ int jugar(tRecursos* recursos)
         system("pause");
         system("cls");
 
-
         printf("\n**************************ARRANCA EL JUEGO**************************\n");
+
         if(OK != (retornoCodigoDeError = iniciarJuego(recursos)))
         {
             fprintf(stderr, "No pude iniciar el juego.\n");
@@ -383,13 +385,11 @@ int jugar(tRecursos* recursos)
         if(OK != (retornoCodigoDeError = generarInforme(recursos, construccionNombreArchivoTxtInforme)))
         {
             fprintf(stderr, "No pude grabar archivo de informe.\n");
-            vaciarListaSimple(&(recursos->listaDeJugadores));
-            return retornoCodigoDeError;
         }
     }
     //RESETEO TODOS LOS PARAMETROS PARA VOLVER A JUGAR
     vaciarListaSimple(&(recursos->listaDeJugadores));
-    return OK;
+    return retornoCodigoDeError;
 }
 
 void switchTextoMenu(int opcion, void* recursos)
