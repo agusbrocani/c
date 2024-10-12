@@ -14,8 +14,6 @@ int main()
 
     ///*********************************IMPLEMENTAR TAM CONSOLA FIJA*********************************
 
-    crearListaSimple(&recursos.listaDeJugadores);
-
     if(!abrirArchivo(&aConfiguracion, NOMBRE_ARCHIVO_TXT_CONFIGURACION, "rt"))
     {
         return NO_PUDE_ABRIR_ARCHIVO_TXT_CONFIGURACION;
@@ -28,9 +26,8 @@ int main()
         return ARCHIVO_TXT_DE_CONFIGURACION_CON_ERRORES;
     }
 
-    menu(textoMenuPrincipal, cantidadDeRegistros, switchTextoMenu, &recursos, DESACTIVAR_AYUDA_AL_USUARIO);
+    menu(textoMenuPrincipal, cantidadDeRegistros, switchTextoMenu, &recursos, DESACTIVAR_AYUDA_AL_USUARIO); // (texto de opciones, cant filas, función switch, variables necesarias para el menu
 
-    vaciarListaSimple(&recursos.listaDeJugadores);
     fclose(aConfiguracion);
 
     return 0;

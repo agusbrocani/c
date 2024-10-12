@@ -67,11 +67,15 @@
 ///obtenerCaracterDeSecuencia
 #define A_NUMERO(X) ((X) - '0')
 
-///generarRondas
+///pedirLetraAleatoria
 #define COLOR_VERDE 'V'
 #define COLOR_AMARILLO 'A'
 #define COLOR_ROJO 'R'
 #define COLOR_NARANJA 'N'
+#define RANGO_MIN_DE_INDICE_VALIDO '0'
+#define RANGO_MAX_DE_INDICE_VALIDO '3'
+#define ES_RANGO_INDICE_VALIDO(X) (((X) >= (RANGO_MIN_DE_INDICE_VALIDO)) && ((X) <= (RANGO_MAX_DE_INDICE_VALIDO)))
+#define NO_PUDE_ASIGNAR_CARACTER_DE_SECUENCIA -4
 
 ///jugar
 #define CARACTERES_VALIDOS_A_INGRESAR_PARA_SECUENCIA "X-V-A-R-N"
@@ -85,10 +89,17 @@ typedef struct
 {
     unsigned id;
     char nya[TAM_NyA];
-    unsigned cantidadDeVidas;
-    t_lista rondasJugadas;
-    t_lista secuenciaFinalRespondida;///COLA PARA GRABAR, PILA PARA USO DE VIDAS
+    unsigned puntosTotales;
+    t_lista rondasJugadas; //guarda un tRonda
+    t_lista secuenciaAsignada; //guarda la secuencia que debe ingresar el jugador
+    t_lista respuestaFinal; //guarda todas las respuestas del jugador.
 }tJugador;
+
+typedef struct
+{
+    unsigned puntosObtenidos;
+    unsigned vidasUsadas;
+}tRonda; ///una ronda por secuencia
 
 typedef struct
 {
@@ -99,12 +110,17 @@ typedef struct
 
 typedef struct
 {
-    tConfiguracion configuraciones[CANTIDAD_DE_NIVELES];
-    unsigned indiceDeNivelDeConfiguracionElegida;
+    tConfiguracion configuraciones[CANTIDAD_DE_NIVELES]; // configuración según el nivel
+    unsigned indiceDeNivelDeConfiguracionElegida; // lo que se lecciona en el menú, para buscarlo en el vector de configuración según nivel
+
     t_lista listaDeJugadores;
+    tRonda ronda;   ///BUFFER para usar en cada una de las rondas para todos los jugadores
+    int cantidadDeVidasUsadasTotales;
     unsigned cantidadDeJugadores;
-    tReconstruccionDato datoRespuestaAPI;
-    char* cadenaConIndices;
+
+    tReconstruccionDato datoRespuestaAPI; // para almacenar la respuesta de la API
+    char* cadenaDeIndicesTraidosDeAPI;
+    unsigned cantidadDeIndicesDeCaracteresDeSecuenciaRestantes;
 }tRecursos;
 
 void mostrarConfiguracionElegida(tConfiguracion* configuracion, unsigned indiceDeNivelDeConfiguracionElegida);
@@ -119,16 +135,20 @@ void ingresoDeNivel(unsigned* indiceDeNivelDeConfiguracionElegida);
 int validaFormatoRespuestaAPI(const char* respuesta);
 void construccionURL(char* URL, unsigned tam, unsigned ce);
 int consumoAPI(tReconstruccionDato* dato, unsigned cantidadDeJugadores, void (*construccionURL)(char* URL, unsigned tam, unsigned ce));
+int inicializarRecursosParaConsumoDeAPI(tRecursos* recursos);
+void liberarRecursosParaConsumoDeAPI(tRecursos* recursos);
 
 void imprimirResultados(FILE* pf, tRecursos* recursos);
 void construccionNombreArchivoTxtInforme(char* NOMBRE_ARCHIVO_TXT_INFORME, unsigned tam, struct tm* fechaYHora);
 int generarInforme(tRecursos* recursos, void (*construccionNombreArchivoTxtInforme)(char* NOMBRE_ARCHIVO_TXT_INFORME, unsigned tam, struct tm* fechaYHora));
 
-char obtenerCaracterDeSecuencia(const char* cadenaConIndices, const char* caracteresDeSecuencia);
-int generarRondas(tRecursos* recursos);
+int convertirIndiceEnCaracterDeSecuencia(char caracterIndice, char* letra);
+int obtenerCaracterDeSecuenciaAleatorio(tRecursos* recursos, char* letra);
+int pedirLetraAleatoria(tRecursos* recursos, char* letra);
 int iniciarJuego(tRecursos* recursos);
-int jugar(tRecursos* recursos);
 
+void mostrarCaracteresValidos();
+int jugar(tRecursos* recursos);
 void switchTextoMenu(int opcion, void* recursos);
 
 #endif // FUNCIONES_H_INCLUDED
