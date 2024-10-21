@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1728597468 source:c:\users\ignac\downloads\eliminarnodolistadoble\listadoble.c
+	"listaDoble.h"
+
+1728597246 c:\users\ignac\downloads\eliminarnodolistadoble\listadoble.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1728605128 source:c:\users\ignac\downloads\eliminarnodolistadoble\main.c
+	"main.h"
+
+1728598540 c:\users\ignac\downloads\eliminarnodolistadoble\main.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"listaDoble.h"
+
+1728606675 source:c:\codeblocks\algoritmos\eliminarnodolistadoble\eliminarnodolistadoble\listadoble.c
+	"listaDoble.h"
+
+1728605956 c:\codeblocks\algoritmos\eliminarnodolistadoble\eliminarnodolistadoble\listadoble.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1728607147 source:c:\codeblocks\algoritmos\eliminarnodolistadoble\eliminarnodolistadoble\main.c
+	"main.h"
+
+1728605956 c:\codeblocks\algoritmos\eliminarnodolistadoble\eliminarnodolistadoble\main.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"listaDoble.h"
+

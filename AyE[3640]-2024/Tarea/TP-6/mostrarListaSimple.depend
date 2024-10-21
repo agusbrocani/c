@@ -1,0 +1,22 @@
+# depslib dependency file v1.0
+1726039809 source:c:\users\pc\desktop\mostrarlistasimpleordeninverso\clase3.c
+	"./clase3.h"
+
+1726039776 c:\users\pc\desktop\mostrarlistasimpleordeninverso\clase3.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1729553600 source:c:\users\pc\desktop\mostrarlistasimpleordeninverso\clase5.c
+	"clase5.h"
+
+1729553364 c:\users\pc\desktop\mostrarlistasimpleordeninverso\clase5.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"clase3.h"
+
+1729553488 source:c:\users\pc\desktop\mostrarlistasimpleordeninverso\main.c
+	"clase5.h"
+

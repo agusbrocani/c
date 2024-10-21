@@ -468,31 +468,31 @@ void mostrarConFormatoEspecialMueveFinR( const char* cadena )
     mostrarConFormatoEspecialMueveFinRC( cadena, fin, cantidadDeCaracteresExtraAMostrar );
 }
 
-void mostrarConFormatoEspecialMueveFinOrdenInversoRC2( const char* ini, const char* fin )
+void mostrarConFormatoEspecialMueveFinOrdenInversoRC2(const char* ini, const char* fin)
 {
-    if(         '\0' != *ini && ini <= fin           )
+    if('\0' != *ini && ini <= fin)
     {
-        printf( "%c", *ini );
-        mostrarConFormatoEspecialMueveFinOrdenInversoRC2( ini + 1, fin );
+        printf("%c", *ini);
+        mostrarConFormatoEspecialMueveFinOrdenInversoRC2(ini + 1, fin);
     }
 }
 
-void mostrarConFormatoEspecialMueveFinOrdenInversoRC( const char* ini, const char* fin,unsigned cantidadDeCaracteresExtraAMostrar )
+void mostrarConFormatoEspecialMueveFinOrdenInversoRC(const char* ini, const char* fin, unsigned cantidadDeCaracteresExtraAMostrar)
 {
-    if(         ini + cantidadDeCaracteresExtraAMostrar < fin          )
+    if(ini + cantidadDeCaracteresExtraAMostrar < fin)
     {
-        mostrarConFormatoEspecialMueveFinOrdenInversoRC( ini, fin, cantidadDeCaracteresExtraAMostrar + 1 );
-        mostrarConFormatoEspecialMueveFinOrdenInversoRC2( ini, ini + cantidadDeCaracteresExtraAMostrar );
-        printf( "\n" );
+        mostrarConFormatoEspecialMueveFinOrdenInversoRC(ini, fin, cantidadDeCaracteresExtraAMostrar + 1);
+        mostrarConFormatoEspecialMueveFinOrdenInversoRC2(ini, ini + cantidadDeCaracteresExtraAMostrar);
+        printf("\n");
     }
 }
 
-void mostrarConFormatoEspecialMueveFinOrdenInversoR( const char* cadena )
+void mostrarConFormatoEspecialMueveFinOrdenInversoR(const char* cadena)
 {
-    char* fin = mStrchrR( (char*)cadena, '\0' );
+    char* fin = mStrchrR((char*)cadena, '\0');
     unsigned cantidadDeCaracteresExtraAMostrar = 0;
 
-    mostrarConFormatoEspecialMueveFinOrdenInversoRC( cadena, fin, cantidadDeCaracteresExtraAMostrar );
+    mostrarConFormatoEspecialMueveFinOrdenInversoRC(cadena, fin, cantidadDeCaracteresExtraAMostrar);
 }
 
 void mostrarEnteroDescompuestoR( int entero )
