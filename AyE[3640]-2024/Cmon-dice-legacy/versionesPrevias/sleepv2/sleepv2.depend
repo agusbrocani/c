@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1729381001 source:c:\users\pc\desktop\sleepv2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<conio.h>
+	<pthread.h>
+
