@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="unidad4" />
+		<Option title="parcial" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/unidad4" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/parcial" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/unidad4" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/parcial" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj/Release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -31,14 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="../Bibliotecas/include/generico.h" />
-		<Unit filename="../Bibliotecas/include/lote.h" />
-		<Unit filename="../Bibliotecas/src/generico.c">
+		<Unit filename="funciones.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="../Bibliotecas/src/lote.c">
-			<Option compilerVar="CC" />
-		</Unit>
+		<Unit filename="funciones.h" />
 		<Unit filename="listaSimple.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -46,10 +42,8 @@
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="unidad4.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="unidad4.h" />
-		<Extensions />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

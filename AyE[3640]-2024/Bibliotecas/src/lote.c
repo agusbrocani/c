@@ -73,6 +73,13 @@ void cargarProductos( tProducto* productos, unsigned ce )
         {"7","Jugo Tang Naranja 20g","Mondelez",{9,9,2024},{3,8,2024},130.0,180.0},
         {"10","Cereal Kellogg's Corn Flakes 500g","Kellogg's",{10,10,2024},{4,8,2024},140.0,190.0},
         {"2","Galletas Oreo 150g","Mondelez",{6,6,2024},{31,7,2024},100.0,150.0},
+        {"11","Cafe Nescafe Dolca 170g","Nestle",{11,11,2024},{5,8,2024},150.0,200.0},
+        {"11","Cafe Nescafe Dolca 170g","Nestle",{11,11,2024},{5,8,2024},150.0,200.0},
+        {"11","Cafe Nescafe Dolca 170g","Nestle",{11,11,2024},{5,8,2024},150.0,200.0},
+        {"11","Cafe Nescafe Dolca 170g","Nestle",{11,11,2024},{5,8,2024},150.0,200.0},
+        {"11","Cafe Nescafe Dolca 170g","Nestle",{11,11,2024},{5,8,2024},150.0,200.0},
+        {"11","Cafe Nescafe Dolca 170g","Nestle",{11,11,2024},{5,8,2024},150.0,200.0},
+        {"11","Cafe Nescafe Dolca 170g","Nestle",{11,11,2024},{5,8,2024},150.0,200.0},
         {"11","Cafe Nescafe Dolca 170g","Nestle",{11,11,2024},{5,8,2024},150.0,200.0}
     };
 

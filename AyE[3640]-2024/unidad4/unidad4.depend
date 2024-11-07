@@ -1,47 +1,59 @@
 # depslib dependency file v1.0
-1726646561 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad4\main.c
+1730572064 source:c:\users\pc\desktop\unidad4\unidad4.c
 	"unidad4.h"
 
-1726643737 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad4\unidad4.h
+1730515998 c:\users\pc\desktop\unidad4\unidad4.h
 	<stdio.h>
 	<stdlib.h>
 	"listaSimple.h"
+
+1730577454 c:\users\pc\desktop\unidad4\listasimple.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1730578252 source:c:\users\pc\desktop\unidad4\listasimple.c
+	"listaSimple.h"
+
+1730578578 source:c:\users\pc\desktop\unidad4\main.c
+	"unidad4.h"
+
+1730671188 source:c:\users\pc\desktop\repos\c\aye[3640]-2024\unidad4\listasimple.c
+	"listaSimple.h"
+
+1730670236 c:\users\pc\desktop\repos\c\aye[3640]-2024\unidad4\listasimple.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
 	"../Bibliotecas/include/lote.h"
 	"../Bibliotecas/include/generico.h"
 
-1726476534 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad4\unidad4.c
+1730671621 c:\users\pc\desktop\repos\c\aye[3640]-2024\bibliotecas\include\lote.h
+	<stdlib.h>
+	<string.h>
+	"../include/generico.h"
+
+1730146266 c:\users\pc\desktop\repos\c\aye[3640]-2024\bibliotecas\include\generico.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1730671741 source:c:\users\pc\desktop\repos\c\aye[3640]-2024\unidad4\main.c
 	"unidad4.h"
 
-1723072131 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\listasimplementeenlazada\listasimplementeenlazada.c
-	"../../include/listaSimplementeEnlazada/listaSimplementeEnlazada.h"
-
-1723064467 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\listasimplementeenlazada\listasimplementeenlazada.h
-	"../lote.h"
+1730670855 c:\users\pc\desktop\repos\c\aye[3640]-2024\unidad4\unidad4.h
 	<stdio.h>
 	<stdlib.h>
-	<string.h>
-
-1725824992 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\lote.h
-	<stdlib.h>
-	<string.h>
-	"../include/generico.h"
-
-1725963750 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\include\generico.h
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-
-1725824980 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\lote.c
-	"../include/lote.h"
-
-1725963724 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\bibliotecas\src\generico.c
-	"../include/generico.h"
-
-1726647248 c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad4\listasimple.h
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-
-1726646500 source:c:\users\pc\desktop\materias2°c-2024\topicos-algoritmos[github]\aye[3640]-2024\unidad4\listasimple.c
 	"listaSimple.h"
+
+1730666219 source:c:\users\pc\desktop\repos\c\aye[3640]-2024\unidad4\unidad4.c
+	"unidad4.h"
+
+1730146266 source:c:\users\pc\desktop\repos\c\aye[3640]-2024\bibliotecas\src\generico.c
+	"../include/generico.h"
+
+1730671601 source:c:\users\pc\desktop\repos\c\aye[3640]-2024\bibliotecas\src\lote.c
+	"../include/lote.h"
 
