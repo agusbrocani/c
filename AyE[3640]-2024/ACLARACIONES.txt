@@ -1,0 +1,3 @@
+Unidad 4 incompleta, pero estan todas las primitivas.
+Unidad 6 sin hacer.
+Hay clases donde no tengo proyecto, mayormente de listaDoble, listaCircular, pila y cola en lista circular

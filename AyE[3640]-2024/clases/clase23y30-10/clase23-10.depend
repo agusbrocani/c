@@ -1,0 +1,23 @@
+# depslib dependency file v1.0
+1729717633 source:c:\users\laboratorios\desktop\clase23-10\main.c
+	"funciones.h"
+
+1729717652 c:\users\laboratorios\desktop\clase23-10\funciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1729717913 source:c:\users\laboratorios\desktop\clase23-10\funciones.c
+	"funciones.h"
+
+1730311751 source:c:\users\pc\desktop\clase23-10\funciones.c
+	"funciones.h"
+
+1730311770 c:\users\pc\desktop\clase23-10\funciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1730311761 source:c:\users\pc\desktop\clase23-10\main.c
+	"funciones.h"
+
