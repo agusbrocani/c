@@ -1,0 +1,15 @@
+Provincia: 3
+Superficie total: 50.00
+Cantidad total de habitantes: 50
+Densidad de poblacion: 1.00
+
+Provincia: 2
+Superficie total: 400.00
+Cantidad total de habitantes: 2000
+Densidad de poblacion: 5.00
+
+Provincia: 1
+Superficie total: 400.00
+Cantidad total de habitantes: 1000
+Densidad de poblacion: 2.50
+

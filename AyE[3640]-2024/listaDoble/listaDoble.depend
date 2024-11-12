@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1728691049 source:c:\users\pc\desktop\listadoble\listadoble.c
+	"listaDoble.h"
+
+1728690716 c:\users\pc\desktop\listadoble\listadoble.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1728690915 source:c:\users\pc\desktop\listadoble\main.c
+	"listaDoble.h"
+
